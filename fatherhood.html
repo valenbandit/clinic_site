@@ -1,0 +1,790 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>להיות אבא נוכח | טיפול רגשי לאבות בפרדס חנה</title>
+    <meta name="description"
+        content="מרגיש רחוק מהילדים שלך אבל לא יודע איך לגשר? טיפול רגשי לאבות בפרדס חנה — לגברים שרוצים להיות שם באמת. פגישת היכרות ללא התחייבות." />
+    <link rel="canonical" href="https://abrahamdagan.co.il/fatherhood" />
+    <meta property="og:title" content="להיות אבא נוכח | טיפול רגשי לאבות בפרדס חנה" />
+    <meta property="og:description"
+        content="מרגיש רחוק מהילדים שלך אבל לא יודע איך לגשר? טיפול רגשי לאבות בפרדס חנה — לגברים שרוצים להיות שם באמת. פגישת היכרות ללא התחייבות." />
+    <meta property="og:url" content="https://abrahamdagan.co.il/fatherhood" />
+    <meta property="og:image"
+        content="https://abrahamdagan.co.il/assets/site-images/Gemini_Generated_Image_8g803h8g803h8g81.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>tailwind.config = { theme: { extend: { colors: { sage: { DEFAULT: '#8B9E8D', light: '#C8D5C9', dark: '#5C7A5E' }, stone: { warm: '#F5F0EB', medium: '#E8DDD4', deep: '#C4B5A5' }, navy: { DEFAULT: '#2C3E50', dark: '#1A252F' }, cream: '#FAF7F4', muted: '#7A7068' }, fontFamily: { sans: ['Assistant', 'sans-serif'] } } } }</script>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            background: #FAF7F4;
+            color: #2C3E50
+        }
+
+        .section-padding {
+            max-width: 72rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2rem;
+            padding-right: 2rem
+        }
+
+        @media(min-width:768px) {
+            .section-padding {
+                padding-left: 4rem;
+                padding-right: 4rem
+            }
+        }
+
+        #navbar {
+            transition: background .35s, box-shadow .35s;
+            z-index: 100;
+            backdrop-filter: blur(12px)
+        }
+
+        #navbar.scrolled {
+            background: rgba(250, 247, 244, .97) !important;
+            box-shadow: 0 2px 20px rgba(44, 62, 80, .08)
+        }
+
+        .divider {
+            width: 48px;
+            height: 2px;
+            background: linear-gradient(90deg, #8B9E8D, #C8D5C9);
+            display: block
+        }
+
+        .divider-right {
+            margin: 0 0 0 auto
+        }
+
+        @keyframes soft-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(139, 158, 141, .40)
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(139, 158, 141, 0)
+            }
+        }
+
+        .btn-cta {
+            animation: soft-pulse 3s ease-in-out infinite
+        }
+
+        .nav-dropdown {
+            position: relative
+        }
+
+        .nav-dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: .25rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            color: inherit;
+            font-weight: 500;
+            font-size: .875rem
+        }
+
+        .nav-dropdown-toggle::after {
+            display: none !important
+        }
+
+        .nav-dropdown:hover .nav-dropdown-toggle svg,
+        .nav-dropdown:focus-within .nav-dropdown-toggle svg {
+            transform: rotate(180deg)
+        }
+
+        .nav-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 190px;
+            background: rgba(250, 247, 244, .97);
+            border: 1px solid rgba(139, 158, 141, .2);
+            border-radius: 1rem;
+            box-shadow: 0 12px 32px rgba(44, 62, 80, .12);
+            padding: .75rem .5rem .5rem;
+            z-index: 100;
+            backdrop-filter: blur(12px)
+        }
+
+        .nav-dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -.75rem;
+            left: 0;
+            right: 0;
+            height: .75rem
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu,
+        .nav-dropdown.dropdown-open .nav-dropdown-menu {
+            display: block
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: .55rem 1rem;
+            font-size: .83rem;
+            font-weight: 500;
+            color: #2C3E50;
+            text-decoration: none;
+            border-radius: .6rem;
+            transition: background .2s, color .2s
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: rgba(139, 158, 141, .12);
+            color: #8B9E8D
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: #8B9E8D;
+            transition: width .25s
+        }
+
+        .nav-link:hover::after {
+            width: 100%
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        #mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 37, 47, .97);
+            backdrop-filter: blur(16px);
+            z-index: 110;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s
+        }
+
+        #mobile-menu.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        #mobile-menu a,
+        #mobile-menu button {
+            color: #FAF7F4;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: 'Assistant', sans-serif;
+            text-decoration: none;
+            transition: color .2s
+        }
+
+        #mobile-menu a:hover {
+            color: #8B9E8D
+        }
+
+        #mobile-menu .mobile-tel {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #8B9E8D;
+            font-weight: 500
+        }
+
+        #hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            z-index: 120
+        }
+
+        @media(max-width:767px) {
+            #hamburger {
+                display: flex
+            }
+        }
+
+        #hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #2C3E50;
+            border-radius: 2px;
+            transition: transform .25s, opacity .25s
+        }
+
+        #hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg)
+        }
+
+        #hamburger.open span:nth-child(2) {
+            opacity: 0
+        }
+
+        #hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg)
+        }
+
+        #hamburger.open span {
+            background: #FAF7F4
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1A252F 0%, #2C3E50 60%, #3d5268 100%);
+            position: relative;
+            overflow: hidden
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(139, 158, 141, .06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none
+        }
+
+        .theme-card {
+            transition: transform .3s, box-shadow .3s;
+            border: 1px solid #E8DDD4
+        }
+
+        .theme-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(44, 62, 80, .10)
+        }
+
+        #site-footer {
+            background: #1A252F;
+            color: rgba(250, 247, 244, .65);
+            font-family: 'Assistant', sans-serif;
+            direction: rtl
+        }
+
+        #site-footer .footer-accent-line {
+            height: 2px;
+            background: linear-gradient(to left, transparent, #8B9E8D 40%, #C8D5C9 60%, transparent);
+            opacity: .55
+        }
+
+        #site-footer .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative
+        }
+
+        #site-footer .footer-divider {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        #site-footer .footer-col-identity {
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+
+        #site-footer .footer-col-links ul {
+            align-items: center
+        }
+
+        #site-footer .footer-col-map iframe {
+            width: 100%;
+            height: 200px
+        }
+
+        @media(min-width:640px) {
+            #site-footer .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                padding: 3.5rem 2rem 2.5rem
+            }
+
+            #site-footer .footer-col-map {
+                grid-column: 1/-1
+            }
+        }
+
+        @media(min-width:900px) {
+            #site-footer .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 3rem;
+                text-align: right;
+                align-items: start
+            }
+
+            #site-footer .footer-col-map {
+                grid-column: auto
+            }
+
+            #site-footer .footer-divider {
+                margin-left: 0;
+                margin-right: 0
+            }
+
+            #site-footer .footer-col-identity {
+                align-items: flex-start
+            }
+
+            #site-footer .footer-col-links ul {
+                align-items: flex-start
+            }
+
+            #site-footer .footer-col-map iframe {
+                height: 140px
+            }
+        }
+
+        #site-footer .footer-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #FAF7F4;
+            margin: 0 0 .2rem
+        }
+
+        #site-footer .title-tag {
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: #8B9E8D;
+            margin-bottom: 1.1rem
+        }
+
+        #site-footer .footer-divider {
+            width: 36px;
+            height: 1px;
+            background: rgba(139, 158, 141, .35);
+            margin: .75rem 0
+        }
+
+        #site-footer .footer-address {
+            font-size: .83rem;
+            color: rgba(250, 247, 244, .5);
+            line-height: 1.7
+        }
+
+        #site-footer .footer-tel {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            color: #8B9E8D;
+            font-size: .9rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: .6rem;
+            transition: color .2s
+        }
+
+        #site-footer .footer-tel:hover {
+            color: #FAF7F4
+        }
+
+        #site-footer .footer-tel-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 1px solid rgba(139, 158, 141, .4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0
+        }
+
+        #site-footer .footer-col-links h3 {
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #8B9E8D;
+            margin-bottom: 1rem
+        }
+
+        #site-footer .footer-col-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .55rem
+        }
+
+        #site-footer .footer-col-links a {
+            color: rgba(250, 247, 244, .6);
+            text-decoration: none;
+            font-size: .88rem;
+            transition: color .2s, padding-right .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem
+        }
+
+        #site-footer .footer-col-links a::before {
+            content: '←';
+            opacity: 0;
+            font-size: .7rem;
+            color: #8B9E8D;
+            transition: opacity .2s
+        }
+
+        #site-footer .footer-col-links a:hover {
+            color: #FAF7F4;
+            padding-right: 4px
+        }
+
+        #site-footer .footer-col-links a:hover::before {
+            opacity: 1
+        }
+
+        #site-footer .footer-col-map h3 {
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #8B9E8D;
+            margin-bottom: 1rem
+        }
+
+        #site-footer .footer-map-frame {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 158, 141, .18);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, .45)
+        }
+
+        #site-footer .footer-bottom {
+            border-top: 1px solid rgba(250, 247, 244, .07);
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 1.1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        #site-footer .footer-bottom p {
+            font-size: .72rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(250, 247, 244, .22);
+            margin: 0
+        }
+
+        #site-footer .footer-texture {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, rgba(139, 158, 141, .04) 1px, transparent 1px);
+            background-size: 28px 28px
+        }
+    </style>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","@id":"https://abrahamdagan.co.il","name":"אברהם דגן – פסיכותרפיסט ומטפל רגשי","url":"https://abrahamdagan.co.il","telephone":"+972528604102","image":"https://abrahamdagan.co.il/assets/site-images/Gemini_Generated_Image_8g803h8g803h8g81.png","priceRange":"₪300-₪400","openingHours":"Su-Th 09:00-20:00","address":{"@type":"PostalAddress","streetAddress":"רחוב הגליל","addressLocality":"פרדס חנה","addressCountry":"IL"}}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"דף הבית","item":"https://abrahamdagan.co.il"},{"@type":"ListItem","position":2,"name":"אבהות","item":"https://abrahamdagan.co.il/fatherhood"}]}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"טיפול רגשי לאבות","provider":{"@id":"https://abrahamdagan.co.il"},"areaServed":"פרדס חנה","description":"עבודה עם אבות על הדפוסים הרגשיים שהם מביאים לאבהות שלהם — לשפר את הקשר עם הילדים."}</script>
+</head>
+
+<body class="antialiased">
+
+    <header id="navbar" class="fixed top-0 right-0 left-0 z-[100] bg-white/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="flex flex-col leading-tight group"><span
+                            class="text-xl font-semibold tracking-tight text-navy-dark group-hover:text-sage transition-colors">אברהם
+                            דגן</span><span class="text-xs font-light text-muted tracking-wide">פסיכותרפיסט | פרדס
+                            חנה</span></a>
+                    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-navy-dark"
+                        aria-label="ניווט ראשי">
+                        <a href="/"
+                            class="nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded">דף הבית</a>
+                        <a href="/about"
+                            class="nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded">אודות</a>
+                        <div class="nav-dropdown">
+                            <button
+                                class="nav-dropdown-toggle nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded"
+                                aria-haspopup="true" aria-expanded="false">תחומי טיפול <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg></button>
+                            <div class="nav-dropdown-menu" role="menu">
+                                <a href="/teens" role="menuitem">נוער ומתבגרים</a>
+                                <a href="/relationships" role="menuitem">זוגיות ומערכות יחסים</a>
+                                <a href="/young-adults" role="menuitem">צעירים וצמתי חיים</a>
+                                <a href="/fatherhood" role="menuitem" aria-current="page">אבהות</a>
+                            </div>
+                        </div>
+                        <a href="/#contact"
+                            class="nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded">צור קשר</a>
+                    </nav>
+                    <button id="hamburger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobile-menu"
+                        class="focus:ring-2 focus:ring-sage focus:outline-none rounded"><span></span><span></span><span></span></button>
+                </div>
+                <a href="/#contact"
+                    class="btn-cta inline-flex items-center gap-2 bg-sage text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg hover:bg-sage-dark transition-colors duration-300 focus:ring-2 focus:ring-sage focus:outline-none"><span>קביעת
+                        פגישת היכרות</span><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l9.2-9.2M17 17V7" />
+                    </svg></a>
+            </div>
+        </div>
+    </header>
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט נייד" aria-hidden="true">
+        <button id="mobile-close" aria-label="סגור תפריט"
+            style="position:absolute;top:1.5rem;left:1.5rem;color:#FAF7F4;font-size:1.5rem;background:none;border:none;cursor:pointer">×</button>
+        <a href="/">דף הבית</a><a href="/about">אודות</a><a href="/#areas">תחומי טיפול</a><a href="/#contact">צור
+            קשר</a><a href="tel:+972528604102" class="mobile-tel">052-8604102</a>
+    </div>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="page-hero pt-36 pb-20 px-6" aria-labelledby="page-h1">
+            <div class="max-w-4xl mx-auto">
+                <nav aria-label="נתיב ניווט" class="mb-8">
+                    <ol class="flex items-center gap-2 text-sm text-cream/50">
+                        <li><a href="/" class="hover:text-cream transition-colors"><span>דף
+                                    הבית</span></a>
+                        </li>
+                        <li aria-hidden="true" class="text-cream/30">/</li>
+                        <li><span class="text-sage">אבהות</span>
+                        </li>
+                    </ol>
+                </nav>
+                <span class="text-sage font-semibold text-sm tracking-widest uppercase block mb-4">אבהות</span>
+                <h1 id="page-h1" class="text-4xl md:text-5xl font-bold text-cream leading-tight mb-5">אתה אוהב את הילדים
+                    שלך —<br><span class="text-sage">אבל משהו בדרך לא עובד</span></h1>
+                <p class="text-cream/70 text-xl font-light max-w-2xl leading-relaxed">להיות אבא נוכח זה לא עניין של זמן.
+                    זה עניין של חיבור — ואפשר ללמוד אותו.</p>
+            </div>
+        </section>
+
+        <!-- INTRO -->
+        <section class="py-24 bg-white" aria-labelledby="intro-h2">
+            <div class="section-padding">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="reveal">
+                        <span class="text-sage font-semibold text-sm tracking-widest uppercase">כשהמרחק גדל</span>
+                        <h2 id="intro-h2" class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
+                            הם ממש לידך — אבל אתה מרגיש רחוק</h2>
+                        <span class="divider divider-right mb-6"></span>
+                        <div class="space-y-5 text-muted text-base md:text-lg leading-relaxed">
+                            <p>הרבה אבות שמגיעים לקליניקה לא נעדרים. הם בבית, הם מספקים, הם מנסים. אבל יש פער — בין מה
+                                שהם רוצים להיות לבין מה שהם מצליחים לתת. שיחות שלא זורמות. רגעים שבהם הילד נסגר ואתה לא
+                                יודע איך להגיע אליו.</p>
+                            <p>בקליניקה בפרדס חנה אני עובד עם אבות שרוצים לשנות את זה. לא לשפר את הביצועים ההוריים — אלא
+                                להבין מה עומד בין האהבה שיש בהם לבין היכולת לבטא אותה. לרוב, התשובה נמצאת הרבה לפני שהיו
+                                לאבות.</p>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <div class="bg-stone-warm rounded-2xl p-8 border border-stone-medium">
+                            <h3 class="font-bold text-navy-dark text-lg mb-5">מתחילים ממך — לא מהילדים</h3>
+                            <p class="text-muted text-base leading-relaxed mb-5">אבהות טובה לא מתחילה בטכניקות הורות.
+                                היא מתחילה בהבנה עצמית — איך גדלת, מה קיבלת, ומה לא קיבלת.</p>
+                            <p class="text-muted text-base leading-relaxed">השילוב בין הגישה הדינמית לכלים החווייתיים של
+                                האקומי מאפשר לעבוד על הדפוסים הרגשיים שאתה מביא לאבהות שלך. כשאלה משתנים — הקשר עם
+                                הילדים משתנה מאליו.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THEMES -->
+        <section class="py-24 bg-cream" aria-labelledby="themes-h2">
+            <div class="section-padding">
+                <div class="text-center mb-14 reveal">
+                    <span class="text-sage font-semibold text-sm tracking-widest uppercase">נושאים שעולים בטיפול</span>
+                    <h2 id="themes-h2" class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-3">מה אבות מביאים
+                        לחדר</h2>
+                    <span class="divider mx-auto mt-2"></span>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
+                    <article class="theme-card bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-sage/10 flex items-center justify-center mb-4"
+                            aria-hidden="true"><svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg></div>
+                        <h3 class="font-bold text-navy-dark text-base mb-2">חיבור רגשי</h3>
+                        <p class="text-muted text-sm leading-relaxed">לאהוב אבל לא לדעת איך להראות את זה — וכיצד לגשר על
+                            הפער</p>
+                    </article>
+                    <article class="theme-card bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-sage/10 flex items-center justify-center mb-4"
+                            aria-hidden="true"><svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                            </svg></div>
+                        <h3 class="font-bold text-navy-dark text-base mb-2">גבולות וסמכות</h3>
+                        <p class="text-muted text-sm leading-relaxed">בין להיות חבר לבין להיות אבא — ולמצוא את הדרך שלך
+                        </p>
+                    </article>
+                    <article class="theme-card bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-sage/10 flex items-center justify-center mb-4"
+                            aria-hidden="true"><svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                            </svg></div>
+                        <h3 class="font-bold text-navy-dark text-base mb-2">אבהות אחרי פרידה</h3>
+                        <p class="text-muted text-sm leading-relaxed">לשמור על קשר אמיתי עם הילדים גם כשהמשפחה השתנתה
+                        </p>
+                    </article>
+                    <article class="theme-card bg-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-sage/10 flex items-center justify-center mb-4"
+                            aria-hidden="true"><svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg></div>
+                        <h3 class="font-bold text-navy-dark text-base mb-2">הדפוסים שעוברים הלאה</h3>
+                        <p class="text-muted text-sm leading-relaxed">מה קיבלת מאביך — ומה אתה רוצה לתת לילדיך</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- REASSURANCE -->
+        <section class="py-20 bg-white" aria-labelledby="reassurance-h2">
+            <div class="section-padding" style="max-width:52rem">
+                <div class="bg-stone-warm border border-stone-medium rounded-2xl p-8 md:p-10 reveal">
+                    <h2 id="reassurance-h2" class="font-bold text-navy-dark text-2xl mb-4">לרצות להיות אבא טוב יותר זו
+                        לא חולשה</h2>
+                    <p class="text-muted text-base md:text-lg leading-relaxed">זה בדיוק ההפך. גברים שמגיעים לעבוד על
+                        האבהות שלהם עושים את אחד הדברים האמיצים ביותר שאבא יכול לעשות — הם בוחרים לשבור דפוס במקום
+                        להעביר אותו הלאה.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BAND -->
+        <section class="bg-navy-dark py-20 px-8" aria-label="קריאה לפעולה">
+            <div class="max-w-3xl mx-auto text-center reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-cream mb-4">רוצה להיות יותר נוכח?</h2>
+                <p class="text-cream/70 text-lg mb-10 font-light">נתחיל בשיחה — תספר לי על הקשר עם הילדים שלך ונראה יחד
+                    מאיפה להתחיל.</p>
+                <a href="/#contact"
+                    class="btn-cta inline-flex items-center gap-3 bg-sage text-white font-bold text-lg px-10 py-4 rounded-full shadow-2xl hover:bg-sage-dark transition-colors focus:ring-2 focus:ring-sage focus:outline-none">
+                    לקביעת פגישת היכרות
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="footer-accent-line"></div>
+        <div class="footer-texture"></div>
+        <div class="footer-grid">
+            <div class="footer-col-identity">
+                <div>
+                    <p class="footer-name">אברהם דגן</p>
+                    <p class="title-tag">פסיכותרפיסט ומטפל רגשי</p>
+                </div>
+                <div class="footer-divider"></div>
+                <p class="footer-address"><span>רחוב
+                        הגליל</span>,<br><span>פרדס חנה</span>
+                </p>
+                <div>
+                    <a href="tel:+972528604102" class="footer-tel"
+                        aria-label="חייגו לאברהם דגן"><span class="footer-tel-icon"><svg width="12" height="12"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.338c0 4.33 3.298 8.298 7.5 8.298m0 0A4.5 4.5 0 0110 18.75m-7.5-12.412A4.5 4.5 0 015.25 3h13.5A4.5 4.5 0 0121 7.5v9a4.5 4.5 0 01-4.5 4.5h-9A4.5 4.5 0 013 16.5V7.5z" />
+                            </svg></span>052-8604102</a>
+                </div>
+            </div>
+            <div class="footer-col-links">
+                <h3>תחומי טיפול</h3>
+                <ul>
+                    <li><a href="/teens">נוער ומתבגרים</a></li>
+                    <li><a href="/relationships">זוגיות ומערכות יחסים</a></li>
+                    <li><a href="/young-adults">צעירים וצמתי חיים</a></li>
+                    <li><a href="/fatherhood">אבהות</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-map">
+                <h3>מיקום הקליניקה</h3>
+                <div class="footer-map-frame"><iframe title="מיקום הקליניקה – רחוב הגליל, פרדס חנה"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.709897228142!2d34.98669871177265!3d32.480450373679716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d0e542a7ada7f%3A0xd17f024f6f97da16!2sKidmat%20HaGalil%2C%20Pardes%20Hana-Karkur!5e0!3m2!1sen!2sil!4v1772116909393!5m2!1sen!2sil"
+                        width="600" height="140"
+                        style="border:0;display:block;filter:grayscale(20%) contrast(1.04) brightness(.92)"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 כל הזכויות שמורות</p>
+        </div>
+    </footer>
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+        const hamburger = document.getElementById('hamburger'), mobileMenu = document.getElementById('mobile-menu'), mobileClose = document.getElementById('mobile-close');
+        function openMenu() { mobileMenu.classList.add('open'); mobileMenu.setAttribute('aria-hidden', 'false'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden' }
+        function closeMenu() { mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden', 'true'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '' }
+        hamburger.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
+        mobileClose.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu() });
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => { btn.addEventListener('click', () => { const ex = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!ex)); btn.closest('.nav-dropdown').classList.toggle('dropdown-open', !ex) }) });
+        document.addEventListener('click', e => { document.querySelectorAll('.nav-dropdown').forEach(dd => { if (!dd.contains(e.target)) { dd.classList.remove('dropdown-open'); dd.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false') } }) });
+        const observer = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); observer.unobserve(en.target) } }), { threshold: .12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
