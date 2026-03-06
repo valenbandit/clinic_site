@@ -1,6 +1,6 @@
 // =============================================================
 //  CLINIC SITE — SHARED JAVASCRIPT
-//  Covers: index.html, about.html, teens.html, relationships.html,
+//  Covers: index.html, teens.html, relationships.html,
 //          young-adults.html, fatherhood.html, depression-anxiety.html
 //
 //  Sections:
