@@ -1,0 +1,699 @@
+/* =============================================================
+   CLINIC SITE — SHARED STYLESHEET
+   Covers: index.html, about.html, teens.html, relationships.html,
+           young-adults.html, fatherhood.html, depression-anxiety.html
+   ============================================================= */
+
+
+/* ─────────────────────────────────────────────────────────────
+   1. GLOBAL / RESET
+   ───────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Assistant', sans-serif;
+    background: #FAF7F4;
+    color: #2C3E50;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   2. LAYOUT UTILITIES
+   ───────────────────────────────────────────────────────────── */
+
+/* Centered content column with responsive side padding */
+.section-padding {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+/* Sage gradient divider line */
+.divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, #8B9E8D, #C8D5C9);
+    margin: 0 auto;
+    display: block;
+}
+
+/* Right-align variant (RTL: pushes divider to the left edge) */
+.divider-right {
+    margin: 0 0 0 auto;
+}
+
+/* Scroll-triggered fade-up reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   3. NAVIGATION — STICKY HEADER
+   ───────────────────────────────────────────────────────────── */
+
+#navbar {
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+/* Solid background once user scrolls past 40 px */
+#navbar.scrolled {
+    background: rgba(250, 247, 244, 0.97) !important;
+    box-shadow: 0 2px 20px rgba(44, 62, 80, 0.08);
+}
+
+/* Underline animation on each nav link */
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #8B9E8D;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   4. NAVIGATION — DROPDOWN
+   ───────────────────────────────────────────────────────────── */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+/* Hide the underline animation on the dropdown trigger */
+.nav-dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Rotate chevron on hover / keyboard-open */
+.nav-dropdown:hover .nav-dropdown-toggle svg,
+.nav-dropdown:focus-within .nav-dropdown-toggle svg {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 190px;
+    background: rgba(250, 247, 244, 0.97);
+    border: 1px solid rgba(139, 158, 141, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 12px 32px rgba(44, 62, 80, 0.12);
+    padding: 0.75rem 0.5rem 0.5rem;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+/* Invisible bridge so the menu doesn't close when moving from trigger to panel */
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.75rem;
+    left: 0;
+    right: 0;
+    height: 0.75rem;
+}
+
+/* Show on hover or keyboard focus */
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    display: block;
+}
+
+/* Show when JS adds .dropdown-open (keyboard toggle) */
+.nav-dropdown.dropdown-open .nav-dropdown-menu {
+    display: block !important;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 0.55rem 1rem;
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: #2C3E50;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown-menu a:hover {
+    background: rgba(139, 158, 141, 0.12);
+    color: #8B9E8D;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   5. NAVIGATION — MOBILE HAMBURGER + OVERLAY
+   ───────────────────────────────────────────────────────────── */
+
+#hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 120;
+}
+
+@media (max-width: 767px) {
+    #hamburger {
+        display: flex;
+    }
+}
+
+#hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #2C3E50;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Animated X state */
+#hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+#hamburger.open span {
+    background: #FAF7F4;
+}
+
+/* Full-screen overlay */
+#mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 37, 47, 0.97);
+    backdrop-filter: blur(16px);
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#mobile-menu a,
+#mobile-menu button {
+    color: #FAF7F4;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Assistant', sans-serif;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#mobile-menu a:hover {
+    color: #8B9E8D;
+}
+
+#mobile-menu .mobile-tel {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #8B9E8D;
+    font-weight: 500;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   6. BUTTONS & CTA
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes soft-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(139, 158, 141, 0.40);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(139, 158, 141, 0);
+    }
+}
+
+/* Pulsing outline on the primary CTA button */
+.btn-cta {
+    animation: soft-pulse 3s ease-in-out infinite;
+}
+
+/* Highlighted credential / badge pill */
+.credential-badge {
+    background: linear-gradient(135deg, #8B9E8D22, #C8D5C933);
+    border: 1px solid #C8D5C9;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   7. HERO — HOMEPAGE ONLY
+   ───────────────────────────────────────────────────────────── */
+
+/* Parallax portrait — height overshoot so translateY stays in frame */
+.hero-img {
+    height: 110%;
+    top: -5%;
+    transition: transform 0.05s linear;
+    will-change: transform;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   8. PAGE HERO — INNER PAGES
+   ───────────────────────────────────────────────────────────── */
+
+/* Dark gradient header used on all service/about pages */
+.page-hero {
+    background: linear-gradient(135deg, #1A252F 0%, #2C3E50 60%, #3d5268 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle dot-grid texture overlay */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(139, 158, 141, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   9. CARDS
+   ───────────────────────────────────────────────────────────── */
+
+/* Hover-lift for homepage approach/area cards */
+.approach-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(44, 62, 80, 0.10);
+}
+
+/* Hover-lift for inner-page theme cards */
+.theme-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #E8DDD4;
+}
+
+.theme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(44, 62, 80, 0.10);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   10. CREDENTIALS STRIP
+   ───────────────────────────────────────────────────────────── */
+
+/* One credential item (icon + text) in the dark trust bar */
+.cred-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: rgba(250, 247, 244, 0.7);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   11. GALLERY — HOMEPAGE ONLY
+   ───────────────────────────────────────────────────────────── */
+
+.gallery-img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-wrap:hover .gallery-img {
+    transform: scale(1.04);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   12. FAQ ACCORDION — HOMEPAGE ONLY
+   ───────────────────────────────────────────────────────────── */
+
+.faq-card {
+    border: 1px solid #E8DDD4;
+    transition: box-shadow 0.35s ease, border-color 0.35s ease;
+    position: relative;
+}
+
+/* Sage accent stripe on the right edge */
+.faq-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #8B9E8D, #C8D5C9);
+    border-radius: 0 1rem 1rem 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.faq-card:hover {
+    box-shadow: 0 6px 24px rgba(44, 62, 80, 0.07);
+    border-color: #C8D5C9;
+}
+
+.faq-card:has(details[open]) {
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.11);
+    border-color: #8B9E8D;
+}
+
+.faq-card:has(details[open])::after {
+    opacity: 1;
+}
+
+.faq-card summary {
+    transition: background 0.25s ease;
+}
+
+.faq-card:has(details[open]) summary {
+    background: rgba(139, 158, 141, 0.06);
+}
+
+@keyframes faq-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-answer {
+    animation: faq-slide-in 0.25s ease forwards;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   13. FOOTER
+   ───────────────────────────────────────────────────────────── */
+
+#site-footer {
+    background: #1A252F;
+    color: rgba(250, 247, 244, 0.65);
+    font-family: 'Assistant', sans-serif;
+    direction: rtl;
+    position: relative;
+    /* needed for .footer-texture absolute */
+}
+
+/* Top gradient accent line */
+#site-footer .footer-accent-line {
+    height: 2px;
+    background: linear-gradient(to left, transparent, #8B9E8D 40%, #C8D5C9 60%, transparent);
+    opacity: 0.55;
+}
+
+/* Dot-grid texture (same as page-hero) */
+#site-footer .footer-texture {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(139, 158, 141, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+/* ── Footer grid layout ── */
+#site-footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+}
+
+/* Mobile: 2-column, map spans full width */
+@media (min-width: 640px) {
+    #site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        padding: 3.5rem 2rem 2.5rem;
+    }
+
+    #site-footer .footer-col-map {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Desktop: 3-column, everything side-by-side */
+@media (min-width: 900px) {
+    #site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+        text-align: right;
+        align-items: start;
+    }
+
+    #site-footer .footer-col-map {
+        grid-column: auto;
+    }
+
+    #site-footer .footer-divider {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #site-footer .footer-col-identity {
+        align-items: flex-start;
+    }
+
+    #site-footer .footer-col-links ul {
+        align-items: flex-start;
+    }
+
+    #site-footer .footer-col-map iframe {
+        height: 140px;
+    }
+}
+
+/* ── Column 1: Identity ── */
+#site-footer .footer-col-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#site-footer .footer-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FAF7F4;
+    margin: 0 0 0.2rem;
+    letter-spacing: 0.01em;
+}
+
+#site-footer .title-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #8B9E8D;
+    margin-bottom: 1.1rem;
+}
+
+#site-footer .footer-divider {
+    width: 36px;
+    height: 1px;
+    background: rgba(139, 158, 141, 0.35);
+    margin: 0.75rem auto;
+}
+
+#site-footer .footer-address {
+    font-size: 0.83rem;
+    color: rgba(250, 247, 244, 0.5);
+    line-height: 1.7;
+}
+
+#site-footer .footer-tel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #8B9E8D;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.6rem;
+    transition: color 0.2s ease;
+}
+
+#site-footer .footer-tel:hover {
+    color: #FAF7F4;
+}
+
+#site-footer .footer-tel-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(139, 158, 141, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ── Column 2: Service links ── */
+#site-footer .footer-col-links h3 {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8B9E8D;
+    margin-bottom: 1rem;
+}
+
+#site-footer .footer-col-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+#site-footer .footer-col-links a {
+    color: rgba(250, 247, 244, 0.6);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s ease, padding-right 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* RTL arrow indicator */
+#site-footer .footer-col-links a::before {
+    content: '←';
+    opacity: 0;
+    font-size: 0.7rem;
+    color: #8B9E8D;
+    transition: opacity 0.2s ease;
+}
+
+#site-footer .footer-col-links a:hover {
+    color: #FAF7F4;
+    padding-right: 4px;
+}
+
+#site-footer .footer-col-links a:hover::before {
+    opacity: 1;
+}
+
+/* ── Column 3: Map ── */
+#site-footer .footer-col-map h3 {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8B9E8D;
+    margin-bottom: 1rem;
+}
+
+#site-footer .footer-col-map iframe {
+    width: 100%;
+    height: 200px;
+}
+
+#site-footer .footer-map-frame {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 158, 141, 0.18);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Bottom bar ── */
+#site-footer .footer-bottom {
+    border-top: 1px solid rgba(250, 247, 244, 0.07);
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#site-footer .footer-bottom p {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 247, 244, 0.22);
+    margin: 0;
+}
