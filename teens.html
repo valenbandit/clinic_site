@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/assets/shared.css">
 </head>
 
-<body class="antialiased">
+<body class="antialiased bg-cream text-navy font-sans">
 
     <header id="navbar" class="fixed top-0 right-0 left-0 z-[100] bg-white/50 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
@@ -55,8 +55,8 @@
                             הבית</a>
                         <a href="/#about"
                             class="nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded">אודות</a>
-                        <div class="nav-dropdown">
-                            <button
+                        <div data-dropdown class="nav-dropdown">
+                            <button data-dropdown-toggle
                                 class="nav-dropdown-toggle nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded"
                                 aria-haspopup="true" aria-expanded="false">
                                 תחומי טיפול
@@ -125,13 +125,13 @@
 
         <!-- INTRO -->
         <section class="py-24 bg-white" aria-labelledby="intro-h2">
-            <div class="section-padding">
+            <div class="section-padding max-w-6xl mx-auto px-8 md:px-16">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="reveal">
+                    <div data-reveal class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <span class="text-sage font-semibold text-sm tracking-widest uppercase">כשמשהו לא בסדר</span>
                         <h2 id="intro-h2" class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
                             אתם רואים שהוא נאבק — אבל הוא לא מוציא מילה</h2>
-                        <span class="divider divider-right mb-6"></span>
+                        <span class="divider divider w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mx-auto-right w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block ml-auto mr-0 mb-6"></span>
                         <div class="space-y-5 text-muted text-base md:text-lg leading-relaxed">
                             <p>גיל ההתבגרות הוא אחד הצמתים הכי מורכבים בחיי בן אדם. לחצים חברתיים, זהות בבנייה, ציפיות
                                 מהבית ומבחוץ — הכל מגיע בבת אחת. חלק מהבנים מתמודדים בשקט, חלק מתפרצים, וחלק פשוט
@@ -142,7 +142,7 @@
                                 בסדר כמו שהוא. מתוך המקום הזה, השינוי מתחיל לזוז.</p>
                         </div>
                     </div>
-                    <div class="reveal">
+                    <div data-reveal class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <div class="bg-stone-warm rounded-2xl p-8 md:p-10 flex flex-col gap-6">
                             <div class="flex items-start gap-4">
                                 <div class="w-10 h-10 rounded-xl bg-sage/15 flex items-center justify-center flex-shrink-0 mt-1"
@@ -196,14 +196,14 @@
 
         <!-- THEMES -->
         <section class="py-24 bg-cream" aria-labelledby="themes-h2">
-            <div class="section-padding">
-                <div class="text-center mb-14 reveal">
+            <div class="section-padding max-w-6xl mx-auto px-8 md:px-16">
+                <div data-reveal class="text-center mb-14 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <span class="text-sage font-semibold text-sm tracking-widest uppercase">נושאים שעולים בטיפול</span>
                     <h2 id="themes-h2" class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-3">במה בני נוער
                         מגיעים אלי</h2>
-                    <span class="divider mx-auto mt-2"></span>
+                    <span class="divider w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mx-auto mx-auto mt-2"></span>
                 </div>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
+                <div data-reveal class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <article class="theme-card bg-white rounded-2xl p-6 shadow-sm">
                         <div class="w-10 h-10 rounded-xl bg-sage/10 flex items-center justify-center mb-4"
                             aria-hidden="true">
@@ -258,8 +258,8 @@
 
         <!-- PARENT NOTE -->
         <section class="py-20 bg-white" aria-labelledby="parent-h2">
-            <div class="section-padding" style="max-width:52rem">
-                <div class="bg-stone-warm border border-stone-medium rounded-2xl p-8 md:p-10 reveal">
+            <div class="section-padding max-w-6xl mx-auto px-8 md:px-16" style="max-width:52rem">
+                <div data-reveal class="bg-stone-warm border border-stone-medium rounded-2xl p-8 md:p-10 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center flex-shrink-0"
                             aria-hidden="true">
@@ -282,7 +282,7 @@
 
         <!-- CTA BAND -->
         <section class="bg-navy-dark py-20 px-8" aria-label="קריאה לפעולה">
-            <div class="max-w-3xl mx-auto text-center reveal">
+            <div data-reveal class="max-w-3xl mx-auto text-center reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                 <h2 class="text-3xl md:text-4xl font-bold text-cream mb-4 leading-tight">לא בטוחים מאיפה להתחיל?</h2>
                 <p class="text-cream/70 text-lg mb-10 font-light">אפשר להתחיל בשיחה קצרה בינינו — ללא התחייבות, ולפני
                     שמגיעים לכל החלטה.</p>

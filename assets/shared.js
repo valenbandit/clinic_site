@@ -5,11 +5,12 @@
 //
 //  Sections:
 //    1. Navbar — Scroll Effect
-//    2. Navbar — Parallax Hero (homepage only, runs inside scroll handler)
-//    3. Navbar — Mobile Hamburger Menu
-//    4. Navbar — Dropdown (keyboard toggle + outside-click close)
-//    5. Scroll Reveal (IntersectionObserver)
-//    6. Contact Form — Async Submit (homepage only)
+//    3. Navbar — Parallax Hero (homepage only)
+//    4. Navbar — Mobile Hamburger Menu
+//    5. Navbar — Dropdown (keyboard toggle + outside-click close)
+//    6. Scroll Reveal (IntersectionObserver)
+//    7. Contact Form — Async Submit (homepage only)
+//    8. About — Read More Toggle
 // =============================================================
 //
 //  NOTE — Tailwind config is NOT here. It must be an inline <script>
@@ -91,11 +92,12 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu();
 //  Clicking anywhere outside the dropdown closes it.
 // ─────────────────────────────────────────────────────────────
 
-document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
+// Requires [data-dropdown-toggle] attribute on buttons in HTML
+document.querySelectorAll('[data-dropdown-toggle]').forEach(btn => {
     btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
-        btn.closest('.nav-dropdown').classList.toggle('dropdown-open', !expanded);
+        btn.closest('[data-dropdown]').classList.toggle('dropdown-open', !expanded);
     });
 
     btn.addEventListener('keydown', e => {
@@ -107,11 +109,12 @@ document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
 });
 
 // Close any open dropdown when clicking outside it
+// Requires [data-dropdown] attribute on wrapper elements in HTML
 document.addEventListener('click', e => {
-    document.querySelectorAll('.nav-dropdown').forEach(dd => {
+    document.querySelectorAll('[data-dropdown]').forEach(dd => {
         if (!dd.contains(e.target)) {
             dd.classList.remove('dropdown-open');
-            dd.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+            dd.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
         }
     });
 });
@@ -133,45 +136,64 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+// Requires [data-reveal] attribute on elements in HTML
+document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
 
 
 // ─────────────────────────────────────────────────────────────
 //  7. CONTACT FORM — ASYNC SUBMIT (homepage only)
-//  Posts to Formspree via fetch. Hides the form and shows a
-//  success message on a 2xx response. Exposed as a global so the
-//  inline onsubmit="handleSubmit(event)" attribute still works.
+//  Linked to: #contact-form
+//  onsubmit attribute removed from HTML — listener registered here instead
 // ─────────────────────────────────────────────────────────────
 
-async function handleSubmit(e) {
-    e.preventDefault();
+const contactForm = document.getElementById('contact-form');
 
-    const form = document.getElementById('contact-form');
-    const btn = document.getElementById('submit-btn');
-    const feedback = document.getElementById('form-feedback');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function handleSubmit(e) {
+        e.preventDefault();
 
-    if (!form || !btn || !feedback) return; // not on homepage — bail silently
+        const btn = document.getElementById('submit-btn');
+        const feedback = document.getElementById('form-feedback');
 
-    btn.disabled = true;
-    btn.textContent = 'שולח...';
+        btn.disabled = true;
+        btn.textContent = 'שולח...';
 
-    try {
-        const res = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        });
+        try {
+            const res = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            });
 
-        if (res.ok) {
-            form.classList.add('hidden');
-            feedback.classList.remove('hidden');
-            feedback.classList.add('visible');
-        } else {
-            throw new Error('server error');
+            if (res.ok) {
+                contactForm.classList.add('hidden');
+                feedback.classList.remove('hidden');
+                feedback.classList.add('visible');
+            } else {
+                throw new Error('server error');
+            }
+        } catch {
+            btn.disabled = false;
+            btn.textContent = 'שליחה';
+            alert('אירעה שגיאה בשליחה. אנא נסו שנית או פנו דרך וואטסאפ.');
         }
-    } catch {
-        btn.disabled = false;
-        btn.textContent = 'שליחה';
-        alert('אירעה שגיאה בשליחה. אנא נסו שנית או פנו דרך וואטסאפ.');
-    }
+    });
+}
+
+// ─────────────────────────────────────────────────────────────
+//  8. ABOUT — READ MORE TOGGLE (homepage only)
+//  Linked to: #about-readmore-btn, #about-extended-text
+//  Reveals the hidden extended bio text, updates aria-expanded,
+//  then hides the button. One-way toggle — no close needed.
+// ─────────────────────────────────────────────────────────────
+
+const readMoreBtn = document.getElementById('about-readmore-btn');
+const extendedText = document.getElementById('about-extended-text');
+
+if (readMoreBtn && extendedText) {
+    readMoreBtn.addEventListener('click', () => {
+        extendedText.classList.remove('hidden');
+        readMoreBtn.setAttribute('aria-expanded', 'true');
+        readMoreBtn.classList.add('hidden');
+    });
 }

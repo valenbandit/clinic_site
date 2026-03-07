@@ -95,17 +95,18 @@
     <link rel="stylesheet" href="/assets/shared.css">
 </head>
 
-<body class="antialiased">
+<body class="antialiased bg-cream text-navy font-sans">
 
     <!-- ════════════════════════════════════════════
        STICKY NAVIGATION
   ═════════════════════════════════════════════ -->
+    <!-- COMPONENT: sticky-nav -->
     <header id="navbar" class="fixed top-0 right-0 left-0 z-[100] bg-white/50 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
-
+                <!--menu-->
                 <!-- Logo + Nav grouped on the right (first in DOM = right side in RTL) -->
-                <div class="flex items-center gap-6 md:gap-8">
+                <div class="flex items-center gap-2 sm:gap-6 md:gap-8">
                     <!-- Hamburger (mobile only) -->
                     <button id="hamburger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobile-menu"
                         class="md:hidden focus:ring-2 focus:ring-sage focus:outline-none rounded">
@@ -114,14 +115,16 @@
                     <!-- Logo / Name -->
                     <a href="#hero" class="flex flex-col leading-tight group">
                         <span
-                            class="text-xl font-semibold tracking-tight text-navy-dark group-hover:text-sage transition-colors">אברהם
+                            class="text-[17px] sm:text-xl font-semibold tracking-tight text-navy-dark group-hover:text-sage transition-colors">אברהם
                             דגן</span>
-                        <span class="text-xs font-light text-muted tracking-wide">פסיכותרפיסט | פרדס חנה</span>
+                        <span
+                            class="hidden sm:block text-[10px] sm:text-xs font-light text-muted tracking-tight sm:tracking-wide">פסיכותרפיסט
+                            | פרדס חנה</span>
                     </a>
                     <!-- Desktop nav -->
                     <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-navy-dark">
 
-                        <a href="#hero"
+                        <a href="#hero" aria-current="page"
                             class="nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded">דף
                             הבית</a>
 
@@ -129,9 +132,9 @@
                             class="nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded">אודות</a>
 
                         <!-- תחומי טיפול with dropdown -->
-                        <div class="nav-dropdown">
-                            <button
-                                class="nav-dropdown-toggle nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-sage focus:outline-none rounded"
+                        <div data-dropdown class="nav-dropdown">
+                            <button data-dropdown-toggle
+                                class="nav-dropdown-toggle nav-link hover:text-sage transition-colors focus:ring-2 focus:ring-white focus:outline-none rounded"
                                 aria-haspopup="true" aria-expanded="false">
                                 תחומי טיפול
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
@@ -140,11 +143,19 @@
                                 </svg>
                             </button>
                             <div class="nav-dropdown-menu" role="menu">
-                                <a href="/teens" role="menuitem">נוער ומתבגרים</a>
-                                <a href="/relationships" role="menuitem">זוגיות ומערכות יחסים</a>
-                                <a href="/young-adults" role="menuitem">צעירים וצמתי חיים</a>
-                                <a href="/fatherhood" role="menuitem">אבהות</a>
-                                <a href="/depression-anxiety" role="menuitem">דיכאון, חרדה ומצבי משבר</a>
+                                <a href="/teens" role="menuitem"
+                                    class="focus:outline-none focus:ring-2 focus:ring-white rounded">נוער ומתבגרים</a>
+                                <a href="/relationships" role="menuitem"
+                                    class="focus:outline-none focus:ring-2 focus:ring-white rounded">זוגיות ומערכות
+                                    יחסים</a>
+                                <a href="/young-adults" role="menuitem"
+                                    class="focus:outline-none focus:ring-2 focus:ring-white rounded">צעירים וצמתי
+                                    חיים</a>
+                                <a href="/fatherhood" role="menuitem"
+                                    class="focus:outline-none focus:ring-2 focus:ring-white rounded">אבהות</a>
+                                <a href="/depression-anxiety" role="menuitem"
+                                    class="focus:outline-none focus:ring-2 focus:ring-white rounded">דיכאון, חרדה ומצבי
+                                    משבר</a>
                             </div>
                         </div>
 
@@ -156,9 +167,11 @@
                 </div>
 
                 <!-- CTA button (last in DOM = left side in RTL) -->
+                <!-- COMPONENT: btn-cta -->
                 <a id="nav-cta" href="#contact"
-                    class="btn-cta inline-flex items-center gap-2 bg-sage text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg hover:bg-sage-dark transition-colors duration-300 focus:ring-2 focus:ring-sage focus:outline-none">
-                    <span>קביעת פגישת היכרות</span>
+                    class="btn-cta inline-flex items-center gap-1.5 sm:gap-2 bg-sage text-white text-sm font-semibold p-2 sm:px-5 sm:py-2.5 rounded-full shadow-lg hover:bg-sage-dark transition-colors duration-300 focus:ring-2 focus:ring-sage focus:outline-none">
+                    <span class="hidden md:inline">קביעת פגישת היכרות</span><span class="inline md:hidden">לקביעת
+                        פגישה</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l9.2-9.2M17 17V7H7" />
@@ -167,15 +180,18 @@
             </div>
         </div>
     </header>
-    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט נייד" aria-hidden="true">
+    <!-- COMPONENT: mobile-menu -->
+    <dialog id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט נייד" aria-hidden="true">
         <button id="mobile-close" aria-label="סגור תפריט"
-            style="position:absolute;top:1.5rem;left:1.5rem;color:#FAF7F4;font-size:1.5rem;background:none;border:none;cursor:pointer">×</button>
-        <a href="#hero" class="mobile-nav-link">דף הבית</a>
-        <a href="#about" class="mobile-nav-link">אודות</a>
-        <a href="#areas" class="mobile-nav-link">תחומי טיפול</a>
-        <a href="#contact" class="mobile-nav-link">צור קשר</a>
-        <a href="tel:+972528604102" class="mobile-tel">052-8604102</a>
-    </div>
+            class="absolute top-6 left-6 text-cream text-2xl bg-transparent border-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-white rounded">×</button>
+        <a href="#hero" class="mobile-nav-link focus:outline-none focus:ring-2 focus:ring-white rounded">דף הבית</a>
+        <a href="#about" class="mobile-nav-link focus:outline-none focus:ring-2 focus:ring-white rounded">אודות</a>
+        <a href="#areas" class="mobile-nav-link focus:outline-none focus:ring-2 focus:ring-white rounded">תחומי
+            טיפול</a>
+        <a href="#contact" class="mobile-nav-link focus:outline-none focus:ring-2 focus:ring-white rounded">צור קשר</a>
+        <a href="tel:+972528604102"
+            class="mobile-tel focus:outline-none focus:ring-2 focus:ring-white rounded">052-8604102</a>
+    </dialog>
     <main id="main-content">
 
 
@@ -186,14 +202,14 @@
 
             <!-- Text side -->
             <div
-                class="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-12 lg:pt-32 pb-20 order-2 lg:order-1 bg-cream">
+                class="flex-1 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-8 sm:pt-12 lg:pt-32 sm:pb-20 order-2 lg:order-1 bg-cream">
                 <!-- Overline -->
                 <span class="text-sage font-semibold text-sm tracking-widest uppercase mb-4">
                     להשתחרר מהדפוסים המעכבים:
                 </span>
 
                 <!-- Headline -->
-                <h1 class="text-4xl md:text-5xl xl:text-6xl font-bold text-navy-dark leading-tight mb-4">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-navy-dark leading-tight mb-4">
                     פסיכותרפיה ממוקדת<br />
                     <span class="text-sage">לגברים</span>
                 </h1>
@@ -203,36 +219,48 @@
                     מטפל רגשי לגברים בגישת האקומי, מיינדפולנס וטיפול דינמי<br class="hidden md:block">
                 </p>
 
-                <!-- Credentials -->
-                <div class="flex flex-wrap gap-3 mb-10">
-                    <span class="credential-badge text-xs font-medium text-navy-dark px-4 py-2 rounded-full">
-                        📍 <strong>פרדס חנה</strong>
-                    </span>
-                    <span class="credential-badge text-xs font-medium text-navy-dark px-4 py-2 rounded-full">
-                        🏛️ חבר ב<strong>האיגוד הישראלי הרב-תחומי לפסיכותרפיה</strong>
-                    </span>
-                </div>
+                <!-- Actions & Credentials -->
+                <div class="flex flex-col gap-6 sm:gap-10 mb-2 sm:mb-10 w-full">
+                    <!-- CTA buttons (Mobile: Order 1, Centered | Desktop: Order 2, Left-aligned) -->
+                    <div class="flex flex-wrap gap-4 order-1 sm:order-2 justify-center sm:justify-start w-full">
+                        <!-- COMPONENT: btn-cta -->
+                        <a href="#contact" title="קביעת פגישת ייעוץ עם אברהם"
+                            class="btn-cta inline-flex items-center justify-center gap-2 bg-sage text-white font-semibold px-7 py-4 rounded-full shadow-xl hover:bg-sage-dark transition-colors text-base focus:outline-none focus:ring-2 focus:ring-white">
+                            קביעת פגישת היכרות
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                        <!-- Desktop secondary button -->
+                        <a href="#about" aria-label="קראו עוד על הגישה הטיפולית של אברהם"
+                            class="hidden sm:inline-flex items-center gap-2 border border-navy-dark/20 text-navy-dark font-medium px-7 py-4 rounded-full hover:border-sage hover:text-sage transition-colors text-base focus:outline-none focus:ring-2 focus:ring-white">
+                            קראו עוד
+                        </a>
+                    </div>
 
-                <!-- CTA buttons -->
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" title="קביעת פגישת ייעוץ עם אברהם"
-                        class="btn-cta inline-flex items-center gap-2 bg-sage text-white font-semibold px-7 py-4 rounded-full shadow-xl hover:bg-sage-dark transition-colors text-base">
-                        קביעת פגישת היכרות
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l9.2-9.2M17 17V7H7" />
-                        </svg>
-                    </a>
-                    <a href="#about" aria-label="קראו עוד על הגישה הטיפולית של אברהם"
-                        class="inline-flex items-center gap-2 border border-navy-dark/20 text-navy-dark font-medium px-7 py-4 rounded-full hover:border-sage hover:text-sage transition-colors text-base">
-                        קראו עוד
-                    </a>
+                    <!-- Credentials & Mobile Secondary Button (Mobile: Order 2, Centered row | Desktop: Order 1) -->
+                    <div class="flex flex-row flex-wrap justify-center sm:justify-start items-center gap-3 order-2 sm:order-1 w-full mt-[-6px] sm:mt-0 mb-8 sm:mb-0">
+                        <span class="credential-badge inline-flex items-center justify-center text-xs font-medium text-navy-dark px-4 py-2 rounded-full">
+                            📍 <strong>פרדס חנה</strong>
+                        </span>
+                        
+                        <!-- Mobile secondary button (styled like badge) -->
+                        <a href="#about" aria-label="קראו עוד"
+                            class="sm:hidden credential-badge inline-flex text-center items-center justify-center text-xs font-medium text-navy-dark px-4 py-2 rounded-full hover:bg-sage/10 transition-colors border border-navy-dark/10">
+                            קראו עוד
+                        </a>
+
+                        <span class="hidden sm:inline-flex credential-badge text-xs font-medium text-navy-dark px-4 py-2 rounded-full items-center">
+                            🏛️ חבר ב<strong>איגוד הישראלי הרב-תחומי לפסיכותרפיה</strong>
+                        </span>
+                    </div>
                 </div>
             </div>
 
             <!-- Image side -->
             <div
-                class="flex-1 order-1 lg:order-2 min-h-[60vh] sm:min-h-[65vh] lg:min-h-screen relative overflow-hidden">
+                class="flex-1 order-1 lg:order-2 min-h-[35vh] sm:min-h-[45vh] lg:min-h-screen relative overflow-hidden">
                 <img id="hero-parallax-img" src="assets/site-images/Gemini_Generated_Image_8g803h8g803h8g81.png"
                     alt="אברהם דגן - פסיכותרפיסט לגברים בקליניקה בפרדס חנה, מומחה בשיטת האקומי וטיפול דינמי"
                     class="hero-img absolute inset-0 w-full object-cover" />
@@ -366,11 +394,12 @@
        ABOUT
   ═════════════════════════════════════════════ -->
         <section id="about" class="py-24 bg-white">
-            <div class="section-padding">
+            <div class="section-padding max-w-6xl mx-auto px-8 md:px-16">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
 
                     <!-- Image -->
-                    <div class="order-2 lg:order-1 reveal">
+                    <div data-reveal
+                        class="order-2 lg:order-1 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <div class="relative inline-block w-full max-w-sm mx-auto">
                             <div class="absolute -inset-4 bg-stone-warm rounded-2xl -z-10"></div>
                             <img src="assets/site-images/Gemini_Generated_Image_g7fzwrg7fzwrg7fz.png"
@@ -385,12 +414,14 @@
                     </div>
 
                     <!-- Text -->
-                    <div class="order-1 lg:order-2 reveal">
+                    <div data-reveal
+                        class="order-1 lg:order-2 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <span class="text-sage font-semibold text-sm tracking-widest uppercase">אודות</span>
                         <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
                             אברהם דגן - פסיכותרפיסט ומטפל רגשי בפרדס חנה
                         </h2>
-                        <span class="divider divider-right mb-8"></span>
+                        <span
+                            class="divider divider w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mx-auto-right w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block ml-auto mr-0 mb-8"></span>
                         <div>
                             <p class="text-muted text-base md:text-lg leading-relaxed mb-6">
                                 נעים מאוד, אני אברהם. הדרך המקצועית שלי כפסיכותרפיסט ומטפל רגשי נולדה מתוך אמונה עמוקה
@@ -402,9 +433,9 @@
                             </p>
 
                             <!-- Read More Button -->
-                            <button id="about-readmore-btn"
-                                onclick="document.getElementById('about-extended-text').classList.remove('hidden'); document.getElementById('about-extended-text').classList.add('animate-[fade-in_0.5s_ease-in-out]'); this.classList.add('hidden');"
-                                class="text-sage font-semibold text-base hover:text-sage-dark transition-colors duration-300 flex items-center gap-2 mb-6">
+                            <button id="about-readmore-btn" data-readmore-btn aria-expanded="false"
+                                aria-controls="about-extended-text"
+                                class="text-sage font-semibold text-base hover:text-sage-dark transition-colors duration-300 flex items-center gap-2 mb-6 focus:outline-none focus:ring-2 focus:ring-white rounded">
                                 המשך קריאה
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor" stroke-width="2">
@@ -441,16 +472,18 @@
        AREAS OF TREATMENT
   ═════════════════════════════════════════════ -->
         <section id="areas" class="py-24 bg-cream">
-            <div class="section-padding">
+            <div class="section-padding max-w-6xl mx-auto px-8 md:px-16">
                 <div class="grid lg:grid-cols-2 gap-16 items-start">
 
                     <!-- Heading side -->
-                    <div class="reveal">
+                    <div data-reveal
+                        class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <span class="text-sage font-semibold text-sm tracking-widest uppercase">תחומי התמחות</span>
                         <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
                             פסיכותרפיה לגברים: מענה רגשי וממוקד לנקודות מפנה בחיים
                         </h2>
-                        <span class="divider divider-right mb-8"></span>
+                        <span
+                            class="divider divider w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mx-auto-right w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block ml-auto mr-0 mb-8"></span>
                         <p class="text-muted text-base md:text-lg leading-relaxed">
                             הטיפול בקליניקה נמצא בצומת שבין זהות גברית לבין האתגרים הייחודיים שגברים פוגשים לאורך
                             מעגלי
@@ -474,12 +507,14 @@
 
                     <!-- Areas cards — Microdata ItemList inside OfferCatalog -->
                     <div>
-                        <div class="flex flex-col gap-4 reveal">
+                        <ul data-reveal
+                            class="flex flex-col gap-4 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 list-none">
 
                             <!-- Card 1: נוער ומתבגרים -->
-                            <div>
+                            <li>
+                                <!-- COMPONENT: approach-card -->
                                 <a id="area-teens" href="/teens"
-                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40">
+                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40 focus:outline-none focus:ring-2 focus:ring-white">
                                     <div
                                         class="flex-shrink-0 w-11 h-11 rounded-xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                         <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
@@ -497,18 +532,19 @@
                                             בגיל
                                             ההתבגרות — זהות, לחצים חברתיים ותקשורת עם ההורים</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:translate-x-[-3px] transition-all duration-300"
+                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:-translate-x-1 transition-all duration-300"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                         aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                                     </svg>
                                 </a>
-                            </div>
+                            </li>
 
                             <!-- Card 2: זוגיות ומערכות יחסים -->
-                            <div>
+                            <li>
+                                <!-- COMPONENT: approach-card -->
                                 <a id="area-relationships" href="/relationships"
-                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40">
+                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40 focus:outline-none focus:ring-2 focus:ring-white">
                                     <div
                                         class="flex-shrink-0 w-11 h-11 rounded-xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                         <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
@@ -526,18 +562,19 @@
                                             קשר,
                                             תקשורת, ואינטימיות מנקודת המבט של הגבר</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:translate-x-[-3px] transition-all duration-300"
+                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:-translate-x-1 transition-all duration-300"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                         aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                                     </svg>
                                 </a>
-                            </div>
+                            </li>
 
                             <!-- Card 3: צעירים וצמתי חיים -->
-                            <div>
+                            <li>
+                                <!-- COMPONENT: approach-card -->
                                 <a id="area-young-adults" href="/young-adults"
-                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40">
+                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40 focus:outline-none focus:ring-2 focus:ring-white">
                                     <div
                                         class="flex-shrink-0 w-11 h-11 rounded-xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                         <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
@@ -555,18 +592,19 @@
                                             כיוון,
                                             זהות עצמית ומעברים משמעותיים בחיי הגבר</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:translate-x-[-3px] transition-all duration-300"
+                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:-translate-x-1 transition-all duration-300"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                         aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                                     </svg>
                                 </a>
-                            </div>
+                            </li>
 
                             <!-- Card 4: אבהות -->
-                            <div>
+                            <li>
+                                <!-- COMPONENT: approach-card -->
                                 <a id="area-fatherhood" href="/fatherhood"
-                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40">
+                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40 focus:outline-none focus:ring-2 focus:ring-white">
                                     <div
                                         class="flex-shrink-0 w-11 h-11 rounded-xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                         <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
@@ -584,19 +622,20 @@
                                             ילדיך,
                                             גבולות, נוכחות ורגש — לאבות שרוצים להיות שם באמת</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:translate-x-[-3px] transition-all duration-300"
+                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:-translate-x-1 transition-all duration-300"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                         aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                                     </svg>
                                 </a>
-                            </div>
+                            </li>
 
 
                             <!-- Card 5: דיכאון, חרדה ומצבי משבר -->
-                            <div>
+                            <li>
+                                <!-- COMPONENT: approach-card -->
                                 <a id="area-depression" href="/depression-anxiety"
-                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40">
+                                    class="approach-card group flex items-center gap-5 bg-white border border-stone-medium/60 rounded-2xl px-6 py-5 shadow-sm block no-underline hover:border-sage/40 focus:outline-none focus:ring-2 focus:ring-white">
                                     <div
                                         class="flex-shrink-0 w-11 h-11 rounded-xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                         <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24"
@@ -612,47 +651,50 @@
                                         <p class="text-muted text-xs mt-1 leading-snug">כשהעולם נעשה כבד מדי — מרחב בטוח
                                             לעיבוד הקושי וקבלת כלים לוויסות</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:translate-x-[-3px] transition-all duration-300"
+                                    <svg class="w-4 h-4 text-sage/40 flex-shrink-0 group-hover:text-sage group-hover:-translate-x-1 transition-all duration-300"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                         aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                                     </svg>
                                 </a>
-                            </div>
+                            </li>
 
 
-                        </div>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
         <!-- ════════════════════════════════════════════
        FAQ
   ═════════════════════════════════════════════ -->
         <section id="faq" class="py-24 bg-white" aria-label="שאלות נפוצות">
-            <div class="section-padding" style="max-width:56rem;">
+            <div class="section-padding  mx-auto px-8 md:px-16 max-w-4xl">
 
-                <div class="text-center mb-14 reveal">
+                <div data-reveal
+                    class="text-center mb-14 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <span class="text-sage font-semibold text-sm tracking-widest uppercase">שאלות נפוצות</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-4">
                         שאלות נפוצות על פסיכותרפיה וטיפול רגשי לגברים
                     </h2>
-                    <span class="divider"></span>
+                    <span class="divider w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mx-auto"></span>
                 </div>
 
                 <!-- FAQ Items -->
-                <div class="flex flex-col gap-4 reveal">
+                <div data-reveal
+                    class="flex flex-col gap-4 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
 
                     <!-- Q1: Value of men-focused therapy -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-1" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">🌿</span> מה הערך המוסף של טיפול רגשי שמותאם במיוחד
                                     לשפה
                                     ולחוויות של גברים?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -680,15 +722,16 @@
                     </article>
 
                     <!-- Q2: Practical tools vs just talking -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-2" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">🛠️</span> האם התהליך ממוקד בשיחה בלבד, או שהוא כולל גם
                                     כלים
                                     מעשיים להתמודדות?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -715,16 +758,17 @@
                     </article>
 
                     <!-- Q3: Not just for crisis -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-3" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">🌱</span> האם הטיפול מיועד רק למצבי משבר, או גם למי
                                     שפשוט
                                     מרגיש
                                     'תקוע' בחיים?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -748,16 +792,17 @@
                     </article>
 
                     <!-- Q4: Hakomi method -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-4" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">🌿</span>איך העבודה בגישת האקומי עוזרת להגיע לתוצאות
                                     במקום
                                     שבו
                                     המילים נעצרות?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -786,16 +831,17 @@
                     </article>
 
                     <!-- Q5: Individual therapy for relationship issues -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-5" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">🤝</span> האם טיפול בנושאי זוגיות מיועד רק לגברים
                                     שנמצאים
                                     כרגע
                                     במערכת יחסים?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -814,15 +860,16 @@
                     </article>
 
                     <!-- Q6: Adolescent therapy -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-6" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">🧒</span> איך נראה התהליך בטיפול עם בני נוער ומה המקום
                                     של
                                     ההורים בתוכו?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -845,14 +892,15 @@
                     </article>
 
                     <!-- Q7: Safe space for LGBTQ+ -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-7" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">🏳️‍🌈</span> האם הקליניקה היא מרחב בטוח לאנשי קהילת
                                     הלהט"ב?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -872,16 +920,17 @@
                     </article>
 
                     <!-- Q8: First session and how to start -->
+                    <!-- COMPONENT: faq-card -->
                     <article id="faq-8" class="faq-card bg-stone-warm rounded-2xl overflow-hidden">
                         <details class="group">
                             <summary
-                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none">
-                                <h3 class="font-semibold text-navy-dark text-base leading-snug">
+                                class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-white rounded font-semibold text-navy-dark text-base leading-snug">
+                                <span class="flex-1 text-right">
                                     <span aria-hidden="true">📞</span> איך נראה המפגש הראשון ומה הצעד הראשון שצריך
                                     לעשות
                                     כדי
                                     להתחיל?
-                                </h3>
+                                </span>
                                 <span
                                     class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
                             </summary>
@@ -917,15 +966,17 @@
        CTA BAND
   ═════════════════════════════════════════════ -->
         <section class="bg-navy-dark py-20 px-8">
-            <div class="max-w-3xl mx-auto text-center reveal">
+            <div data-reveal
+                class="max-w-3xl mx-auto text-center reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                 <h2 class="text-3xl md:text-4xl font-bold text-cream mb-4 leading-tight">
                     מוכן להתחיל את השינוי?
                 </h2>
                 <p class="text-cream/70 text-lg mb-10 font-light">
                     פגישת ההיכרות הראשונה היא ללא התחייבות — פשוט שיחה פתוחה.
                 </p>
+                <!-- COMPONENT: btn-cta -->
                 <a href="#contact"
-                    class="btn-cta inline-flex items-center gap-3 bg-sage text-white font-bold text-lg px-10 py-4 rounded-full shadow-2xl hover:bg-sage-dark transition-colors">
+                    class="btn-cta inline-flex items-center gap-3 bg-sage text-white font-bold text-lg px-10 py-4 rounded-full shadow-2xl hover:bg-sage-dark transition-colors focus:outline-none focus:ring-2 focus:ring-white">
                     לקביעת פגישת היכרות
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
@@ -939,21 +990,23 @@
        CONTACT
   ═════════════════════════════════════════════ -->
         <section id="contact" class="py-24 bg-white">
-            <div class="section-padding" style="max-width:56rem;">
-                <div class="text-center mb-14 reveal">
+            <div class="section-padding  mx-auto px-8 md:px-16 max-w-4xl">
+                <div data-reveal
+                    class="text-center mb-14 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <span class="text-sage font-semibold text-sm tracking-widest uppercase">צרו קשר</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-4">
                         נדבר
                     </h2>
-                    <span class="divider"></span>
+                    <span class="divider w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mx-auto"></span>
                     <p class="text-muted text-lg mt-6 max-w-lg mx-auto leading-relaxed">
                         השאירו פרטים ואחזור אליכם בהקדם לתיאום פגישת היכרות
                     </p>
                 </div>
 
                 <!-- Contact form -->
-                <form id="contact-form" class="bg-cream rounded-2xl p-8 md:p-12 shadow-sm reveal"
-                    action="https://formspree.io/f/xzdaoedj" method="POST" onsubmit="handleSubmit(event)">
+                <form id="contact-form" data-reveal
+                    class="bg-cream rounded-2xl p-8 md:p-12 shadow-sm reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0"
+                    action="https://formspree.io/f/xzdaoedj" method="POST">
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
                             <label class="block text-sm font-medium text-navy-dark mb-2" for="name">שם <span
@@ -982,7 +1035,7 @@
                     </div>
                     <div class="text-center w-full mt-2">
                         <button type="submit" id="submit-btn"
-                            class="btn-cta w-full md:w-auto inline-flex items-center justify-center gap-2 bg-sage text-white font-bold text-base px-10 py-4 rounded-full shadow-lg hover:bg-sage-dark transition-colors">
+                            class="btn-cta w-full md:w-auto inline-flex items-center justify-center gap-2 bg-sage text-white font-bold text-base px-10 py-4 rounded-full shadow-lg hover:bg-sage-dark transition-colors focus:outline-none focus:ring-2 focus:ring-white">
                             שליחה
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -994,15 +1047,18 @@
                 </form>
 
                 <!-- Success feedback (shown after submit) -->
-                <div id="form-feedback" class="hidden bg-cream rounded-2xl p-10 text-center shadow-sm reveal">
+                <div id="form-feedback" data-reveal
+                    class="hidden bg-cream rounded-2xl p-10 text-center shadow-sm reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <div class="text-5xl mb-4">✅</div>
                     <h3 class="text-xl font-bold text-navy-dark mb-2">תודה! הפנייה התקבלה.</h3>
                     <p class="text-muted">אחזור אליך בהקדם לתיאום פגישת היכרות.</p>
                 </div>
 
                 <!-- Direct contact info -->
-                <div class="mt-10 flex flex-wrap justify-center gap-8 text-muted text-sm reveal">
-                    <a href="tel:+972528604102" class="flex items-center gap-2 hover:text-sage transition-colors"
+                <div data-reveal
+                    class="mt-10 flex flex-wrap justify-center gap-8 text-muted text-sm reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
+                    <a href="tel:+972528604102"
+                        class="flex items-center gap-2 hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-white rounded"
                         aria-label="חייגו ל-052-8604102">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                             aria-hidden="true">
@@ -1012,7 +1068,8 @@
                         <span>צרו קשר טלפוני</span>
                     </a>
                     <a href="https://wa.me/972528604102?text=%D7%94%D7%99%D7%99%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
-                        target="_blank" class="flex items-center gap-2 hover:text-sage transition-colors">
+                        target="_blank"
+                        class="flex items-center gap-2 hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-white rounded">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -1037,11 +1094,11 @@
         <!-- ════════════════════════════════════════════
        FOOTER
   ═════════════════════════════════════════════ -->
+        <!-- COMPONENT: site-footer -->
         <footer id="site-footer"
             class="bg-navy-dark text-cream/70 py-16 md:py-20 relative overflow-hidden border-t-4 border-sage">
             <!-- Subtle dot pattern overlay -->
-            <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style="background-image: radial-gradient(circle, #FAF7F4 1px, transparent 1px); background-size: 24px 24px;">
+            <div class="absolute inset-0 opacity-5 bg-pattern-dots-cream">
             </div>
 
             <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -1051,7 +1108,7 @@
                     <!-- Col 1: Identity & Contact (Right) -->
                     <div class="flex flex-col justify-between h-full gap-6 text-center md:text-right">
                         <div>
-                            <h2 class="text-2xl font-bold text-cream tracking-tight mb-1">אברהם דגן</h2>
+                            <p class="text-2xl font-bold text-cream tracking-tight mb-1">אברהם דגן</p>
                             <span class="text-sage text-sm font-semibold tracking-widest uppercase block">פסיכותרפיסט
                                 ומטפל רגשי</span>
                         </div>
@@ -1076,7 +1133,7 @@
                                         d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.539-4.062-7.236-7.118l1.264-1.077c.345-.295.478-.764.33-1.182L6.906 2.36C6.738 1.834 6.228 1.5 5.658 1.5H4.125C3.132 1.5 2.25 2.515 2.25 3.75v3z" />
                                 </svg>
                                 <a href="tel:+972528604102"
-                                    class="font-medium tracking-wide dir-ltr hover:text-white transition-colors"
+                                    class="font-medium tracking-wide dir-ltr hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white rounded"
                                     aria-label="חייגו ל-052-8604102">052-8604102</a>
                             </div>
                         </div>
@@ -1087,26 +1144,26 @@
                         <h3 class="text-sage text-sm font-semibold tracking-widest uppercase">תחומי טיפול</h3>
                         <nav class="flex flex-col items-center md:items-start gap-3.5 text-sm" aria-label="ניווט תחתון">
                             <a href="/teens"
-                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-sage rounded inline-flex items-center gap-2 group">
+                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
                                 <span class="text-sage/0 group-hover:text-sage transition-colors text-xs">←</span> נוער
                                 ומתבגרים
                             </a>
                             <a href="/relationships"
-                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-sage rounded inline-flex items-center gap-2 group">
+                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
                                 <span class="text-sage/0 group-hover:text-sage transition-colors text-xs">←</span>
                                 זוגיות ומערכות יחסים
                             </a>
                             <a href="/young-adults"
-                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-sage rounded inline-flex items-center gap-2 group">
+                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
                                 <span class="text-sage/0 group-hover:text-sage transition-colors text-xs">←</span>
                                 צעירים וצמתי חיים
                             </a>
                             <a href="/fatherhood"
-                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-sage rounded inline-flex items-center gap-2 group">
+                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
                                 <span class="text-sage/0 group-hover:text-sage transition-colors text-xs">←</span> אבהות
                             </a>
                             <a href="/depression-anxiety"
-                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-sage rounded inline-flex items-center gap-2 group">
+                                class="hover:text-white transition-colors duration-300 w-fit focus:outline-none focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
                                 <span class="text-sage/0 group-hover:text-sage transition-colors text-xs">←</span>
                                 דיכאון וחרדה
                             </a>
@@ -1133,9 +1190,12 @@
                     class="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-wider text-cream/40 uppercase">
                     <p>© 2026 אברהם דגן. כל הזכויות שמורות.</p>
                     <div class="flex gap-4">
-                        <a href="/#contact" class="hover:text-sage transition-colors">צור קשר</a>
+                        <a href="/#contact"
+                            class="hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-white rounded">צור
+                            קשר</a>
                         <span class="opacity-30">|</span>
-                        <a href="/#about" class="hover:text-sage transition-colors">אודות</a>
+                        <a href="/#about"
+                            class="hover:text-sage transition-colors focus:outline-none focus:ring-2 focus:ring-white rounded">אודות</a>
                     </div>
                 </div>
         </footer>

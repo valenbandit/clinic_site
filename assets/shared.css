@@ -3,79 +3,71 @@
            young-adults.html, fatherhood.html, depression-anxiety.html
    ============================================================= */
 
+/* ─────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   ───────────────────────────────────────────────────────────── */
+:root {
+    --color-sage: #8B9E8D;
+    --color-sage-light: #C8D5C9;
+    --color-sage-dark: #5C7A5E;
+    --color-navy: #2C3E50;
+    --color-navy-dark: #1A252F;
+    --color-navy-mid: #3d5268;
+    --color-cream: #FAF7F4;
+    --color-muted: #7A7068;
+    --color-stone-warm: #F5F0EB;
+    --color-stone-medium: #E8DDD4;
+
+    --color-sage-rgb:         139, 158, 141;
+    --color-sage-light-rgb:   200, 213, 201;
+    --color-sage-dark-rgb:    92, 122, 94;
+    --color-navy-rgb:         44, 62, 80;
+    --color-navy-dark-rgb:    26, 37, 47;
+    --color-navy-mid-rgb:     61, 82, 104;
+    --color-cream-rgb:        250, 247, 244;
+    --color-muted-rgb:        122, 112, 104;
+    --color-stone-warm-rgb:   245, 240, 235;
+    --color-stone-medium-rgb: 232, 221, 212;
+}
 
 /* ─────────────────────────────────────────────────────────────
    1. GLOBAL / RESET
    ───────────────────────────────────────────────────────────── */
 
+/* Tailwind cannot express: global box-sizing reset for pseudo-elements */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
+/* Tailwind cannot express: global smooth scroll-behavior override */
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Assistant', sans-serif;
-    background: #FAF7F4;
-    color: #2C3E50;
-}
-
+/* REMOVED: body — font-family and colors now handled by Tailwind classes in HTML */
 
 /* ─────────────────────────────────────────────────────────────
    2. LAYOUT UTILITIES
    ───────────────────────────────────────────────────────────── */
 
 /* Centered content column with responsive side padding */
-.section-padding {
-    max-width: 72rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-@media (min-width: 768px) {
-    .section-padding {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
+/* REMOVED: .section-padding — convert to Tailwind utilities on elements in HTML */
 
 /* Sage gradient divider line */
-.divider {
-    width: 48px;
-    height: 2px;
-    background: linear-gradient(90deg, #8B9E8D, #C8D5C9);
-    margin: 0 auto;
-    display: block;
-}
+/* REMOVED: .divider / .divider-right — convert to Tailwind utilities on elements in HTML */
 
 /* Right-align variant (RTL: pushes divider to the left edge) */
-.divider-right {
-    margin: 0 0 0 auto;
-}
 
 /* Scroll-triggered fade-up reveal */
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* REMOVED: .reveal — convert to Tailwind utilities and data-attributes using JS */
 
 /* ─────────────────────────────────────────────────────────────
    3. NAVIGATION — STICKY HEADER
    ───────────────────────────────────────────────────────────── */
 
+/* Tailwind cannot express: complex multi-property custom transition */
 #navbar {
     transition: background 0.35s ease, box-shadow 0.35s ease;
     z-index: 100;
@@ -83,34 +75,38 @@ body {
 }
 
 /* Solid background once user scrolls past 40 px */
+/* Tailwind cannot express: custom relative rgb color modification with !important */
 #navbar.scrolled {
-    background: rgba(250, 247, 244, 0.97) !important;
-    box-shadow: 0 2px 20px rgba(44, 62, 80, 0.08);
+    background: rgba(var(--color-cream-rgb), 0.97) !important;
+    box-shadow: 0 2px 20px rgba(var(--color-navy-rgb), 0.08);
 }
 
 /* Underline animation on each nav link */
+/* Tailwind cannot express: ::after pseudo-element with dynamic dimension */
 .nav-link::after {
     content: '';
     display: block;
     width: 0;
     height: 1px;
-    background: #8B9E8D;
+    background: var(--color-sage);
     transition: width 0.25s ease;
 }
 
+/* Tailwind cannot express: hover state targeting ::after pseudo-element */
 .nav-link:hover::after {
     width: 100%;
 }
-
 
 /* ─────────────────────────────────────────────────────────────
    4. NAVIGATION — DROPDOWN
    ───────────────────────────────────────────────────────────── */
 
+/* Tailwind cannot express: required positioning context grouping */
 .nav-dropdown {
     position: relative;
 }
 
+/* Tailwind cannot express: complex native button reset combined with flex alignment */
 .nav-dropdown-toggle {
     display: inline-flex;
     align-items: center;
@@ -126,32 +122,36 @@ body {
 }
 
 /* Hide the underline animation on the dropdown trigger */
+/* Tailwind cannot express: overriding and hiding parent ::after pseudo-element */
 .nav-dropdown-toggle::after {
     display: none !important;
 }
 
 /* Rotate chevron on hover / keyboard-open */
+/* Tailwind cannot express: complex nested hover/focus-within state targeting svg child */
 .nav-dropdown:hover .nav-dropdown-toggle svg,
 .nav-dropdown:focus-within .nav-dropdown-toggle svg {
     transform: rotate(180deg);
 }
 
+/* Tailwind cannot express: complex dropdown positioning overlay with custom backdrop filter */
 .nav-dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
     min-width: 190px;
-    background: rgba(250, 247, 244, 0.97);
-    border: 1px solid rgba(139, 158, 141, 0.2);
+    background: rgba(var(--color-cream-rgb), 0.97);
+    border: 1px solid rgba(var(--color-sage-rgb), 0.2);
     border-radius: 1rem;
-    box-shadow: 0 12px 32px rgba(44, 62, 80, 0.12);
+    box-shadow: 0 12px 32px rgba(var(--color-navy-rgb), 0.12);
     padding: 0.75rem 0.5rem 0.5rem;
     z-index: 100;
     backdrop-filter: blur(12px);
 }
 
 /* Invisible bridge so the menu doesn't close when moving from trigger to panel */
+/* Tailwind cannot express: invisible hover bridge using ::before pseudo-element */
 .nav-dropdown-menu::before {
     content: '';
     position: absolute;
@@ -162,37 +162,41 @@ body {
 }
 
 /* Show on hover or keyboard focus */
+/* Tailwind cannot express: complex nested hover/focus-within state targeting menu child */
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
     display: block;
 }
 
 /* Show when JS adds .dropdown-open (keyboard toggle) */
+/* Tailwind cannot express: custom JS state class toggling display !important */
 .nav-dropdown.dropdown-open .nav-dropdown-menu {
     display: block !important;
 }
 
+/* Tailwind cannot express: custom sub-rem font sizing and transition on dropdown links */
 .nav-dropdown-menu a {
     display: block;
     padding: 0.55rem 1rem;
     font-size: 0.83rem;
     font-weight: 500;
-    color: #2C3E50;
+    color: var(--color-navy);
     text-decoration: none;
     border-radius: 0.6rem;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
+/* Tailwind cannot express: custom rgb background hover state */
 .nav-dropdown-menu a:hover {
-    background: rgba(139, 158, 141, 0.12);
-    color: #8B9E8D;
+    background: rgba(var(--color-sage-rgb), 0.12);
+    color: var(--color-sage);
 }
-
 
 /* ─────────────────────────────────────────────────────────────
    5. NAVIGATION — MOBILE HAMBURGER + OVERLAY
    ───────────────────────────────────────────────────────────── */
 
+/* Tailwind cannot express: complex flex layout for custom hamburger icon */
 #hamburger {
     display: none;
     flex-direction: column;
@@ -204,43 +208,57 @@ body {
     z-index: 120;
 }
 
+/* Tailwind cannot express: custom media query targeting ID selector */
 @media (max-width: 767px) {
     #hamburger {
         display: flex;
     }
 }
 
+/* Tailwind cannot express: complex multi-property transition on individual hamburger bars */
 #hamburger span {
     display: block;
     width: 22px;
     height: 2px;
-    background: #2C3E50;
+    background: var(--color-navy);
     border-radius: 2px;
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 /* Animated X state */
+/* Tailwind cannot express: nth-child targeting with custom transform states */
 #hamburger.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
 
+/* Tailwind cannot express: nth-child targeting with custom transform states */
 #hamburger.open span:nth-child(2) {
     opacity: 0;
 }
 
+/* Tailwind cannot express: nth-child targeting with custom transform states */
 #hamburger.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Tailwind cannot express: complex descendant state targeting */
 #hamburger.open span {
-    background: #FAF7F4;
+    background: var(--color-cream);
 }
 
 /* Full-screen overlay */
+/* Tailwind cannot express: full-screen fixed overlay with complex flex layout */
 #mobile-menu {
     position: fixed;
     inset: 0;
-    background: rgba(26, 37, 47, 0.97);
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background: rgba(var(--color-navy-dark-rgb), 0.97);
     backdrop-filter: blur(16px);
     z-index: 110;
     display: flex;
@@ -253,14 +271,16 @@ body {
     transition: opacity 0.3s ease;
 }
 
+/* Tailwind cannot express: custom state class toggling opacity and pointer-events */
 #mobile-menu.open {
     opacity: 1;
     pointer-events: all;
 }
 
+/* Tailwind cannot express: grouped descendant styling for mobile typography */
 #mobile-menu a,
 #mobile-menu button {
-    color: #FAF7F4;
+    color: var(--color-cream);
     font-size: 1.4rem;
     font-weight: 600;
     font-family: 'Assistant', sans-serif;
@@ -268,51 +288,57 @@ body {
     transition: color 0.2s ease;
 }
 
+/* Tailwind cannot express: specific child hover styling */
 #mobile-menu a:hover {
-    color: #8B9E8D;
+    color: var(--color-sage);
 }
 
+/* Tailwind cannot express: scoped child element typography */
 #mobile-menu .mobile-tel {
     margin-top: 1rem;
     font-size: 1rem;
-    color: #8B9E8D;
+    color: var(--color-sage);
     font-weight: 500;
 }
-
 
 /* ─────────────────────────────────────────────────────────────
    6. BUTTONS & CTA
    ───────────────────────────────────────────────────────────── */
 
+/* Tailwind cannot express: @keyframes for custom pulse animation */
 @keyframes soft-pulse {
 
     0%,
     100% {
-        box-shadow: 0 0 0 0 rgba(139, 158, 141, 0.40);
+        box-shadow: 0 0 0 0 rgba(var(--color-sage-rgb), 0.40);
     }
 
     50% {
-        box-shadow: 0 0 0 10px rgba(139, 158, 141, 0);
+        box-shadow: 0 0 0 10px rgba(var(--color-sage-rgb), 0);
     }
 }
 
 /* Pulsing outline on the primary CTA button */
+/* Tailwind cannot express: custom infinite soft-pulse animation application */
 .btn-cta {
     animation: soft-pulse 3s ease-in-out infinite;
 }
 
 /* Highlighted credential / badge pill */
+/* Tailwind cannot express: complex linear gradient background with hex variable transparencies */
 .credential-badge {
-    background: linear-gradient(135deg, #8B9E8D22, #C8D5C933);
-    border: 1px solid #C8D5C9;
+    background: linear-gradient(135deg,
+            rgba(var(--color-sage-rgb), 0.13),
+            rgba(var(--color-sage-light-rgb), 0.20));
+    border: 1px solid var(--color-sage-light);
 }
-
 
 /* ─────────────────────────────────────────────────────────────
    7. HERO — HOMEPAGE ONLY
    ───────────────────────────────────────────────────────────── */
 
 /* Parallax portrait — height overshoot so translateY stays in frame */
+/* Tailwind cannot express: custom height overshoot and transform will-change optimization */
 .hero-img {
     height: 110%;
     top: -5%;
@@ -320,81 +346,80 @@ body {
     will-change: transform;
 }
 
-
 /* ─────────────────────────────────────────────────────────────
    8. PAGE HERO — INNER PAGES
    ───────────────────────────────────────────────────────────── */
 
 /* Dark gradient header used on all service/about pages */
+/* Tailwind cannot express: complex multi-stop linear gradient background */
 .page-hero {
-    background: linear-gradient(135deg, #1A252F 0%, #2C3E50 60%, #3d5268 100%);
+    background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 60%, var(--color-navy-mid) 100%);
     position: relative;
     overflow: hidden;
 }
 
 /* Subtle dot-grid texture overlay */
+/* Tailwind cannot express: ::before pseudo-element with radial gradient dot pattern */
 .page-hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(139, 158, 141, 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(var(--color-sage-rgb), 0.06) 1px, transparent 1px);
     background-size: 28px 28px;
     pointer-events: none;
 }
 
+/* Subtle dot pattern for dark backgrounds (like the footer) */
+/* Tailwind cannot express: responsive radial gradient dot pattern background */
+.bg-pattern-dots-cream {
+    background-image: radial-gradient(circle, var(--color-cream) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
 
 /* ─────────────────────────────────────────────────────────────
    9. CARDS
    ───────────────────────────────────────────────────────────── */
 
 /* Hover-lift for homepage approach/area cards */
+/* Tailwind cannot express: complex multi-property hover transition */
 .approach-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Tailwind cannot express: custom transform and rgb box-shadow on hover */
 .approach-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(44, 62, 80, 0.10);
+    box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
 }
 
 /* Hover-lift for inner-page theme cards */
+/* Tailwind cannot express: custom solid border combined with multi-property transition */
 .theme-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #E8DDD4;
+    border: 1px solid var(--color-stone-medium);
 }
 
+/* Tailwind cannot express: custom transform and rgb box-shadow on hover */
 .theme-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(44, 62, 80, 0.10);
+    box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
 }
 
-
-
-/* ─────────────────────────────────────────────────────────────
-   11. GALLERY — HOMEPAGE ONLY
-   ───────────────────────────────────────────────────────────── */
-
-.gallery-img {
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.gallery-wrap:hover .gallery-img {
-    transform: scale(1.04);
-}
-
+/* REMOVED: .gallery-img / .gallery-wrap — no gallery in current build */
 
 /* ─────────────────────────────────────────────────────────────
    12. FAQ ACCORDION — HOMEPAGE ONLY
    ───────────────────────────────────────────────────────────── */
 
+/* Tailwind cannot express: complex multi-property transition on component */
 .faq-card {
-    border: 1px solid #E8DDD4;
+    border: 1px solid var(--color-stone-medium);
     transition: box-shadow 0.35s ease, border-color 0.35s ease;
     position: relative;
 }
 
 /* Sage accent stripe on the right edge */
+/* Tailwind cannot express: ::after pseudo-element with dynamic linear gradient background */
 .faq-card::after {
     content: '';
     position: absolute;
@@ -402,34 +427,40 @@ body {
     right: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(180deg, #8B9E8D, #C8D5C9);
+    background: linear-gradient(180deg, var(--color-sage), var(--color-sage-light));
     border-radius: 0 1rem 1rem 0;
     opacity: 0;
     transition: opacity 0.35s ease;
 }
 
+/* Tailwind cannot express: custom box-shadow and border color on hover */
 .faq-card:hover {
-    box-shadow: 0 6px 24px rgba(44, 62, 80, 0.07);
-    border-color: #C8D5C9;
+    box-shadow: 0 6px 24px rgba(var(--color-navy-rgb), 0.07);
+    border-color: var(--color-sage-light);
 }
 
+/* Tailwind cannot express: pseudo-class selector Tailwind cannot target (:has) */
 .faq-card:has(details[open]) {
-    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.11);
-    border-color: #8B9E8D;
+    box-shadow: 0 8px 32px rgba(var(--color-navy-rgb), 0.11);
+    border-color: var(--color-sage);
 }
 
+/* Tailwind cannot express: pseudo-class selector combined with ::after element opacity */
 .faq-card:has(details[open])::after {
     opacity: 1;
 }
 
+/* Tailwind cannot express: explicit transition on specific summary child element */
 .faq-card summary {
     transition: background 0.25s ease;
 }
 
+/* Tailwind cannot express: pseudo-class selector targeting summary background */
 .faq-card:has(details[open]) summary {
-    background: rgba(139, 158, 141, 0.06);
+    background: rgba(var(--color-sage-rgb), 0.06);
 }
 
+/* Tailwind cannot express: @keyframes for custom slide-in animation */
 @keyframes faq-slide-in {
     from {
         opacity: 0;
@@ -442,6 +473,7 @@ body {
     }
 }
 
+/* Tailwind cannot express: custom forwards animation application */
 .faq-answer {
     animation: faq-slide-in 0.25s ease forwards;
 }
