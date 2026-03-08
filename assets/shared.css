@@ -18,15 +18,15 @@
     --color-stone-warm: #F5F0EB;
     --color-stone-medium: #E8DDD4;
 
-    --color-sage-rgb:         139, 158, 141;
-    --color-sage-light-rgb:   200, 213, 201;
-    --color-sage-dark-rgb:    92, 122, 94;
-    --color-navy-rgb:         44, 62, 80;
-    --color-navy-dark-rgb:    26, 37, 47;
-    --color-navy-mid-rgb:     61, 82, 104;
-    --color-cream-rgb:        250, 247, 244;
-    --color-muted-rgb:        122, 112, 104;
-    --color-stone-warm-rgb:   245, 240, 235;
+    --color-sage-rgb: 139, 158, 141;
+    --color-sage-light-rgb: 200, 213, 201;
+    --color-sage-dark-rgb: 92, 122, 94;
+    --color-navy-rgb: 44, 62, 80;
+    --color-navy-dark-rgb: 26, 37, 47;
+    --color-navy-mid-rgb: 61, 82, 104;
+    --color-cream-rgb: 250, 247, 244;
+    --color-muted-rgb: 122, 112, 104;
+    --color-stone-warm-rgb: 245, 240, 235;
     --color-stone-medium-rgb: 232, 221, 212;
 }
 
@@ -476,4 +476,34 @@ html {
 /* Tailwind cannot express: custom forwards animation application */
 .faq-answer {
     animation: faq-slide-in 0.25s ease forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   REDUCED MOTION
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+    .btn-cta,
+    .faq-answer,
+    [class*="animate-infinite-scroll"] {
+        animation: none !important;
+    }
+
+    #navbar,
+    .nav-link::after,
+    .nav-dropdown-menu a,
+    #hamburger span,
+    #mobile-menu,
+    #mobile-menu a,
+    #mobile-menu button,
+    .hero-img,
+    .approach-card,
+    .approach-card:hover,
+    .theme-card,
+    .theme-card:hover,
+    .faq-card,
+    .faq-card::after,
+    .faq-card summary {
+        transition: none !important;
+    }
 }
