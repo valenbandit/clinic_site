@@ -209,7 +209,7 @@ html {
 }
 
 /* Tailwind cannot express: custom media query targeting ID selector */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     #hamburger {
         display: flex;
     }
