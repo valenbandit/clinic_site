@@ -6,28 +6,28 @@
 /* ─────────────────────────────────────────────────────────────
    DESIGN TOKENS
    ───────────────────────────────────────────────────────────── */
-:root {
-    --color-sage: #8B9E8D;
-    --color-sage-light: #C8D5C9;
-    --color-sage-dark: #5C7A5E;
-    --color-navy: #2C3E50;
-    --color-navy-dark: #1A252F;
-    --color-navy-mid: #3d5268;
-    --color-cream: #FAF7F4;
-    --color-muted: #7A7068;
-    --color-stone-warm: #F5F0EB;
-    --color-stone-medium: #E8DDD4;
 
-    --color-sage-rgb: 139, 158, 141;
-    --color-sage-light-rgb: 200, 213, 201;
-    --color-sage-dark-rgb: 92, 122, 94;
-    --color-navy-rgb: 44, 62, 80;
-    --color-navy-dark-rgb: 26, 37, 47;
-    --color-navy-mid-rgb: 61, 82, 104;
-    --color-cream-rgb: 250, 247, 244;
-    --color-muted-rgb: 122, 112, 104;
-    --color-stone-warm-rgb: 245, 240, 235;
-    --color-stone-medium-rgb: 232, 221, 212;
+:root {
+  --color-sage: #8B9E8D;
+  --color-sage-light: #C8D5C9;
+  --color-sage-dark: #5C7A5E;
+  --color-navy: #2C3E50;
+  --color-navy-dark: #1A252F;
+  --color-navy-mid: #3d5268;
+  --color-cream: #FAF7F4;
+  --color-muted: #7A7068;
+  --color-stone-warm: #F5F0EB;
+  --color-stone-medium: #E8DDD4;
+  --color-sage-rgb: 139, 158, 141;
+  --color-sage-light-rgb: 200, 213, 201;
+  --color-sage-dark-rgb: 92, 122, 94;
+  --color-navy-rgb: 44, 62, 80;
+  --color-navy-dark-rgb: 26, 37, 47;
+  --color-navy-mid-rgb: 61, 82, 104;
+  --color-cream-rgb: 250, 247, 244;
+  --color-muted-rgb: 122, 112, 104;
+  --color-stone-warm-rgb: 245, 240, 235;
+  --color-stone-medium-rgb: 232, 221, 212;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -35,15 +35,17 @@
    ───────────────────────────────────────────────────────────── */
 
 /* Tailwind cannot express: global box-sizing reset for pseudo-elements */
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Tailwind cannot express: global smooth scroll-behavior override */
+
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* REMOVED: body — font-family and colors now handled by Tailwind classes in HTML */
@@ -53,14 +55,17 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Centered content column with responsive side padding */
+
 /* REMOVED: .section-padding — convert to Tailwind utilities on elements in HTML */
 
 /* Sage gradient divider line */
+
 /* REMOVED: .divider / .divider-right — convert to Tailwind utilities on elements in HTML */
 
 /* Right-align variant (RTL: pushes divider to the left edge) */
 
 /* Scroll-triggered fade-up reveal */
+
 /* REMOVED: .reveal — convert to Tailwind utilities and data-attributes using JS */
 
 /* ─────────────────────────────────────────────────────────────
@@ -68,33 +73,39 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Tailwind cannot express: complex multi-property custom transition */
+
 #navbar {
-    transition: background 0.35s ease, box-shadow 0.35s ease;
-    z-index: 100;
-    backdrop-filter: blur(12px);
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+  z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
 /* Solid background once user scrolls past 40 px */
+
 /* Tailwind cannot express: custom relative rgb color modification with !important */
+
 #navbar.scrolled {
-    background: rgba(var(--color-cream-rgb), 0.97) !important;
-    box-shadow: 0 2px 20px rgba(var(--color-navy-rgb), 0.08);
+  background: rgba(var(--color-cream-rgb), 0.97) !important;
+  box-shadow: 0 2px 20px rgba(var(--color-navy-rgb), 0.08);
 }
 
 /* Underline animation on each nav link */
+
 /* Tailwind cannot express: ::after pseudo-element with dynamic dimension */
+
 .nav-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1px;
-    background: var(--color-sage);
-    transition: width 0.25s ease;
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--color-sage);
+  transition: width 0.25s ease;
 }
 
 /* Tailwind cannot express: hover state targeting ::after pseudo-element */
+
 .nav-link:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -102,94 +113,109 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Tailwind cannot express: required positioning context grouping */
+
 .nav-dropdown {
-    position: relative;
+  position: relative;
 }
 
 /* Tailwind cannot express: complex native button reset combined with flex alignment */
+
 .nav-dropdown-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    color: inherit;
-    font-weight: 500;
-    font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  font-weight: 500;
+  font-size: 0.875rem;
 }
 
 /* Hide the underline animation on the dropdown trigger */
+
 /* Tailwind cannot express: overriding and hiding parent ::after pseudo-element */
+
 .nav-dropdown-toggle::after {
-    display: none !important;
+  display: none !important;
 }
 
 /* Rotate chevron on hover / keyboard-open */
+
 /* Tailwind cannot express: complex nested hover/focus-within state targeting svg child */
+
 .nav-dropdown:hover .nav-dropdown-toggle svg,
 .nav-dropdown:focus-within .nav-dropdown-toggle svg {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Tailwind cannot express: complex dropdown positioning overlay with custom backdrop filter */
+
 .nav-dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    min-width: 190px;
-    background: rgba(var(--color-cream-rgb), 0.97);
-    border: 1px solid rgba(var(--color-sage-rgb), 0.2);
-    border-radius: 1rem;
-    box-shadow: 0 12px 32px rgba(var(--color-navy-rgb), 0.12);
-    padding: 0.75rem 0.5rem 0.5rem;
-    z-index: 100;
-    backdrop-filter: blur(12px);
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 190px;
+  background: rgba(var(--color-cream-rgb), 0.97);
+  border: 1px solid rgba(var(--color-sage-rgb), 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 12px 32px rgba(var(--color-navy-rgb), 0.12);
+  padding: 0.75rem 0.5rem 0.5rem;
+  z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
 /* Invisible bridge so the menu doesn't close when moving from trigger to panel */
+
 /* Tailwind cannot express: invisible hover bridge using ::before pseudo-element */
+
 .nav-dropdown-menu::before {
-    content: '';
-    position: absolute;
-    top: -0.75rem;
-    left: 0;
-    right: 0;
-    height: 0.75rem;
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  left: 0;
+  right: 0;
+  height: 0.75rem;
 }
 
 /* Show on hover or keyboard focus */
+
 /* Tailwind cannot express: complex nested hover/focus-within state targeting menu child */
+
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
-    display: block;
+  display: block;
 }
 
 /* Show when JS adds .dropdown-open (keyboard toggle) */
+
 /* Tailwind cannot express: custom JS state class toggling display !important */
+
 .nav-dropdown.dropdown-open .nav-dropdown-menu {
-    display: block !important;
+  display: block !important;
 }
 
 /* Tailwind cannot express: custom sub-rem font sizing and transition on dropdown links */
+
 .nav-dropdown-menu a {
-    display: block;
-    padding: 0.55rem 1rem;
-    font-size: 0.83rem;
-    font-weight: 500;
-    color: var(--color-navy);
-    text-decoration: none;
-    border-radius: 0.6rem;
-    transition: background 0.2s ease, color 0.2s ease;
+  display: block;
+  padding: 0.55rem 1rem;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  text-decoration: none;
+  border-radius: 0.6rem;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 /* Tailwind cannot express: custom rgb background hover state */
+
 .nav-dropdown-menu a:hover {
-    background: rgba(var(--color-sage-rgb), 0.12);
-    color: var(--color-sage);
+  background: rgba(var(--color-sage-rgb), 0.12);
+  color: var(--color-sage);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -197,108 +223,122 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Tailwind cannot express: complex flex layout for custom hamburger icon */
+
 #hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px;
-    z-index: 120;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  z-index: 120;
 }
 
 /* Tailwind cannot express: custom media query targeting ID selector */
+
 @media (max-width: 1023px) {
-    #hamburger {
-        display: flex;
-    }
+  #hamburger {
+    display: flex;
+  }
 }
 
 /* Tailwind cannot express: complex multi-property transition on individual hamburger bars */
+
 #hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--color-navy);
-    border-radius: 2px;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-navy);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 /* Animated X state */
+
 /* Tailwind cannot express: nth-child targeting with custom transform states */
+
 #hamburger.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 /* Tailwind cannot express: nth-child targeting with custom transform states */
+
 #hamburger.open span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 /* Tailwind cannot express: nth-child targeting with custom transform states */
+
 #hamburger.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Tailwind cannot express: complex descendant state targeting */
+
 #hamburger.open span {
-    background: var(--color-cream);
+  background: var(--color-cream);
 }
 
 /* Full-screen overlay */
+
 /* Tailwind cannot express: full-screen fixed overlay with complex flex layout */
+
 #mobile-menu {
-    position: fixed;
-    inset: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    background: rgba(var(--color-navy-dark-rgb), 0.97);
-    backdrop-filter: blur(16px);
-    z-index: 110;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background: rgba(var(--color-navy-dark-rgb), 0.97);
+  backdrop-filter: blur(16px);
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 /* Tailwind cannot express: custom state class toggling opacity and pointer-events */
+
 #mobile-menu.open {
-    opacity: 1;
-    pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Tailwind cannot express: grouped descendant styling for mobile typography */
+
 #mobile-menu a,
 #mobile-menu button {
-    color: var(--color-cream);
-    font-size: 1.4rem;
-    font-weight: 600;
-    font-family: 'Assistant', sans-serif;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: var(--color-cream);
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Assistant', sans-serif;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 /* Tailwind cannot express: specific child hover styling */
+
 #mobile-menu a:hover {
-    color: var(--color-sage);
+  color: var(--color-sage);
 }
 
 /* Tailwind cannot express: scoped child element typography */
+
 #mobile-menu .mobile-tel {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: var(--color-sage);
-    font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--color-sage);
+  font-weight: 500;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -306,31 +346,35 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Tailwind cannot express: @keyframes for custom pulse animation */
+
 @keyframes soft-pulse {
-
-    0%,
+  0%,
     100% {
-        box-shadow: 0 0 0 0 rgba(var(--color-sage-rgb), 0.40);
-    }
+    box-shadow: 0 0 0 0 rgba(var(--color-sage-rgb), 0.40);
+  }
 
-    50% {
-        box-shadow: 0 0 0 10px rgba(var(--color-sage-rgb), 0);
-    }
+  50% {
+    box-shadow: 0 0 0 10px rgba(var(--color-sage-rgb), 0);
+  }
 }
 
 /* Pulsing outline on the primary CTA button */
+
 /* Tailwind cannot express: custom infinite soft-pulse animation application */
+
 .btn-cta {
-    animation: soft-pulse 3s ease-in-out infinite;
+  animation: soft-pulse 3s ease-in-out infinite;
 }
 
 /* Highlighted credential / badge pill */
+
 /* Tailwind cannot express: complex linear gradient background with hex variable transparencies */
+
 .credential-badge {
-    background: linear-gradient(135deg,
+  background: linear-gradient(135deg,
             rgba(var(--color-sage-rgb), 0.13),
             rgba(var(--color-sage-light-rgb), 0.20));
-    border: 1px solid var(--color-sage-light);
+  border: 1px solid var(--color-sage-light);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -338,12 +382,14 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Parallax portrait — height overshoot so translateY stays in frame */
+
 /* Tailwind cannot express: custom height overshoot and transform will-change optimization */
+
 .hero-img {
-    height: 110%;
-    top: -5%;
-    transition: transform 0.05s linear;
-    will-change: transform;
+  height: 110%;
+  top: -5%;
+  transition: transform 0.05s linear;
+  will-change: transform;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -351,29 +397,35 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Dark gradient header used on all service/about pages */
+
 /* Tailwind cannot express: complex multi-stop linear gradient background */
+
 .page-hero {
-    background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 60%, var(--color-navy-mid) 100%);
-    position: relative;
-    overflow: hidden;
+  background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 60%, var(--color-navy-mid) 100%);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Subtle dot-grid texture overlay */
+
 /* Tailwind cannot express: ::before pseudo-element with radial gradient dot pattern */
+
 .page-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(var(--color-sage-rgb), 0.06) 1px, transparent 1px);
-    background-size: 28px 28px;
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(var(--color-sage-rgb), 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
 }
 
 /* Subtle dot pattern for dark backgrounds (like the footer) */
+
 /* Tailwind cannot express: responsive radial gradient dot pattern background */
+
 .bg-pattern-dots-cream {
-    background-image: radial-gradient(circle, var(--color-cream) 1px, transparent 1px);
-    background-size: 24px 24px;
+  background-image: radial-gradient(circle, var(--color-cream) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -381,28 +433,34 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Hover-lift for homepage approach/area cards */
+
 /* Tailwind cannot express: complex multi-property hover transition */
+
 .approach-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Tailwind cannot express: custom transform and rgb box-shadow on hover */
+
 .approach-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
 }
 
 /* Hover-lift for inner-page theme cards */
+
 /* Tailwind cannot express: custom solid border combined with multi-property transition */
+
 .theme-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--color-stone-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--color-stone-medium);
 }
 
 /* Tailwind cannot express: custom transform and rgb box-shadow on hover */
+
 .theme-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
 }
 
 /* REMOVED: .gallery-img / .gallery-wrap — no gallery in current build */
@@ -412,84 +470,94 @@ html {
    ───────────────────────────────────────────────────────────── */
 
 /* Tailwind cannot express: complex multi-property transition on component */
+
 .faq-card {
-    border: 1px solid var(--color-stone-medium);
-    transition: box-shadow 0.35s ease, border-color 0.35s ease;
-    position: relative;
+  border: 1px solid var(--color-stone-medium);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
 }
 
 /* Sage accent stripe on the right edge */
+
 /* Tailwind cannot express: ::after pseudo-element with dynamic linear gradient background */
+
 .faq-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, var(--color-sage), var(--color-sage-light));
-    border-radius: 0 1rem 1rem 0;
-    opacity: 0;
-    transition: opacity 0.35s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--color-sage), var(--color-sage-light));
+  border-radius: 0 1rem 1rem 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 /* Tailwind cannot express: custom box-shadow and border color on hover */
+
 .faq-card:hover {
-    box-shadow: 0 6px 24px rgba(var(--color-navy-rgb), 0.07);
-    border-color: var(--color-sage-light);
+  box-shadow: 0 6px 24px rgba(var(--color-navy-rgb), 0.07);
+  border-color: var(--color-sage-light);
 }
 
 /* Tailwind cannot express: pseudo-class selector Tailwind cannot target (:has) */
+
 .faq-card:has(details[open]) {
-    box-shadow: 0 8px 32px rgba(var(--color-navy-rgb), 0.11);
-    border-color: var(--color-sage);
+  box-shadow: 0 8px 32px rgba(var(--color-navy-rgb), 0.11);
+  border-color: var(--color-sage);
 }
 
 /* Tailwind cannot express: pseudo-class selector combined with ::after element opacity */
+
 .faq-card:has(details[open])::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Tailwind cannot express: explicit transition on specific summary child element */
+
 .faq-card summary {
-    transition: background 0.25s ease;
+  transition: background 0.25s ease;
 }
 
 /* Tailwind cannot express: pseudo-class selector targeting summary background */
+
 .faq-card:has(details[open]) summary {
-    background: rgba(var(--color-sage-rgb), 0.06);
+  background: rgba(var(--color-sage-rgb), 0.06);
 }
 
 /* Tailwind cannot express: @keyframes for custom slide-in animation */
-@keyframes faq-slide-in {
-    from {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes faq-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Tailwind cannot express: custom forwards animation application */
+
 .faq-answer {
-    animation: faq-slide-in 0.25s ease forwards;
+  animation: faq-slide-in 0.25s ease forwards;
 }
 
 /* ─────────────────────────────────────────────────────────────
    REDUCED MOTION
    ───────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
 
-    .btn-cta,
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta,
     .faq-answer,
     [class*="animate-infinite-scroll"] {
-        animation: none !important;
-    }
+    animation: none !important;
+  }
 
-    #navbar,
+  #navbar,
     .nav-link::after,
     .nav-dropdown-menu a,
     #hamburger span,
@@ -504,6 +572,6 @@ html {
     .faq-card,
     .faq-card::after,
     .faq-card summary {
-        transition: none !important;
-    }
+    transition: none !important;
+  }
 }
