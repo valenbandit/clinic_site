@@ -48,6 +48,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Tailwind cannot express: a linear-gradient used as a partial underline highlight,
+   because gradient background-image cannot be combined with an arbitrary stop-position
+   percentage using Tailwind utility classes alone. */
+
+.text-highlight {
+  background: linear-gradient(transparent 52%, rgba(92,122,94,0.22) 52%);
+  padding-bottom: 2px;
+}
+
 /* REMOVED: body — font-family and colors now handled by Tailwind classes in HTML */
 
 /* ─────────────────────────────────────────────────────────────
@@ -146,8 +155,7 @@ html {
 
 /* Tailwind cannot express: complex nested hover/focus-within state targeting svg child */
 
-.nav-dropdown:hover .nav-dropdown-toggle svg,
-.nav-dropdown:focus-within .nav-dropdown-toggle svg {
+.nav-dropdown:hover .nav-dropdown-toggle svg {
   transform: rotate(180deg);
 }
 
@@ -185,8 +193,7 @@ html {
 
 /* Tailwind cannot express: complex nested hover/focus-within state targeting menu child */
 
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
+.nav-dropdown:hover .nav-dropdown-menu {
   display: block;
 }
 
@@ -274,71 +281,130 @@ html {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Tailwind cannot express: complex descendant state targeting */
+/* Compact dropdown panel — slides down from navbar */
 
-#hamburger.open span {
-  background: var(--color-cream);
-}
-
-/* Full-screen overlay */
-
-/* Tailwind cannot express: full-screen fixed overlay with complex flex layout */
+/* Tailwind cannot express: fixed positioning anchored below navbar with slide animation */
 
 #mobile-menu {
   position: fixed;
-  inset: 0;
-  margin: 0;
-  padding: 0;
-  border: none;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  background: rgba(var(--color-navy-dark-rgb), 0.97);
-  backdrop-filter: blur(16px);
-  z-index: 110;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  top: 80px; /* matches navbar h-20 */
+  right: 0;
+  left: 0;
+  background: var(--color-navy-dark);
+  max-height: 0;
+  overflow: hidden;
+  z-index: 99;
+  transition: max-height 0.35s ease;
 }
 
-/* Tailwind cannot express: custom state class toggling opacity and pointer-events */
+/* Tailwind cannot express: custom state class toggling max-height for slide reveal */
 
 #mobile-menu.open {
-  opacity: 1;
-  pointer-events: all;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 
-/* Tailwind cannot express: grouped descendant styling for mobile typography */
+/* Mobile menu list — reset + dividers */
 
-#mobile-menu a,
-#mobile-menu button {
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(var(--color-sage-rgb), 0.15);
+}
+
+.mobile-menu-list > li {
+  border-bottom: 1px solid rgba(var(--color-sage-rgb), 0.15);
+}
+
+/* Top-level nav links */
+
+.mobile-menu-link {
+  display: block;
+  padding: 1rem 1.5rem;
   color: var(--color-cream);
-  font-size: 1.4rem;
-  font-weight: 600;
-  font-family: 'Assistant', sans-serif;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-/* Tailwind cannot express: specific child hover styling */
-
-#mobile-menu a:hover {
-  color: var(--color-sage);
-}
-
-/* Tailwind cannot express: scoped child element typography */
-
-#mobile-menu .mobile-tel {
-  margin-top: 1rem;
   font-size: 1rem;
-  color: var(--color-sage);
   font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus-visible {
+  color: var(--color-sage-light);
+  background: rgba(var(--color-sage-rgb), 0.08);
+}
+
+/* Accordion trigger button */
+
+.mobile-accordion-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-cream);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: right;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobile-accordion-btn:hover,
+.mobile-accordion-btn:focus-visible {
+  color: var(--color-sage-light);
+  background: rgba(var(--color-sage-rgb), 0.08);
+}
+
+/* Rotate chevron when expanded */
+
+.mobile-accordion-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.mobile-accordion-btn[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* Accordion sub-panel */
+
+.mobile-accordion-panel {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.18);
+  transition: max-height 0.25s ease;
+}
+
+.mobile-accordion-panel.open {
+  max-height: 280px;
+}
+
+/* Indented sub-links */
+
+.mobile-sublink {
+  display: block;
+  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+  padding-inline-start: 2.75rem;
+  color: var(--color-cream);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.78;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-sublink:hover,
+.mobile-sublink:focus-visible {
+  color: var(--color-sage-light);
+  opacity: 1;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -562,8 +628,11 @@ html {
     .nav-dropdown-menu a,
     #hamburger span,
     #mobile-menu,
-    #mobile-menu a,
-    #mobile-menu button,
+    .mobile-menu-link,
+    .mobile-accordion-btn,
+    .mobile-accordion-btn svg,
+    .mobile-accordion-panel,
+    .mobile-sublink,
     .hero-img,
     .approach-card,
     .approach-card:hover,

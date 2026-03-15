@@ -56,34 +56,96 @@ onScroll();
 
 // ─────────────────────────────────────────────────────────────
 //  4. NAVBAR — MOBILE HAMBURGER MENU
-//  Toggles the full-screen overlay (#mobile-menu) and animates
-//  the hamburger icon into an ×. Also closes on Escape key.
+//  Toggles a compact dropdown panel below the navbar.
+//  Hamburger animates into ×. Closes on: hamburger re-tap,
+//  outside click, Escape key, or nav link activation.
+//  Focus is trapped inside while open, released on close.
 // ─────────────────────────────────────────────────────────────
 
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
-const mobileClose = document.getElementById('mobile-close');
 
-function openMenu() {
+// ── Focus trap ───────────────────────────────────────────────
+let _trapHandler = null;
+
+function trapFocus(container) {
+    const focusable = Array.from(
+        container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+    ).filter(el => !el.closest('[inert]'));
+    if (!focusable.length) return;
+    focusable[0].focus();
+
+    _trapHandler = e => {
+        if (e.key !== 'Tab') return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+    };
+    document.addEventListener('keydown', _trapHandler);
+}
+
+function releaseFocus() {
+    if (_trapHandler) {
+        document.removeEventListener('keydown', _trapHandler);
+        _trapHandler = null;
+    }
+}
+
+// ── Open / Close ─────────────────────────────────────────────
+function openMobileMenu() {
+    mobileMenu.removeAttribute('inert');
     mobileMenu.classList.add('open');
     mobileMenu.setAttribute('aria-hidden', 'false');
     hamburger.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    trapFocus(mobileMenu);
 }
 
-function closeMenu() {
+function closeMobileMenu() {
     mobileMenu.classList.remove('open');
     mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.setAttribute('inert', '');
     hamburger.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    releaseFocus();
+    hamburger.focus();
 }
 
-hamburger.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
-mobileClose.addEventListener('click', closeMenu);
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+hamburger.addEventListener('click', () =>
+    mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu()
+);
+
+// Close on outside click
+document.addEventListener('click', e => {
+    if (mobileMenu.classList.contains('open') &&
+        !mobileMenu.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+        closeMobileMenu();
+    }
+});
+
+// Close on Escape
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+    }
+});
+
+// Close when a nav link is activated
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+
+// ── Accordion ────────────────────────────────────────────────
+mobileMenu.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.nextElementSibling.classList.toggle('open', !expanded);
+    });
+});
 
 
 // ─────────────────────────────────────────────────────────────
@@ -97,7 +159,8 @@ document.querySelectorAll('[data-dropdown-toggle]').forEach(btn => {
     btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
-        btn.closest('[data-dropdown]').classList.toggle('dropdown-open', !expanded);
+        const dropdown = btn.closest('[data-dropdown]');
+        dropdown.classList.toggle('dropdown-open', !expanded);
     });
 
     btn.addEventListener('keydown', e => {
@@ -116,6 +179,17 @@ document.addEventListener('click', e => {
             dd.classList.remove('dropdown-open');
             dd.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
         }
+    });
+});
+
+// Close any open dropdown on Escape, return focus to its toggle button
+document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('[data-dropdown].dropdown-open').forEach(dd => {
+        dd.classList.remove('dropdown-open');
+        const toggle = dd.querySelector('[data-dropdown-toggle]');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
     });
 });
 
