@@ -182,6 +182,16 @@ document.addEventListener('click', e => {
     });
 });
 
+// Close dropdown when focus leaves it entirely (Tab away)
+document.querySelectorAll('[data-dropdown]').forEach(dd => {
+    dd.addEventListener('focusout', e => {
+        if (!dd.contains(e.relatedTarget)) {
+            dd.classList.remove('dropdown-open');
+            dd.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
 // Close any open dropdown on Escape, return focus to its toggle button
 document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
@@ -271,3 +281,5 @@ if (readMoreBtn && extendedText) {
         readMoreBtn.classList.add('hidden');
     });
 }
+
+
