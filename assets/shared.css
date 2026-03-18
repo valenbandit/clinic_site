@@ -645,3 +645,35 @@ html {
   }
 }
 
+
+/* ─────────────────────────────────────────────────────────────
+   13. DECORATIVE ELEMENTS
+   Ambient blobs: soft radial blur shapes that drift slowly.
+   Grain: fixed film-grain overlay for tactile depth.
+   ───────────────────────────────────────────────────────────── */
+
+/* Slow organic drift — three phases so multiple blobs feel independent */
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0px,   0px)  scale(1);    }
+  33%       { transform: translate(22px, -16px) scale(1.04); }
+  66%       { transform: translate(-14px, 11px) scale(0.97); }
+}
+
+
+/* Base class shared by every decorative blob */
+
+.deco-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+  will-change: transform;
+  animation: blob-drift 18s ease-in-out infinite;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .deco-blob { animation: none; }
+}
+

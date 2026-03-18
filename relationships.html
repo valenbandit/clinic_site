@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>מערכות יחסים | אברהם דגן – פסיכותרפיסט ומטפל רגשי</title>
+    <title>זוגיות ומערכות יחסים | אברהם דגן – פסיכותרפיסט ומטפל רגשי</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,9 +90,9 @@
                                     </svg>
                                 </button>
                                 <ul id="dropdown-areas" class="nav-dropdown-menu">
+                                    <li><a href="/relationships" class="rounded" aria-current="page">זוגיות ומערכות יחסים</a></li>
                                     <li><a href="/crisis" class="rounded">דיכאון, חרדה ומצבי משבר</a></li>
-                                    <li><a href="/young-adults" class="rounded">מבוגרים צעירים</a></li>
-                                    <li><a href="/relationships" class="rounded" aria-current="page">מערכות יחסים</a></li>
+                                    <li><a href="/young-adults" class="rounded">בניית זהות ועצמאות</a></li>
                                     <li><a href="/career" class="rounded">שחיקה בעבודה</a></li>
                                 </ul>
                             </li>
@@ -152,9 +152,9 @@
                     </svg>
                 </button>
                 <ul class="mobile-accordion-panel">
+                    <li><a href="/relationships" class="mobile-sublink" aria-current="page">זוגיות ומערכות יחסים</a></li>
                     <li><a href="/crisis" class="mobile-sublink">דיכאון, חרדה ומצבי משבר</a></li>
-                    <li><a href="/young-adults" class="mobile-sublink">מבוגרים צעירים</a></li>
-                    <li><a href="/relationships" class="mobile-sublink" aria-current="page">מערכות יחסים</a></li>
+                    <li><a href="/young-adults" class="mobile-sublink">בניית זהות ועצמאות</a></li>
                     <li><a href="/career" class="mobile-sublink">שחיקה בעבודה</a></li>
                 </ul>
             </li>
@@ -192,12 +192,12 @@
                                 הבית</a>
                         </li>
                         <li aria-hidden="true"><span class="text-cream/40 mx-1">›</span></li>
-                        <li><span class="text-cream/90" aria-current="page">מערכות יחסים</span></li>
+                        <li><span class="text-cream/90" aria-current="page">זוגיות ומערכות יחסים</span></li>
                     </ol>
                 </nav>
                 <h1 id="page-title"
                     class="text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-4">
-                    מערכות יחסים
+                    זוגיות ומערכות יחסים
                 </h1>
                 <p class="text-sage-light text-lg md:text-xl max-w-2xl leading-relaxed opacity-90">
                     טיפול רגשי לזוגות ויחידים המסייע להבין דפוסי קשר, לשפר תקשורת ולהניח בסיס חדש למערכות יחסים
@@ -214,26 +214,29 @@
            CONTENT SECTIONS
       ═════════════════════════════════════════════ -->
 
-        <!-- Section 1: דפוסי קשר -->
+        <!-- Section 1: דפוסי קשר — text left, placeholder right -->
         <section id="patterns" class="py-12 md:py-20 bg-cream" aria-labelledby="heading-patterns">
-            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
-                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                    <span
-                        class="text-sage-accessible font-semibold text-sm tracking-widest uppercase">01</span>
-                    <h2 id="heading-patterns"
-                        class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
-                        כיצד נוצרים דפוסי הקשר שלנו
-                    </h2>
-                    <span
-                        class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
-                    <p class="text-muted text-base md:text-lg leading-relaxed max-w-prose">
-                        דפוסי הקשר שלנו מתעצבים כבר בשנות חיינו הראשונות, דרך המפגשים עם דמויות ההתקשרות
-                        הראשוניות שלנו. מסרים – מפורשים ולא מפורשים – על אהבה, ביטחון, גבולות ונוכחות רגשית,
-                        הופכים עם הזמן למפה הפנימית שאנחנו מביאים לכל קשר חדש. בטיפול, אנחנו לומדים לזהות את
-                        אותן מפות, מבינים כיצד ציפיות מהעבר חודרות להווה, ומגלים שינוי אפשרי – לא כשינוי של
-                        האחר, אלא כצמיחה עמוקה ואמיתית שלנו עצמנו, מבפנים.
-                    </p>
+                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+                    <!-- Placeholder above text on mobile; right column on desktop (RTL flex-row: first child = right) -->
+                    <div class="w-full lg:w-1/2 aspect-[4/3] rounded-2xl bg-stone-medium flex-shrink-0" aria-hidden="true"></div>
+                    <!-- Text: left column on desktop -->
+                    <div class="w-full lg:w-1/2">
+                        <h2 id="heading-patterns"
+                            class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
+                            כיצד נוצרים דפוסי הקשר שלנו
+                        </h2>
+                        <span
+                            class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
+                        <p class="text-muted text-base md:text-lg leading-relaxed">
+                            דפוסי הקשר שלנו מתעצבים כבר בשנות חיינו הראשונות, דרך המפגשים עם דמויות ההתקשרות
+                            הראשוניות שלנו. מסרים – מפורשים ולא מפורשים – על אהבה, ביטחון, גבולות ונוכחות רגשית,
+                            הופכים עם הזמן למפה הפנימית שאנחנו מביאים לכל קשר חדש. בטיפול, אנחנו לומדים לזהות את
+                            אותן מפות, מבינים כיצד ציפיות מהעבר חודרות להווה, ומגלים שינוי אפשרי – לא כשינוי של
+                            האחר, אלא כצמיחה עמוקה ואמיתית שלנו עצמנו, מבפנים.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -242,26 +245,29 @@
             <hr class="border-stone-medium/40">
         </div>
 
-        <!-- Section 2: תקשורת זוגית -->
+        <!-- Section 2: תקשורת זוגית — placeholder left, text right -->
         <section id="communication" class="py-12 md:py-20 bg-white" aria-labelledby="heading-communication">
-            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
-                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                    <span
-                        class="text-sage-accessible font-semibold text-sm tracking-widest uppercase">02</span>
-                    <h2 id="heading-communication"
-                        class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
-                        תקשורת כבסיס לקשר בריא
-                    </h2>
-                    <span
-                        class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
-                    <p class="text-muted text-base md:text-lg leading-relaxed max-w-prose">
-                        תקשורת טובה אינה רק הימנעות מריבות – היא היכולת להיות נוכחים, להקשיב ולהיות מוקשבים,
-                        גם ברגעים הקשים ביותר. רבים מאיתנו גדלנו בלי מודלים לתקשורת פתוחה ובריאה, ולכן מצאנו
-                        את עצמנו בתבניות חוזרות: שתיקה, ריחוק, ניסיון שוב ושוב להסביר מבלי להיות מובנים.
-                        בטיפול, נלמד לזהות את הצרכים שמסתתרים מאחורי המריבות, לפתח שפה רגשית משותפת ולהחזיר
-                        את תחושת הקרבה שנשחקה.
-                    </p>
+                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
+                    <!-- Placeholder above text on mobile; left column on desktop (RTL flex-row-reverse: first child = left) -->
+                    <div class="w-full lg:w-1/2 aspect-[4/3] rounded-2xl bg-stone-medium flex-shrink-0" aria-hidden="true"></div>
+                    <!-- Text: right column on desktop -->
+                    <div class="w-full lg:w-1/2">
+                        <h2 id="heading-communication"
+                            class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
+                            תקשורת כבסיס לקשר בריא
+                        </h2>
+                        <span
+                            class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
+                        <p class="text-muted text-base md:text-lg leading-relaxed">
+                            תקשורת טובה אינה רק הימנעות מריבות – היא היכולת להיות נוכחים, להקשיב ולהיות מוקשבים,
+                            גם ברגעים הקשים ביותר. רבים מאיתנו גדלנו בלי מודלים לתקשורת פתוחה ובריאה, ולכן מצאנו
+                            את עצמנו בתבניות חוזרות: שתיקה, ריחוק, ניסיון שוב ושוב להסביר מבלי להיות מובנים.
+                            בטיפול, נלמד לזהות את הצרכים שמסתתרים מאחורי המריבות, לפתח שפה רגשית משותפת ולהחזיר
+                            את תחושת הקרבה שנשחקה.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -270,26 +276,29 @@
             <hr class="border-stone-medium/40">
         </div>
 
-        <!-- Section 3: משברי זוגיות -->
+        <!-- Section 3: משברי זוגיות — text left, placeholder right -->
         <section id="crisis" class="py-12 md:py-20 bg-cream" aria-labelledby="heading-crisis">
-            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
-                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                    <span
-                        class="text-sage-accessible font-semibold text-sm tracking-widest uppercase">03</span>
-                    <h2 id="heading-crisis"
-                        class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
-                        משברי זוגיות: כשהקשר נפגע
-                    </h2>
-                    <span
-                        class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
-                    <p class="text-muted text-base md:text-lg leading-relaxed max-w-prose">
-                        לעיתים הקשר נתקל במשבר – בגידה, פרידה קרובה, אבדן אמון, או שחיקה ארוכה שנצברה בשקט.
-                        בנקודות האלה, קל להרגיש שאין דרך חזרה. אך בניגוד לתחושה הזו, משבר בזוגיות הוא לעיתים
-                        קרובות גם הזמן שבו שינוי אמיתי הופך אפשרי – בתנאי שיש מרחב בטוח לעבד אותו. הטיפול
-                        מציע בדיוק את זה: מקום ניטרלי, לא שיפוטי, שבו שני הצדדים יכולים להיות נוכחים
-                        ונשמעים.
-                    </p>
+                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+                    <!-- Placeholder above text on mobile; right column on desktop -->
+                    <div class="w-full lg:w-1/2 aspect-[4/3] rounded-2xl bg-stone-medium flex-shrink-0" aria-hidden="true"></div>
+                    <!-- Text: left column on desktop -->
+                    <div class="w-full lg:w-1/2">
+                        <h2 id="heading-crisis"
+                            class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
+                            משברי זוגיות: כשהקשר נפגע
+                        </h2>
+                        <span
+                            class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
+                        <p class="text-muted text-base md:text-lg leading-relaxed">
+                            לעיתים הקשר נתקל במשבר – בגידה, פרידה קרובה, אבדן אמון, או שחיקה ארוכה שנצברה בשקט.
+                            בנקודות האלה, קל להרגיש שאין דרך חזרה. אך בניגוד לתחושה הזו, משבר בזוגיות הוא לעיתים
+                            קרובות גם הזמן שבו שינוי אמיתי הופך אפשרי – בתנאי שיש מרחב בטוח לעבד אותו. הטיפול
+                            מציע בדיוק את זה: מקום ניטרלי, לא שיפוטי, שבו שני הצדדים יכולים להיות נוכחים
+                            ונשמעים.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -298,25 +307,28 @@
             <hr class="border-stone-medium/40">
         </div>
 
-        <!-- Section 4: הטיפול -->
+        <!-- Section 4: הטיפול — placeholder left, text right -->
         <section id="therapy" class="py-12 md:py-20 bg-white" aria-labelledby="heading-therapy">
-            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
-                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                    <span
-                        class="text-sage-accessible font-semibold text-sm tracking-widest uppercase">04</span>
-                    <h2 id="heading-therapy"
-                        class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
-                        הטיפול – מרחב בטוח לשינוי
-                    </h2>
-                    <span
-                        class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
-                    <p class="text-muted text-base md:text-lg leading-relaxed max-w-prose">
-                        בטיפול רגשי למערכות יחסים, המטרה אינה לקבוע מי צודק. המטרה היא לייצר מרחב שבו כל אחד
-                        יכול לחוות הבנה, ולגלות מה הוא מביא לקשר – מה הצרכים שלו, מה הפחדים ומה מונע ממנו
-                        לאהוב ולהיאהב באופן מלא. בין אם אתם מגיעים כזוג ובין אם כיחיד העובד על דפוסי הקשר
-                        שלו, התהליך הטיפולי יכול להיות גשר בין מה שיש לבין מה שאתם רוצים שיהיה.
-                    </p>
+                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
+                    <!-- Placeholder above text on mobile; left column on desktop -->
+                    <div class="w-full lg:w-1/2 aspect-[4/3] rounded-2xl bg-stone-medium flex-shrink-0" aria-hidden="true"></div>
+                    <!-- Text: right column on desktop -->
+                    <div class="w-full lg:w-1/2">
+                        <h2 id="heading-therapy"
+                            class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
+                            הטיפול – מרחב בטוח לשינוי
+                        </h2>
+                        <span
+                            class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mb-8"></span>
+                        <p class="text-muted text-base md:text-lg leading-relaxed">
+                            בטיפול רגשי למערכות יחסים, המטרה אינה לקבוע מי צודק. המטרה היא לייצר מרחב שבו כל אחד
+                            יכול לחוות הבנה, ולגלות מה הוא מביא לקשר – מה הצרכים שלו, מה הפחדים ומה מונע ממנו
+                            לאהוב ולהיאהב באופן מלא. בין אם אתם מגיעים כזוג ובין אם כיחיד העובד על דפוסי הקשר
+                            שלו, התהליך הטיפולי יכול להיות גשר בין מה שיש לבין מה שאתם רוצים שיהיה.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -512,6 +524,11 @@
                     <p class="text-sage-light text-sm font-semibold tracking-widest uppercase">תחומי טיפול</p>
                     <nav class="flex flex-col items-center lg:items-start gap-3 text-sm"
                         aria-label="ניווט תחומי טיפול">
+                        <a href="/relationships" aria-current="page"
+                            class="text-white transition-colors duration-300 w-fit focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
+                            <span class="hidden lg:inline text-sage text-xs" aria-hidden="true">←</span>
+                            זוגיות ומערכות יחסים
+                        </a>
                         <a href="/crisis"
                             class="hover:text-white transition-colors duration-300 w-fit focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
                             <span
@@ -524,12 +541,7 @@
                             <span
                                 class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
                                 aria-hidden="true">←</span>
-                            מבוגרים צעירים
-                        </a>
-                        <a href="/relationships" aria-current="page"
-                            class="text-white transition-colors duration-300 w-fit focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
-                            <span class="hidden lg:inline text-sage text-xs" aria-hidden="true">←</span>
-                            מערכות יחסים
+                            בניית זהות ועצמאות
                         </a>
                         <a href="/career"
                             class="hover:text-white transition-colors duration-300 w-fit focus:ring-2 focus:ring-white rounded inline-flex items-center gap-2 group">
