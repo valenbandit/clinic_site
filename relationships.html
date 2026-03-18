@@ -214,6 +214,8 @@
            CONTENT SECTIONS
       ═════════════════════════════════════════════ -->
 
+        <div id="timeline-wrapper" class="relative">
+
         <!-- Section 1: דפוסי קשר — text left, placeholder right -->
         <section id="patterns" class="py-12 md:py-20 bg-cream" aria-labelledby="heading-patterns">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
@@ -332,6 +334,18 @@
                 </div>
             </div>
         </section>
+
+        <!-- Timeline spine: desktop only, purely additive -->
+        <div id="timeline-spine" class="hidden lg:block" aria-hidden="true">
+            <div id="timeline-track"></div>
+            <div id="timeline-fill"></div>
+            <div class="timeline-dot" data-index="0"></div>
+            <div class="timeline-dot" data-index="1"></div>
+            <div class="timeline-dot" data-index="2"></div>
+            <div class="timeline-dot" data-index="3"></div>
+        </div>
+
+        </div><!-- /#timeline-wrapper -->
 
         <!-- ════════════════════════════════════════════
            CTA BLOCK
@@ -640,6 +654,47 @@
     </footer>
 
     <script src="/assets/shared.js" defer></script>
+    <script>
+        (function () {
+            if (!window.matchMedia('(min-width: 1024px)').matches) return;
+
+            const wrapper = document.getElementById('timeline-wrapper');
+            const fill    = document.getElementById('timeline-fill');
+            const dots    = Array.from(document.querySelectorAll('.timeline-dot'));
+            const sectionIds = ['patterns', 'communication', 'crisis', 'therapy'];
+
+            function positionDots() {
+                const wBase = wrapper.getBoundingClientRect().top + window.scrollY;
+                sectionIds.forEach(function (id, i) {
+                    const sec = document.getElementById(id);
+                    const sTop = sec.getBoundingClientRect().top + window.scrollY;
+                    dots[i].style.top = (sTop - wBase + sec.offsetHeight / 2) + 'px';
+                });
+            }
+
+            function update() {
+                const wBase   = wrapper.getBoundingClientRect().top + window.scrollY;
+                const wHeight = wrapper.offsetHeight;
+                const anchor  = window.scrollY + window.innerHeight * 0.5;
+                const progress = Math.max(0, Math.min(1, (anchor - wBase) / wHeight));
+                fill.style.height = (progress * wHeight) + 'px';
+                dots.forEach(function (dot) {
+                    const dotY = parseFloat(dot.style.top) || 0;
+                    dot.classList.toggle('tl-active', anchor > wBase + dotY);
+                });
+            }
+
+            function init() { positionDots(); update(); }
+
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', function () { positionDots(); update(); });
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                requestAnimationFrame(init);
+            }
+        })();
+    </script>
 </body>
 
 </html>

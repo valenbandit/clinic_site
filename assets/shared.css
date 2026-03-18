@@ -18,6 +18,7 @@
   --color-muted: #7A7068;
   --color-stone-warm: #F5F0EB;
   --color-stone-medium: #E8DDD4;
+  --color-stone-deep: #C4B5A5;
   --color-sage-rgb: 139, 158, 141;
   --color-sage-light-rgb: 200, 213, 201;
   --color-sage-dark-rgb: 92, 122, 94;
@@ -640,7 +641,8 @@ html {
     .theme-card:hover,
     .faq-card,
     .faq-card::after,
-    .faq-card summary {
+    .faq-card summary,
+    .timeline-dot {
     transition: none !important;
   }
 }
@@ -675,5 +677,65 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   .deco-blob { animation: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   14. TIMELINE SPINE — relationships.html (desktop only)
+   ───────────────────────────────────────────────────────────── */
+
+/* Tailwind cannot express: absolute full-height overlay centered on parent */
+
+#timeline-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Muted track — full height background */
+
+#timeline-track {
+  position: absolute;
+  inset: 0;
+  background: var(--color-stone-deep);
+  opacity: 0.45;
+  border-radius: 9999px;
+}
+
+/* Sage fill — grows with scroll via JS */
+
+#timeline-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: var(--color-sage);
+  border-radius: 9999px;
+}
+
+/* Dot: centered on the 2px line (left: -4px = (2px - 10px) / 2) */
+
+/* Tailwind cannot express: precise negative-offset centering on a narrow element */
+
+.timeline-dot {
+  position: absolute;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: 2px solid var(--color-stone-deep);
+  transition: background 0.25s ease, border-color 0.25s ease;
+  z-index: 1;
+}
+
+.timeline-dot.tl-active {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
 }
 
