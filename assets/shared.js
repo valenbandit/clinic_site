@@ -41,7 +41,7 @@ function onScroll() {
         // ── 3. NAVBAR — PARALLAX HERO (homepage only) ──────────
         // Only runs when #hero-parallax-img exists and on desktop
         // to avoid wasting CPU on mobile/tablet.
-        if (heroParallaxImg && window.innerWidth > 1024) {
+        if (heroParallaxImg && window.innerWidth > 1024 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             heroParallaxImg.style.transform = `translateY(${scrollY * 0.4}px)`;
         }
 
@@ -139,28 +139,62 @@ document.addEventListener('keydown', e => {
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
 
 // ── Accordion ────────────────────────────────────────────────
-mobileMenu.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+mobileMenu.querySelectorAll('.mobile-accordion-chevron').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Prevent click from bubbling if needed, though they don't overlap with the link
+        e.stopPropagation();
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
-        btn.nextElementSibling.classList.toggle('open', !expanded);
+        // The panel is the next sibling of the .mobile-accordion-header
+        const header = btn.closest('.mobile-accordion-header');
+        if (header && header.nextElementSibling) {
+            header.nextElementSibling.classList.toggle('open', !expanded);
+        }
     });
 });
 
 
 // ─────────────────────────────────────────────────────────────
 //  5. NAVBAR — DROPDOWN
-//  Keyboard-accessible toggle: click the button to open/close.
-//  Clicking anywhere outside the dropdown closes it.
+//  Mouse: opens on hover (mouseenter/mouseleave on the [data-dropdown] li).
+//  Keyboard: click the chevron [data-dropdown-toggle] button to toggle.
+//  Only one dropdown can be open at a time.
 // ─────────────────────────────────────────────────────────────
 
-// Requires [data-dropdown-toggle] attribute on buttons in HTML
+function closeAllDropdowns(except) {
+    document.querySelectorAll('[data-dropdown]').forEach(dd => {
+        if (dd === except) return;
+        dd.classList.remove('dropdown-open');
+        const toggle = dd.querySelector('[data-dropdown-toggle]');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+}
+
+// ── Hover (mouse users) ──────────────────────────────────────
+document.querySelectorAll('[data-dropdown]').forEach(dd => {
+    dd.addEventListener('mouseenter', () => {
+        closeAllDropdowns(dd);
+        dd.classList.add('dropdown-open');
+        const toggle = dd.querySelector('[data-dropdown-toggle]');
+        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    });
+
+    dd.addEventListener('mouseleave', () => {
+        dd.classList.remove('dropdown-open');
+        const toggle = dd.querySelector('[data-dropdown-toggle]');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+});
+
+// ── Click-toggle (keyboard / chevron button users) ───────────
+// Requires [data-dropdown-toggle] attribute on the chevron button in HTML
 document.querySelectorAll('[data-dropdown-toggle]').forEach(btn => {
     btn.addEventListener('click', () => {
+        const dd = btn.closest('[data-dropdown]');
         const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if (!expanded) closeAllDropdowns(dd);
         btn.setAttribute('aria-expanded', String(!expanded));
-        const dropdown = btn.closest('[data-dropdown]');
-        dropdown.classList.toggle('dropdown-open', !expanded);
+        dd.classList.toggle('dropdown-open', !expanded);
     });
 
     btn.addEventListener('keydown', e => {
@@ -171,35 +205,34 @@ document.querySelectorAll('[data-dropdown-toggle]').forEach(btn => {
     });
 });
 
-// Close any open dropdown when clicking outside it
-// Requires [data-dropdown] attribute on wrapper elements in HTML
+// ── Outside click — closes all ───────────────────────────────
 document.addEventListener('click', e => {
-    document.querySelectorAll('[data-dropdown]').forEach(dd => {
-        if (!dd.contains(e.target)) {
-            dd.classList.remove('dropdown-open');
-            dd.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
-        }
-    });
+    if (!e.target.closest('[data-dropdown]')) {
+        closeAllDropdowns(null);
+    }
 });
 
-// Close dropdown when focus leaves it entirely (Tab away)
+// ── Tab away — close that specific dropdown ──────────────────
 document.querySelectorAll('[data-dropdown]').forEach(dd => {
     dd.addEventListener('focusout', e => {
         if (!dd.contains(e.relatedTarget)) {
             dd.classList.remove('dropdown-open');
-            dd.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
+            const toggle = dd.querySelector('[data-dropdown-toggle]');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
         }
     });
 });
 
-// Close any open dropdown on Escape, return focus to its toggle button
+// ── Escape — close all, return focus to chevron ──────────────
 document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
     document.querySelectorAll('[data-dropdown].dropdown-open').forEach(dd => {
         dd.classList.remove('dropdown-open');
         const toggle = dd.querySelector('[data-dropdown-toggle]');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.focus();
+        if (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+        }
     });
 });
 

@@ -43,6 +43,11 @@
   box-sizing: border-box;
 }
 
+Tailwind cannot express: global focus-visible override restoring browser-managed outline */
+/*:focus-visible {
+    outline: auto;
+}
+
 /* Tailwind cannot express: global smooth scroll-behavior override */
 
 html {
@@ -54,7 +59,7 @@ html {
    percentage using Tailwind utility classes alone. */
 
 .text-highlight {
-  background: linear-gradient(transparent 52%, rgba(92,122,94,0.22) 52%);
+  background: linear-gradient(transparent 52%, rgba(var(--color-sage-dark-rgb), 0.22) 52%);
   padding-bottom: 2px;
 }
 
@@ -126,6 +131,9 @@ html {
 
 .nav-dropdown {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
 }
 
 /* Tailwind cannot express: complex native button reset combined with flex alignment */
@@ -144,6 +152,26 @@ html {
   font-size: 0.875rem;
 }
 
+/* Chevron-only button (used in the split a + button pattern) */
+
+.nav-dropdown-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0 0.1rem;
+  color: inherit;
+  line-height: 1;
+}
+
+/* Hide underline on chevron button */
+
+.nav-dropdown-chevron::after {
+  display: none !important;
+}
+
 /* Hide the underline animation on the dropdown trigger */
 
 /* Tailwind cannot express: overriding and hiding parent ::after pseudo-element */
@@ -156,7 +184,8 @@ html {
 
 /* Tailwind cannot express: complex nested hover/focus-within state targeting svg child */
 
-.nav-dropdown:hover .nav-dropdown-toggle svg {
+.nav-dropdown:hover .nav-dropdown-toggle svg,
+.nav-dropdown:hover .nav-dropdown-chevron svg {
   transform: rotate(180deg);
 }
 
@@ -288,7 +317,8 @@ html {
 
 #mobile-menu {
   position: fixed;
-  top: 80px; /* matches navbar h-20 */
+  top: 80px;
+  /* matches navbar h-20 */
   right: 0;
   left: 0;
   background: var(--color-navy-dark);
@@ -314,7 +344,7 @@ html {
   border-top: 1px solid rgba(var(--color-sage-rgb), 0.15);
 }
 
-.mobile-menu-list > li {
+.mobile-menu-list>li {
   border-bottom: 1px solid rgba(var(--color-sage-rgb), 0.15);
 }
 
@@ -338,37 +368,49 @@ html {
 
 /* Accordion trigger button */
 
-.mobile-accordion-btn {
+/* Mobile Accordion Split Button Pattern */
+
+.mobile-accordion-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem 1.5rem;
+}
+
+.mobile-accordion-link {
+  flex: 1;
+  display: block;
+  width: 100%;
+  text-align: right;
+  padding: 0.75rem 1.25rem;
+  color: theme("colors.navy.DEFAULT");
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mobile-accordion-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: theme("colors.navy.DEFAULT");
+  transition: all 0.3s ease;
+  cursor: pointer;
   background: none;
   border: none;
-  color: var(--color-cream);
-  font: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-align: right;
-  transition: color 0.2s ease, background 0.2s ease;
+  padding: 0;
 }
 
-.mobile-accordion-btn:hover,
-.mobile-accordion-btn:focus-visible {
-  color: var(--color-sage-light);
-  background: rgba(var(--color-sage-rgb), 0.08);
+.mobile-accordion-header[aria-expanded="true"] .mobile-accordion-chevron,
+.mobile-accordion-chevron[aria-expanded="true"] {
+  color: theme("colors.sage.accessible");
 }
 
-/* Rotate chevron when expanded */
-
-.mobile-accordion-btn svg {
-  flex-shrink: 0;
-  transition: transform 0.25s ease;
-}
-
-.mobile-accordion-btn[aria-expanded="true"] svg {
+.mobile-accordion-header[aria-expanded="true"] .mobile-accordion-chevron svg,
+.mobile-accordion-chevron[aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
 
@@ -415,8 +457,9 @@ html {
 /* Tailwind cannot express: @keyframes for custom pulse animation */
 
 @keyframes soft-pulse {
+
   0%,
-    100% {
+  100% {
     box-shadow: 0 0 0 0 rgba(var(--color-sage-rgb), 0.40);
   }
 
@@ -439,8 +482,8 @@ html {
 
 .credential-badge {
   background: linear-gradient(135deg,
-            rgba(var(--color-sage-rgb), 0.13),
-            rgba(var(--color-sage-light-rgb), 0.20));
+      rgba(var(--color-sage-rgb), 0.13),
+      rgba(var(--color-sage-light-rgb), 0.20));
   border: 1px solid var(--color-sage-light);
 }
 
@@ -613,36 +656,43 @@ html {
   animation: faq-slide-in 0.25s ease forwards;
 }
 
+/* Tailwind cannot express: outline offset */
+.faq-card summary:focus-visible {
+  outline: auto;
+  outline-offset: -3px;
+}
+
 /* ─────────────────────────────────────────────────────────────
    REDUCED MOTION
    ───────────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
+
   .btn-cta,
-    .faq-answer,
-    [class*="animate-infinite-scroll"] {
+  .faq-answer,
+  [class*="animate-infinite-scroll"] {
     animation: none !important;
   }
 
   #navbar,
-    .nav-link::after,
-    .nav-dropdown-menu a,
-    #hamburger span,
-    #mobile-menu,
-    .mobile-menu-link,
-    .mobile-accordion-btn,
-    .mobile-accordion-btn svg,
-    .mobile-accordion-panel,
-    .mobile-sublink,
-    .hero-img,
-    .approach-card,
-    .approach-card:hover,
-    .theme-card,
-    .theme-card:hover,
-    .faq-card,
-    .faq-card::after,
-    .faq-card summary,
-    .timeline-dot {
+  .nav-link::after,
+  .nav-dropdown-menu a,
+  #hamburger span,
+  #mobile-menu,
+  .mobile-menu-link,
+  .mobile-accordion-btn,
+  .mobile-accordion-btn svg,
+  .mobile-accordion-panel,
+  .mobile-sublink,
+  .hero-img,
+  .approach-card,
+  .approach-card:hover,
+  .theme-card,
+  .theme-card:hover,
+  .faq-card,
+  .faq-card::after,
+  .faq-card summary,
+  .timeline-dot {
     transition: none !important;
   }
 }
@@ -657,9 +707,19 @@ html {
 /* Slow organic drift — three phases so multiple blobs feel independent */
 
 @keyframes blob-drift {
-  0%, 100% { transform: translate(0px,   0px)  scale(1);    }
-  33%       { transform: translate(22px, -16px) scale(1.04); }
-  66%       { transform: translate(-14px, 11px) scale(0.97); }
+
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(22px, -16px) scale(1.04);
+  }
+
+  66% {
+    transform: translate(-14px, 11px) scale(0.97);
+  }
 }
 
 
@@ -676,7 +736,48 @@ html {
 
 
 @media (prefers-reduced-motion: reduce) {
-  .deco-blob { animation: none; }
+  .deco-blob {
+    animation: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   14b. CARD ACCENT BORDERS — relationships.html
+   Start transparent; revealed via .accent-active toggled by JS
+   when the nearby timeline dot activates.
+   ───────────────────────────────────────────────────────────── */
+
+.card-accent-l {
+  border-left-width: 3px !important;
+  border-left-color: rgba(var(--color-sage-rgb), 0);
+  box-shadow: 0 4px 20px rgba(var(--color-navy-dark-rgb), 0);
+  transition: border-left-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-accent-l.accent-active {
+  border-left-color: rgba(var(--color-sage-rgb), 0.55);
+  box-shadow: 0 4px 20px rgba(var(--color-navy-dark-rgb), 0.07);
+}
+
+.card-accent-r {
+  border-right-width: 3px !important;
+  border-right-color: rgba(var(--color-sage-rgb), 0);
+  box-shadow: 0 4px 20px rgba(var(--color-navy-dark-rgb), 0);
+  transition: border-right-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-accent-r.accent-active {
+  border-right-color: rgba(var(--color-sage-rgb), 0.55);
+  box-shadow: 0 4px 20px rgba(var(--color-navy-dark-rgb), 0.07);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .card-accent-l,
+  .card-accent-r {
+    transition: none;
+    box-shadow: none;
+  }
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -688,10 +789,9 @@ html {
 #timeline-spine {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
+  width: 6px;
   pointer-events: none;
   z-index: 10;
 }
@@ -718,15 +818,15 @@ html {
   border-radius: 9999px;
 }
 
-/* Dot: centered on the 2px line (left: -4px = (2px - 10px) / 2) */
+/* Dot: centered on the 3px line (left: -7px = (3px - 16px) / 2) */
 
 /* Tailwind cannot express: precise negative-offset centering on a narrow element */
 
 .timeline-dot {
   position: absolute;
-  left: -4px;
-  width: 10px;
-  height: 10px;
+  left: -5px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--color-cream);
   border: 2px solid var(--color-stone-deep);
@@ -739,3 +839,30 @@ html {
   border-color: var(--color-sage);
 }
 
+/* ─────────────────────────────────────────────────────────────
+   15. SECTION ILLUSTRATION ANIMATION — relationships.html
+   Triggered by JS when the corresponding timeline dot goes active.
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes svg-float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+.section-img-active {
+  animation: svg-float 3.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-img-active {
+    animation: none;
+  }
+}
