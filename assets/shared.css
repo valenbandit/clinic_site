@@ -43,7 +43,7 @@
   box-sizing: border-box;
 }
 
-Tailwind cannot express: global focus-visible override restoring browser-managed outline */
+/* Tailwind cannot express: global focus-visible override restoring browser-managed outline */
 /*:focus-visible {
     outline: auto;
 }
@@ -383,7 +383,7 @@ html {
   width: 100%;
   text-align: right;
   padding: 0.75rem 1.25rem;
-  color: theme("colors.navy.DEFAULT");
+  color: var(--color-cream);
   font-weight: 500;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -396,7 +396,7 @@ html {
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  color: theme("colors.navy.DEFAULT");
+  color: var(--color-cream);
   transition: all 0.3s ease;
   cursor: pointer;
   background: none;
@@ -406,7 +406,7 @@ html {
 
 .mobile-accordion-header[aria-expanded="true"] .mobile-accordion-chevron,
 .mobile-accordion-chevron[aria-expanded="true"] {
-  color: theme("colors.sage.accessible");
+  color: var(--color-sage-light);
 }
 
 .mobile-accordion-header[aria-expanded="true"] .mobile-accordion-chevron svg,
