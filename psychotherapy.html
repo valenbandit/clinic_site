@@ -202,37 +202,32 @@
                 </h1>
                 <p
                     class="text-cream text-lg md:text-xl max-w-2xl leading-relaxed opacity-90 mb-8 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
-                    הכנס טקסט כאן הכנס טקסט כאן
-                </p>
+                    להבין את העבר כדי ליצור חופש בחירה בהווה </p>
             </div>
         </section>
 
-        <!-- CONTENT SECTIONS -->
-
-        <!-- Section 1: מהי פסיכותרפיה דינמית — image right, text left -->
+        <!-- ════════════════════════════════════════════
+       SECTION 1: מהי פסיכותרפיה דינמית
+  ═════════════════════════════════════════════ -->
         <section id="what" class="py-12 md:py-24 bg-cream" aria-labelledby="heading-what">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
                     class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-                    <div class="w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center py-4 relative">
-                        <div aria-hidden="true"
-                            class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <div class="w-80 h-80 rounded-full bg-sage-light/50 blur-2xl"></div>
-                        </div>
-                        <div
-                            class="w-full max-w-md aspect-[4/5] rounded-3xl bg-stone-medium/60 relative z-10 flex items-center justify-center">
-                            <svg class="w-20 h-20 text-stone-deep/40" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="1" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
-                        </div>
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/john-gibbons-iWFUwBC_-pU-unsplash.jpg" alt=""
+                            class="w-full max-w-md aspect-[4/5] rounded-3xl object-cover relative z-10" />
                     </div>
-                    <div class="w-full lg:w-2/3">
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-2/3">
                         <h2 id="heading-what"
                             class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
                             מהי פסיכותרפיה דינמית
                         </h2>
+                        <!-- COMPONENT: divider -->
                         <span
                             class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
                         <p class="text-muted text-base md:text-lg leading-loose mb-5">
@@ -282,9 +277,20 @@
             </div>
         </section>
 
-        <!-- Section 2: PRINCIPLES -->
-        <section id="unconscious" class="py-12 md:py-24 bg-white" aria-labelledby="heading-unconscious">
-            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
+        <!-- ════════════════════════════════════════════
+       SECTION 2: עקרונות הגישה הפסיכודינמית
+  ═════════════════════════════════════════════ -->
+        <section id="unconscious" class="py-12 md:py-24 bg-white relative overflow-hidden"
+            aria-labelledby="heading-unconscious">
+            <!-- Decorative Background Blobs -->
+            <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none">
+                <div class="deco-blob w-96 h-96 bg-sage-light/30 -top-32 -left-32"></div>
+                <div class="deco-blob w-[500px] h-[500px] bg-stone-medium/30 top-1/3 -right-64 mix-blend-multiply">
+                </div>
+                <div class="deco-blob w-80 h-80 bg-sage-light/10 bottom-20 left-10"></div>
+            </div>
+
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl relative z-10">
                 <!-- Section Heading -->
                 <div data-reveal
                     class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 text-center mb-12 md:mb-20">
@@ -292,21 +298,26 @@
                         class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
                         עקרונות הגישה הפסיכודינמית
                     </h2>
+                    <!-- COMPONENT: divider -->
                     <span
                         class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mx-auto rounded-full"></span>
                 </div>
 
                 <!-- PRINCIPLE 1: Levels of Consciousness -->
                 <div data-reveal
-                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16 mb-20 lg:mb-32">
-                    <div class="w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center relative">
-                        <div class="w-full max-w-sm aspect-[4/5] relative z-10 flex items-center justify-center">
-                            <object type="image/svg+xml" data-src="assets/site-images/iceberg.svg"
-                                aria-label="רמות מודעות ורכיבי הנפש"
-                                class="lazy-object w-full h-full object-contain"></object>
-                        </div>
+                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16 mb-8 lg:mb-32">
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center relative">
+
+                        <object type="image/svg+xml" data-src="assets/site-images/iceberg.svg"
+                            aria-label="רמות מודעות ורכיבי הנפש"
+                            class="lazy-object w-2/3 lg:w-full h-full object-contain"></object>
+
                     </div>
-                    <div class="w-full lg:w-2/3">
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-2/3">
                         <h3 class="text-xl md:text-2xl font-bold text-navy-dark mb-4">רמות מודעות ורכיבי הנפש</h3>
                         <p class="text-muted text-base md:text-lg leading-loose mb-5">
                             לפי <strong class="font-semibold text-navy-dark">המודל הטופוגרפי</strong> של פרויד,
@@ -359,14 +370,18 @@
 
                 <!-- PRINCIPLE 2: Defense Mechanisms -->
                 <div data-reveal
-                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-20 lg:mb-32">
-                    <div class="w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center relative">
-                        <div class="w-full max-w-sm aspect-[4/5] relative z-10 flex items-center justify-center">
-                            <object type="image/svg+xml" data-src="assets/site-images/heya.svg"
-                                aria-label="מנגנוני הגנה" class="lazy-object w-full h-full object-contain"></object>
-                        </div>
+                    class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-8 lg:mb-32">
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center relative">
+
+                        <object type="image/svg+xml" data-src="assets/site-images/heya.svg" aria-label="מנגנוני הגנה"
+                            class="lazy-object w-2/3 lg:w-full h-full object-contain"></object>
+
                     </div>
-                    <div class="w-full lg:w-2/3">
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-2/3">
                         <h3 class="text-xl md:text-2xl font-bold text-navy-dark mb-4">מנגנוני הגנה</h3>
                         <p class="text-muted text-base md:text-lg leading-loose mb-5">מנגנוני הגנה הם תהליכים נפשיים
                             לא
@@ -407,13 +422,17 @@
                 <!-- PRINCIPLE 3: Transference -->
                 <div data-reveal
                     class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
-                    <div class="w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center relative">
-                        <div class="w-full max-w-sm aspect-[4/5] relative z-10 flex items-center justify-center">
-                            <object type="image/svg+xml" data-src="assets/site-images/foranimate.svg" aria-label="העברה"
-                                class="lazy-object w-full h-full object-contain"></object>
-                        </div>
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center relative">
+
+                        <object type="image/svg+xml" data-src="assets/site-images/foranimate.svg" aria-label="העברה"
+                            class="lazy-object w-2/3 lg:w-full h-full object-contain"></object>
+
                     </div>
-                    <div class="w-full lg:w-2/3">
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-2/3">
                         <h3 class="text-xl md:text-2xl font-bold text-navy-dark mb-4">העברה</h3>
                         <p class="text-muted text-base md:text-lg leading-loose mb-5"><strong
                                 class="font-semibold text-navy-dark">העברה</strong> היא אחד התהליכים המרכזיים
@@ -444,30 +463,28 @@
             </div>
         </section>
 
-        <!-- Section 3: הטיפול בפועל — image right, text left -->
+        <!-- ════════════════════════════════════════════
+       SECTION 3: הטיפול בפועל
+  ═════════════════════════════════════════════ -->
         <section id="process" class="py-12 md:py-24 bg-cream" aria-labelledby="heading-process">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
                     class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-                    <div class="w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
-                        <div aria-hidden="true"
-                            class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <div class="w-80 h-80 rounded-full bg-sage-light/50 blur-2xl"></div>
-                        </div>
-                        <div
-                            class="w-full max-w-md aspect-[4/5] rounded-3xl bg-stone-medium/60 relative z-10 flex items-center justify-center">
-                            <svg class="w-20 h-20 text-stone-deep/40" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="1" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                            </svg>
-                        </div>
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/name_-gravity-_AdUs32i0jc-unsplash.jpg" alt=""
+                            class="w-full max-w-md aspect-[4/5] rounded-3xl object-cover relative z-10" />
                     </div>
-                    <div class="w-full lg:w-1/2">
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-1/2">
                         <h2 id="heading-process"
                             class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
                             לראות את האדם שמאחורי הקושי
                         </h2>
+                        <!-- COMPONENT: divider -->
                         <span
                             class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
                         <p class="text-muted text-base md:text-lg leading-loose mb-5">
@@ -485,32 +502,53 @@
             </div>
         </section>
 
-        <!-- CTA BLOCK -->
-        <section aria-label="קריאה לפעולה" class="bg-navy-dark py-20 px-4 md:px-8">
+        <!-- ════════════════════════════════════════════
+       CTA BLOCK
+  ═════════════════════════════════════════════ -->
+        <section aria-label="ציטוט וקריאה לפעולה" class="bg-navy-dark py-20 px-4 md:px-8">
             <div data-reveal
                 class="max-w-3xl mx-auto text-center reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                <span class="text-sage-light text-sm font-semibold tracking-widest uppercase block mb-4">מוכנים
-                    להתחיל?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-cream leading-tight mb-6">
-                    שינוי אמיתי מתחיל בצעד אחד קטן
-                </h2>
-                <p class="text-cream/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-                    צרו קשר לשיחת היכרות קצרה ללא התחייבות, ונבדוק יחד כיצד אוכל לסייע.
-                </p>
-                <a href="#contact"
+                <div class="relative max-w-2xl mx-auto mb-10 text-center" dir="rtl">
+                    <!-- Right decorative quote mark -->
+                    <span
+                        class="hidden sm:block absolute -top-8 right-16 md:-right-10 text-7xl text-sage-dark font-sans leading-none select-none"
+                        aria-hidden="true">❞</span>
+
+                    <p
+                        class="text-2xl md:text-3xl lg:text-4xl font-semibold text-cream leading-tight mb-4 relative z-10 italic inline-block">
+                        הטיפול הוא המקום שבו אנו מפסיקים רק להגיב לעולם, ומתחילים באמת לחיות בו
+                    </p>
+
+                    <!-- Left decorative quote mark -->
+                    <span
+                        class="hidden sm:block absolute -bottom-5 left-20 md:left-12 text-7xl text-sage-dark font-sans leading-none select-none"
+                        aria-hidden="true">❝</span>
+
+                    <p class="text-sage-light text-lg font-medium opacity-90 mt-2">— דונלד ויניקוט</p>
+                </div>
+                <!-- COMPONENT: btn-cta -->
+                <a href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
+                    target="_blank" rel="noopener noreferrer"
                     class="btn-cta inline-flex items-center gap-3 bg-sage-dark text-white font-bold text-base px-6 py-3.5 sm:text-lg sm:px-10 sm:py-4 rounded-full shadow-md hover:shadow-lg hover:bg-sage-accessible transform hover:scale-[1.02] transition-all duration-300">
-                    לקביעת פגישה
+                    שנצא לדרך חדשה?
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
                 </a>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="py-12 md:py-24 bg-white">
+        <!-- ════════════════════════════════════════════
+       CONTACT
+  ═════════════════════════════════════════════ -->
+        <section id="contact" aria-label="צרו קשר" class="py-12 md:py-24 bg-white">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
                 <div data-reveal
                     class="text-center mb-10 md:mb-16 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <span class="text-sage-accessible font-semibold text-sm tracking-widest uppercase">צרו קשר</span>
                     <p class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">נדבר</p>
+                    <!-- COMPONENT: divider -->
                     <span class="w-12 h-[2px] bg-gradient-to-r from-sage to-sage-light block mx-auto mb-8"></span>
                     <p class="text-muted text-base md:text-lg max-w-lg mx-auto leading-relaxed">השאירו פרטים ואחזור
                         אליכם בהקדם לתיאום פגישת היכרות</p>
@@ -742,48 +780,6 @@
 
     <script src="/assets/shared.js" defer></script>
 
-    <!-- Lazy load SVG objects -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const lazyObjects = document.querySelectorAll('.lazy-object');
-            if (!lazyObjects.length) return;
-
-            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
-                /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-            if (isSafari) {
-                lazyObjects.forEach(obj => {
-                    const src = obj.getAttribute('data-src');
-                    if (!src) return;
-                    const img = document.createElement('img');
-                    img.src = src.replace('.svg', '-static.svg');
-                    img.className = obj.className;
-                    img.setAttribute('aria-label', obj.getAttribute('aria-label') || '');
-                    obj.replaceWith(img);
-                });
-                return;
-            }
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const obj = entry.target;
-                        const src = obj.getAttribute('data-src');
-                        if (src) {
-                            obj.setAttribute('data', src);
-                            obj.removeAttribute('data-src');
-                        }
-                        observer.unobserve(obj);
-                    }
-                });
-            }, {
-                rootMargin: '0px',
-                threshold: 0.5
-            });
-
-            lazyObjects.forEach(obj => observer.observe(obj));
-        });
-    </script>
 </body>
 
 </html>

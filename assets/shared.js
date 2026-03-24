@@ -10,8 +10,7 @@
 //    5. Navbar — Dropdown (keyboard toggle + outside-click close)
 //    6. Scroll Reveal (IntersectionObserver)
 //    7. Contact Form — Async Submit (homepage only)
-//    8. About — Read More Toggle
-// =============================================================
+//    8. Lazy Load SVG Objects
 //
 //  NOTE — Tailwind config is NOT here. It must be an inline <script>
 //  in each page's <head> before the Tailwind CDN tag so the design
@@ -298,21 +297,49 @@ if (contactForm) {
 }
 
 // ─────────────────────────────────────────────────────────────
-//  8. ABOUT — READ MORE TOGGLE (homepage only)
-//  Linked to: #about-readmore-btn, #about-extended-text
-//  Reveals the hidden extended bio text, updates aria-expanded,
-//  then hides the button. One-way toggle — no close needed.
+//  8. LAZY LOAD SVG OBJECTS
+//  Linked to: .lazy-object, [data-src]
+//  Uses IntersectionObserver to swap data-src to data when in
+//  viewport. Replaces <object> with static <img> for Safari
+//  to avoid rendering bugs with complex SVGs.
 // ─────────────────────────────────────────────────────────────
 
-const readMoreBtn = document.getElementById('about-readmore-btn');
-const extendedText = document.getElementById('about-extended-text');
+document.addEventListener('DOMContentLoaded', () => {
+    const lazyObjects = document.querySelectorAll('.lazy-object');
+    if (!lazyObjects.length) return;
 
-if (readMoreBtn && extendedText) {
-    readMoreBtn.addEventListener('click', () => {
-        extendedText.classList.remove('hidden');
-        readMoreBtn.setAttribute('aria-expanded', 'true');
-        readMoreBtn.classList.add('hidden');
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
+        /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isSafari) {
+        lazyObjects.forEach(obj => {
+            const src = obj.getAttribute('data-src');
+            if (!src) return;
+            const img = document.createElement('img');
+            img.src = src.replace('.svg', '-static.svg');
+            img.className = obj.className;
+            img.setAttribute('aria-label', obj.getAttribute('aria-label') || '');
+            obj.replaceWith(img);
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const obj = entry.target;
+                const src = obj.getAttribute('data-src');
+                if (src) {
+                    obj.setAttribute('data', src);
+                    obj.removeAttribute('data-src');
+                }
+                observer.unobserve(obj);
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.5
     });
-}
 
-
+    lazyObjects.forEach(obj => observer.observe(obj));
+});
