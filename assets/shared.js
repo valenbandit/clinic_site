@@ -305,41 +305,35 @@ if (contactForm) {
 // ─────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
-    const lazyObjects = document.querySelectorAll('.lazy-object');
-    if (!lazyObjects.length) return;
+    const lazySVGs = document.querySelectorAll('.lazy-svg');
+    if (!lazySVGs.length) return;
 
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
-        /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const svgObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
 
-    if (isSafari) {
-        lazyObjects.forEach(obj => {
-            const src = obj.getAttribute('data-src');
-            if (!src) return;
-            const img = document.createElement('img');
-            img.src = src.replace('.svg', '-static.svg');
-            img.className = obj.className;
-            img.setAttribute('aria-label', obj.getAttribute('aria-label') || '');
-            obj.replaceWith(img);
-        });
-        return;
-    }
+                const el = entry.target;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const obj = entry.target;
-                const src = obj.getAttribute('data-src');
-                if (src) {
-                    obj.setAttribute('data', src);
-                    obj.removeAttribute('data-src');
-                }
-                observer.unobserve(obj);
-            }
-        });
-    }, {
-        rootMargin: '0px',
-        threshold: 0.5
-    });
+                fetch(el.dataset.src)
+                    .then(r => r.text())
+                    .then(svg => {
+                        el.innerHTML = svg;
+                        const svgEl = el.querySelector('svg');
+                        svgEl?.removeAttribute('width');
+                        svgEl?.removeAttribute('height');
+                        svgEl?.setCurrentTime(0); // reset animation timeline to beginning
+                        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                            svgEl?.pauseAnimations();
+                        }
+                    });
+                svgObserver.unobserve(el);
+            });
+        },
+        {
+            threshold: 0.5
+        }
+    );
 
-    lazyObjects.forEach(obj => observer.observe(obj));
+    lazySVGs.forEach(target => svgObserver.observe(target));
 });
