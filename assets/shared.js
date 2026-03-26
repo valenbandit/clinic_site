@@ -322,10 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const svgEl = el.querySelector('svg');
                         svgEl?.removeAttribute('width');
                         svgEl?.removeAttribute('height');
-                        svgEl?.setCurrentTime(0); // reset animation timeline to beginning
-                        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                            svgEl?.pauseAnimations();
-                        }
                     });
                 svgObserver.unobserve(el);
             });

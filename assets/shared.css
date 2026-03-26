@@ -136,21 +136,6 @@ html {
   gap: 0.15rem;
 }
 
-/* Tailwind cannot express: complex native button reset combined with flex alignment */
-
-.nav-dropdown-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  font-weight: 500;
-  font-size: 0.875rem;
-}
 
 /* Chevron-only button (used in the split a + button pattern) */
 
@@ -172,19 +157,11 @@ html {
   display: none !important;
 }
 
-/* Hide the underline animation on the dropdown trigger */
-
-/* Tailwind cannot express: overriding and hiding parent ::after pseudo-element */
-
-.nav-dropdown-toggle::after {
-  display: none !important;
-}
 
 /* Rotate chevron on hover / keyboard-open */
 
 /* Tailwind cannot express: complex nested hover/focus-within state targeting svg child */
 
-.nav-dropdown:hover .nav-dropdown-toggle svg,
 .nav-dropdown:hover .nav-dropdown-chevron svg {
   transform: rotate(180deg);
 }
@@ -502,6 +479,14 @@ html {
   will-change: transform;
 }
 
+/*beta
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-img {
+    height: 80%;
+    top: 10%;
+  }
+}
+*/
 /* ─────────────────────────────────────────────────────────────
    8. PAGE HERO — INNER PAGES
    ───────────────────────────────────────────────────────────── */
@@ -680,8 +665,8 @@ html {
   #hamburger span,
   #mobile-menu,
   .mobile-menu-link,
-  .mobile-accordion-btn,
-  .mobile-accordion-btn svg,
+  .mobile-accordion-chevron,
+  .mobile-accordion-link,
   .mobile-accordion-panel,
   .mobile-sublink,
   .hero-img,
@@ -847,14 +832,29 @@ html {
    without heavily bloating the class list. Extracting these into dedicated classes improves maintainability. */
 
 .hero-overlay-main {
-    background: linear-gradient(160deg, rgba(15,22,28,0.90) 0%, rgba(26,37,47,0.75) 50%, rgba(26,37,47,0.55) 100%);
+  background: linear-gradient(160deg, rgba(15, 22, 28, 0.90) 0%, rgba(26, 37, 47, 0.75) 50%, rgba(26, 37, 47, 0.55) 100%);
 }
 
 .hero-overlay-secondary {
-    background: linear-gradient(to right, transparent 40%, rgba(10,15,20,0.65) 100%);
+  background: linear-gradient(to right, transparent 40%, rgba(10, 15, 20, 0.65) 100%);
 }
 
 .hero-overlay-pattern {
-    background-image: radial-gradient(circle, rgba(139,158,141,0.07) 1px, transparent 1px);
-    background-size: 28px 28px;
+  background-image: radial-gradient(circle, rgba(139, 158, 141, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Tailwind CDN applies transitions via class attribute —
+     this catches all transition-* and duration-* utilities globally */
+
+@media (prefers-reduced-motion: reduce) {
+
+  [class*="transition"],
+  [class*="duration"] {
+    transition: none !important;
+  }
+
+  [class*="animate-"] {
+    animation: none !important;
+  }
 }
