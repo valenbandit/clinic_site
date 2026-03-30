@@ -734,3 +734,96 @@ html {
     animation: none !important;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   TIMELINE COMPONENT
+   ───────────────────────────────────────────────────────────── */
+
+/* Spine: absolute centering Tailwind cannot express */
+#timeline-spine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Track: absolute inset positioning Tailwind cannot express succinctly without cluttering HTML */
+#timeline-track {
+  position: absolute;
+  inset: 0;
+  background: var(--color-stone-deep, #C4B5A5);
+  opacity: 0.45;
+  border-radius: 9999px;
+}
+
+/* Fill: absolute positioning with JavaScript height manipulation Tailwind cannot express */
+#timeline-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: var(--color-sage, #8B9E8D);
+  border-radius: 9999px;
+}
+
+/* Dot: precise negative offset and custom border transition Tailwind cannot express */
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-cream, #FAF7F4);
+  border: 2px solid var(--color-stone-deep, #C4B5A5);
+  transition: background 0.25s ease, border-color 0.25s ease;
+  z-index: 1;
+}
+
+/* Active dot state: specific color variables via JS class replacement */
+.timeline-dot.tl-active {
+  background: var(--color-sage, #8B9E8D);
+  border-color: var(--color-sage, #8B9E8D);
+}
+
+/* Card accent: custom rgba variable shadow and bespoke transition Tailwind cannot express cleanly */
+.card-accent {
+  box-shadow: 0 4px 24px 2px rgba(var(--color-navy-dark-rgb), 0);
+  transition: box-shadow 0.5s ease;
+}
+
+/* Active card accent: updated subtle opacity shadow on scroll target */
+.card-accent.accent-active {
+  box-shadow: 0 4px 24px 2px rgba(var(--color-navy-dark-rgb), 0.13);
+}
+
+/* Focus/Accessibility context: disable transitions smoothly */
+@media (prefers-reduced-motion: reduce) {
+  .card-accent {
+    transition: none;
+    box-shadow: none;
+  }
+}
+
+/* Number color uses CSS vars + bespoke JS-toggled state timing */
+.timeline-item__number {
+  color: var(--color-stone-deep, #C4B5A5);
+  transition: color 0.35s ease;
+  font-size: 1;
+  font-weight: 700;
+}
+
+/* Active Number state */
+.timeline-item__number.tl-active {
+  color: var(--color-sage, #8B9E8D);
+}
+
+@media (min-width: 1024px) {
+  .timeline-item__number {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+}
