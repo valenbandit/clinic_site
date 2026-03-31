@@ -677,7 +677,8 @@ html {
   .faq-card,
   .faq-card::after,
   .faq-card summary,
-  .timeline-dot {
+  .timeline-dot,
+  .timeline-item__number {
     transition: none !important;
   }
 }
@@ -810,9 +811,9 @@ html {
 
 /* Number color uses CSS vars + bespoke JS-toggled state timing */
 .timeline-item__number {
-  color: var(--color-stone-deep, #C4B5A5);
+  color: var(--color-stone-deep, #7A7068);
   transition: color 0.35s ease;
-  font-size: 1;
+  font-size: 1rem;
   font-weight: 700;
 }
 

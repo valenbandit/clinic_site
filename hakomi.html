@@ -35,6 +35,19 @@
   "telephone": "+972-52-8604102",
   "image": "https://abrahamdagan.co.il/assets/site-images/Gemini_Generated_Image_g7fzwrg7fzwrg7fz.png",
   "priceRange": "₪300-400",
+  "currenciesAccepted": "ILS",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "areaServed": [
+    { "@type": "City", "name": "פרדס חנה כרכור" },
+    { "@type": "City", "name": "חדרה" },
+    { "@type": "City", "name": "בנימינה" },
+    { "@type": "City", "name": "זכרון יעקב" },
+    { "@type": "City", "name": "קיסריה" },
+    { "@type": "City", "name": "חריש" },
+    { "@type": "City", "name": "עתלית" },
+    { "@type": "City", "name": "אור עקיבא" },
+    { "@type": "City", "name": "תלמי אלעזר" }
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "הגליל 42",
@@ -59,7 +72,7 @@
       { "@type": "Service", "name": "זוגיות ומערכות יחסים", "url": "https://abrahamdagan.co.il/relationships" },
       { "@type": "Service", "name": "דיכאון, חרדה ומצבי משבר", "url": "https://abrahamdagan.co.il/crisis" },
       { "@type": "Service", "name": "בניית זהות ועצמאות", "url": "https://abrahamdagan.co.il/young-adults" },
-      { "@type": "Service", "name": "שחיקה בעבודה", "url": "https://abrahamdagan.co.il/career" },
+      { "@type": "Service", "name": "שחיקה בעבורה", "url": "https://abrahamdagan.co.il/career" },
       { "@type": "Service", "name": "פסיכותרפיה דינמית", "url": "https://abrahamdagan.co.il/psychotherapy" },
       { "@type": "Service", "name": "מיינדפולנס", "url": "https://abrahamdagan.co.il/mindfulness" },
       { "@type": "Service", "name": "האקומי", "url": "https://abrahamdagan.co.il/hakomi" }
@@ -73,24 +86,32 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "אברהם דגן",
+  "url": "https://abrahamdagan.co.il",
+  "image": "https://abrahamdagan.co.il/assets/site-images/Gemini_Generated_Image_g7fzwrg7fzwrg7fz.png",
+  "description": "פסיכותרפיסט ומטפל רגשי בפרדס חנה בגישת מיינדפולנס, האקומי וטיפול דינמי",
   "jobTitle": "פסיכותרפיסט",
+  "knowsAbout": ["פסיכותרפיה", "האקומי", "מיינדפולנס"],
+  "alumniOf": {
+    "@type": "Hospital",
+    "name": "בית חולים לב השרון",
+    "url": "https://www.lev-hasharon.co.il/"
+  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "האיגוד הישראלי הרב-תחומי לפסיכותרפיה",
+      "url": "https://israel-psychotherapy.org/"
+    }
+  ],
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",
       "name": "מסלול ארבע שנתי לפסיכותרפיה",
-      "credentialCategory": "degree",
+      "credentialCategory": "professionalDesignation",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "מכון האקומי"
-      }
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "חבר האיגוד הישראלי הרב-תחומי לפסיכותרפיה",
-      "credentialCategory": "membership",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "האיגוד הישראלי הרב-תחומי לפסיכותרפיה"
+        "name": "Hakomi Institute Israel",
+        "url": "https://hakomiisrael.com/"
       }
     }
   ],
@@ -107,17 +128,18 @@
   "@type": "Service",
   "name": "האקומי", /* TO CHANGE */
   "serviceType": "האקומי", /* TO CHANGE */
+  "url": "https://abrahamdagan.co.il/hakomi", /* TO CHANGE */
   "description": "האקומי בפרדס חנה – טיפול מבוסס מיינדפולנס, חיבור לגוף-נפש ועבודה חווייתית. עם אברהם דגן, פסיכותרפיסט ומטפל רגשי.", /* TO CHANGE */
   "areaServed": [
-    "פרדס חנה כרכור",
-    "חדרה",
-    "בנימינה",
-    "זכרון יעקב",
-    "קיסריה",
-    "חריש",
-    "עתלית",
-    "אור עקיבא",
-    "תלמי אלעזר"
+    { "@type": "City", "name": "פרדס חנה כרכור" },
+    { "@type": "City", "name": "חדרה" },
+    { "@type": "City", "name": "בנימינה" },
+    { "@type": "City", "name": "זכרון יעקב" },
+    { "@type": "City", "name": "קיסריה" },
+    { "@type": "City", "name": "חריש" },
+    { "@type": "City", "name": "עתלית" },
+    { "@type": "City", "name": "אור עקיבא" },
+    { "@type": "City", "name": "תלמי אלעזר" }
   ],
   "provider": {
     "@id": "https://abrahamdagan.co.il"
@@ -167,7 +189,7 @@
                         stone: { warm: '#F5F0EB', medium: '#E8DDD4', deep: '#C4B5A5' },
                         navy: { DEFAULT: '#2C3E50', dark: '#1A252F' },
                         cream: '#FAF7F4',
-                        muted: '#7A7068',
+                        muted: { DEFAULT: '#7A7068', dark: '#5A524C' },
                     },
                     fontFamily: { sans: ['Assistant', 'sans-serif'] },
                     keyframes: {
@@ -326,14 +348,14 @@
     <main id="main-content">
 
         <!-- PAGE HERO: video background -->
-        <section class="relative overflow-hidden pt-36 md:pt-44 pb-14 md:pb-20" aria-labelledby="page-title">
+        <section class="relative overflow-hidden pt-36 md:pt-44 pb-14 md:pb-20">
             <!-- Video background (md+) -->
             <video class="hidden md:block absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline
-                poster="assets/site-images/1ndV43aZeu.jpg">
-                <source src="assets/site-images/216462.mp4" type="video/mp4">
+                poster="assets/site-images/hakomi_bg_static.jpg">
+                <source src="assets/site-images/hakomi_bg.mp4" type="video/mp4">
             </video>
             <!-- Poster image (mobile fallback) -->
-            <img src="assets/site-images/1ndV43aZeu.jpg" alt=""
+            <img src="assets/site-images/hakomi_bg_static.jpg" alt=""
                 class="md:hidden absolute inset-0 w-full h-full object-cover object-center" aria-hidden="true">
             <!-- Main dark overlay -->
             <div class="hero-overlay-main absolute inset-0 pointer-events-none">
@@ -360,14 +382,15 @@
                 </h1>
                 <p
                     class="text-cream text-lg md:text-xl max-w-2xl leading-relaxed opacity-90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
-                    להבין את העבר כדי ליצור חופש בחירה בהווה </p>
+                    להביט פנימה ולגלות את כוח הריפוי הטבעי שבתוכנו
+                </p>
             </div>
         </section>
 
         <!-- ════════════════════════════════════════════
-       SECTION 1: מהי פסיכותרפיה דינמית
+       SECTION 1: מהי שיטת האקומי
   ═════════════════════════════════════════════ -->
-        <section id="what" class="py-12 md:py-24 bg-cream" aria-labelledby="heading-what">
+        <section id="what" class="py-12 md:py-24 bg-cream">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
                     class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
@@ -381,8 +404,7 @@
 
                     <!-- Text side -->
                     <div class="order-1 lg:order-2 w-full lg:w-2/3">
-                        <h2 id="heading-what"
-                            class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
                             מהי שיטת האקומי
 
                         </h2>
@@ -428,11 +450,16 @@
   * ==========================================
   * HTML TIMELINE WRAPPER
   * ==========================================
-  * One parent <section id="timeline-wrapper">; each stop is a
-  * <div class="timeline-item"> with a matching id so the JS sectionIds array still works.
 -->
         <section id="timeline-wrapper" class="relative bg-white py-12 md:py-24 overflow-hidden"
             aria-label="שלבי התהליך הטיפולי">
+            <!-- Top wave -->
+            <svg class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-32 z-0" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+                <path fill="#FAF7F4" fill-opacity="1"
+                    d="M0,192L80,208C160,224,320,256,480,229.3C640,203,800,117,960,69.3C1120,21,1280,11,1360,5.3L1440,0L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+                </path>
+            </svg>
             <!-- COMPONENT: deco-blob (5 blobs) -->
             <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none">
                 <span class="deco-blob hidden lg:block" aria-hidden="true"
@@ -464,7 +491,7 @@
                 <!-- Stop 1: even → card left, number right -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 relative lg:pl-12 mb-6 lg:mb-0">
                     <div
-                        class="timeline-item__card card-accent col-start-1 flex flex-col justify-center bg-white rounded-xl border border-[#D6CEC5] shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
+                        class="timeline-item__card card-accent col-start-1 flex flex-col justify-center bg-white rounded-xl border border-stone-deep shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
                         <div class="flex items-baseline gap-2 mb-3">
                             <span class="timeline-item__number lg:hidden" aria-hidden="true">01</span>
                             <h3 class="text-xl md:text-2xl font-bold text-navy-dark">יצירת קשר</h3>
@@ -481,7 +508,7 @@
                 <!-- Stop 2: odd → card right, number left -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 relative lg:pr-12 mb-6 lg:mb-0">
                     <div
-                        class="timeline-item__card card-accent col-start-2 row-start-1 flex flex-col justify-center bg-white rounded-xl border border-[#D6CEC5] shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
+                        class="timeline-item__card card-accent col-start-2 row-start-1 flex flex-col justify-center bg-white rounded-xl border border-stone-deep shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
                         <div class="flex items-baseline gap-2 mb-3">
                             <span class="timeline-item__number lg:hidden" aria-hidden="true">02</span>
                             <h3 class="text-xl md:text-2xl font-bold text-navy-dark">מיינדפולנס: השער ללא מודע</h3>
@@ -500,7 +527,7 @@
                 <!-- Stop 3: even → card left, number right -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 relative lg:pl-12 mb-6 lg:mb-0">
                     <div
-                        class="timeline-item__card card-accent col-start-1 flex flex-col justify-center bg-white rounded-xl border border-[#D6CEC5] shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
+                        class="timeline-item__card card-accent col-start-1 flex flex-col justify-center bg-white rounded-xl border border-stone-deep shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
                         <div class="flex items-baseline gap-2 mb-3">
                             <span class="timeline-item__number lg:hidden" aria-hidden="true">03</span>
                             <h3 class="text-xl md:text-2xl font-bold text-navy-dark">עיבוד וטרמספורמציה (התמרה)</h3>
@@ -520,7 +547,7 @@
                 <!-- Stop 4: odd → card right, number left -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 relative lg:pr-12 mb-6 lg:mb-0">
                     <div class=" timeline-item__card card-accent col-start-2 row-start-1 flex flex-col justify-center
-                    bg-white rounded-xl border border-[#D6CEC5] shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
+                    bg-white rounded-xl border border-stone-deep shadow-[0_2px_12px_rgba(0,0,0,0.08)] p-6">
                         <div class="flex items-baseline gap-2 mb-3">
                             <span class="timeline-item__number lg:hidden" aria-hidden="true">04</span>
                             <h3 class="text-xl md:text-2xl font-bold text-navy-dark">אינטגרציה (הטמעה)</h3>
@@ -546,6 +573,13 @@
                 </div>
 
             </div><!-- /.max-w-5xl -->
+            <!-- Bottom wave -->
+            <svg class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-32 z-0"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+                <path fill="#FAF7F4" fill-opacity="1"
+                    d="M0,192L80,208C160,224,320,256,480,229.3C640,203,800,117,960,69.3C1120,21,1280,11,1360,5.3L1440,0L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+                </path>
+            </svg>
 
         </section><!-- /#timeline-wrapper -->
 
@@ -554,15 +588,14 @@
         <!-- ════════════════════════════════════════════
        SECTION 3: ACCORDION PRINCIPLES
   ═════════════════════════════════════════════ -->
-        <section id="principles" class="py-12 md:py-24 bg-cream" aria-labelledby="heading-principles">
+        <section id="principles" class="py-12 md:py-24 bg-cream">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
 
                 <!-- Heading -->
                 <div data-reveal
                     class="text-center opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 mb-12 md:mb-16">
                     <span class="text-sage font-semibold text-sm tracking-widest uppercase">גישת ההאקומי</span>
-                    <h2 id="heading-principles"
-                        class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mt-3 mb-6 leading-tight">
                         עקרונות הגישה
                     </h2>
                     <!-- COMPONENT: divider -->
@@ -630,11 +663,12 @@
                                 </summary>
                                 <div
                                     class="faq-answer px-7 pb-6 text-muted text-sm leading-relaxed border-t border-stone-medium/40 pt-4">
-                                    <p>הכוח הטמון בכל מערכת חיה, המניע תהליכי ריפוי וצמיחה טבעיים. האורגניות באה לידי
+                                    <p>הכוח הגדול ביותר בגוף האדם הוא הדחף הטבעי שלו לרפא את עצמו. זהו
+                                        הכוח הטמון בכל מערכת חיה, המניע תהליכי ריפוי וצמיחה. האורגניות באה לידי
                                         ביטוי הן בעולם הפיזי כמו נבט שצומח לעץ, והן בעולם הנפשי כמו פצע רגשי שמגליד
-                                        ומתאחה. בגישת האקומי, רותמים כוח טבעי זה לתהליך הטיפולי ועובדים בשיתוף פעולה
-                                        הרמוני עם מערכת הגוף-נפש של המטופל. מתוך אמון בתנועה האורגנית של הנפש, המטפל
-                                        מוותר על עמדות קבועות מראש ומאפשר לתהליך הריפוי הייחודי של המטופל להתפתח
+                                        ומתאחה. בגישת האקומי, עובדים בשיתוף פעולה עם כוח טבעי זה
+                                        מתוך אמון בתנועה האורגנית של הנפש. המטפל
+                                        מוותר על עמדות קבועות מראש ומאפשר לתהליך הריפוי העצמי של המטופל להתפתח
                                         ולהבשיל בקצב שלו.</p>
                                 </div>
                             </details>
@@ -675,11 +709,12 @@
                                 </summary>
                                 <div
                                     class="faq-answer px-7 pb-6 text-muted text-sm leading-relaxed border-t border-stone-medium/40 pt-4">
-                                    <p>עקרון המניח כי בני אדם הם מערכות חיות ואורגניות, המשמרות שלמות הבנויה מחלקי
-                                        גוף-נפש, שמתקיימים ביניהם יחסי גומלין והשפעה הדדית, והם מרכיבים מערכות גדולות
-                                        יותר — משפחות, קבוצות, תרבויות. האקומי מזמינה לחקור את חלקים שונים אלו, ואת
-                                        התהליכים הפסיכולוגיים שהם מניעים, תוך הכרה בכך שכולנו חלק ממערכת שלמה, שבה
-                                        חלקים שנמצאים אצל האחד מהדהדים ומשפיעים על האחר.</p>
+                                    <p> עקרון זה מניח שבני אדם הם מערכות חיות ואורגניות, הבנויות מחלקי גוף-נפש
+                                        שביניהם מתקיימים יחסי גומלין. אנחנו חלק ממערכות גדולות יותר - משפחות, קבוצות
+                                        ותרבויות - וכאשר אנו חוקרים את החלקים השונים שבתוכנו, מתגלה ההשפעה ההדדית שלנו
+                                        על הסביבה ושל הסביבה עלינו. ההכרה בכך שכל חלק בנו מהדהד ומשפיע על האחר מאפשרת
+                                        חיבור עמוק יותר לעצמנו ולעולם שסביבנו.
+                                    </p>
                                 </div>
                             </details>
                         </div>
@@ -698,7 +733,7 @@
                                     class="faq-answer px-7 pb-6 text-muted text-sm leading-relaxed border-t border-stone-medium/40 pt-4">
                                     <p>האקומי רואה בגוף שותף פעיל ומרכזי בחוויית החיים הנפשית. התרחבות המודעות
                                         לתנועה, מבע גוף, קול, ומתח שרירי מאפשרת גישה ישירה לחומרי ליבה נפשיים, ופותחת
-                                        פתח לשינוי מהותי. הגוף אינו רק "כלי" — הוא שותף מלא בחוויית החיים ובתהליך
+                                        פתח לשינוי מהותי. הגוף אינו רק "כלי" - הוא שותף מלא בחוויית החיים ובתהליך
                                         הריפוי.</p>
                                 </div>
                             </details>
@@ -750,7 +785,7 @@
         <!-- ════════════════════════════════════════════
        SECTION 4: הטיפול בפועל
   ═════════════════════════════════════════════ -->
-        <section id="process" class="py-12 md:py-24 bg-white" aria-labelledby="heading-process">
+        <section id="process" class="py-12 md:py-24 bg-white">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
                     class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
@@ -764,27 +799,25 @@
 
                     <!-- Text side -->
                     <div class="order-1 lg:order-2 w-full lg:w-1/2">
-                        <h2 id="heading-process"
-                            class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
-                            לראות את האדם שמאחורי הקושי
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            טיפול בשיטת האקומי: להקשיב למה שמבקש להתגלות
                         </h2>
                         <!-- COMPONENT: divider -->
                         <span
                             class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
                         <p class="text-muted text-base md:text-lg leading-loose mb-5">
-                            כל אדם חווה משברים במהלך החיים, ולעיתים ניתן להתמודד עמם בכוחות עצמנו או בתמיכת הסביבה
-                            הקרובה. עם זאת, לטיפול הפסיכודינמי יש ערך מוסף: הוא מאפשר <strong
-                                class="font-semibold text-navy-dark">לא רק "לשרוד" את המשבר הנוכחי</strong>, אלא
-                            <strong class="font-semibold text-navy-dark">להבין לעומק את שורשיו</strong> כדי ליצור
-                            שינוי
-                            מתמשך באיכות החיים וברווחה הנפשית.
+                            עקרונות האקומי אינם רעיונות, אלא משמשים כמפת דרכים למפגש טיפולי עמוק ומרפא. בקליניקה,
+                            עקרונות אלו קמים לתחייה: יחד אנו יוצרים מרחב בטוח של נוכחות אוהבת, שבו מותר לעצור ולהתבונן
+                            פנימה בסקרנות, בעדינות, וללא שיפוט. דרך התייחסות לאדם כמערכת של אחדות
+                            ושלמות גוף-רוח-נפש, נוצרת הזמנה להקשיב למה שאינו נאמר במילים, לביטויים שמספרים את הסיפור
+                            העמוק של עולמך הפנימי ומחברים אותך מחדש אל עצמך.
                         </p>
                         <p class="text-muted text-base md:text-lg leading-loose mb-5">
-                            דרך התבוננות בדינמיקה הנפשית הייחודית לך, מתאפשרת היכרות עמוקה יותר עם עצמך - עם מה
-                            שמניע
-                            אותך, מעכב אותך ומעצב את חוויית החיים שלך. מתוך הבנה זו נפתח מרחב לבחירה מודעת, כזה
-                            שאינו
-                            משמש רק כמענה לקושי, אלא כהזדמנות אמיתית לצמיחה והתפתחות אישית עמוקה.
+                            מתוך המפגש עם הפינות החבויות בנפש, הסבל הבלתי-הכרחי מתחיל להתפוגג. כאן מתגלה כוח הריפוי
+                            הטבעי שלך, המאפשר להחליף אמונות מגבילות בחוויות חדשות ומזינות. השינוי באקומי אינו נכפה
+                            מבחוץ, אלא צומח מתוך הקשבה למה שכבר קיים בתוכך, ומתוך אמון ביכולת הטבעית של הנפש לנוע לעבר
+                            איזון. כך נפתחת אפשרות להרפות ממה שכבר לא משרת אותך, ולבחור מחדש מי את.ה רוצה להיות וכיצד
+                            את.ה מבקש.ת לחיות את חייך, כאן ועכשיו.
                         </p>
                     </div>
                 </div>
@@ -800,20 +833,19 @@
                 <div class="relative max-w-2xl mx-auto text-center" dir="rtl">
                     <!-- Right decorative quote mark -->
                     <span
-                        class="hidden lg:block absolute -top-8 right-16 md:-right-10 text-7xl text-sage-dark font-sans leading-none select-none"
+                        class="hidden lg:block absolute -top-8 -right-10 text-7xl text-sage-dark font-sans leading-none select-none"
                         aria-hidden="true">❞</span>
 
                     <p
                         class="text-2xl md:text-3xl lg:text-4xl font-semibold text-cream leading-tight mb-4 relative z-10 italic inline-block">
-                        הטיפול הוא המקום שבו אנו מפסיקים רק להגיב לעולם, ומתחילים באמת לחיות בו
-                    </p>
+                        הפרדוקס המסקרן הוא שכאשר אני מקבל את עצמי בדיוק כפי שאני, אז אני יכול להשתנות </p>
 
                     <!-- Left decorative quote mark -->
                     <span
-                        class="hidden lg:block absolute -bottom-5 left-20 md:left-12 text-7xl text-sage-dark font-sans leading-none select-none"
+                        class="hidden lg:block absolute -bottom-5 -left-4 text-7xl text-sage-dark font-sans leading-none select-none"
                         aria-hidden="true">❝</span>
 
-                    <p class="text-sage-light text-lg font-medium opacity-90 mt-2">— דונלד ויניקוט</p>
+                    <p class="text-sage-light text-lg font-medium opacity-90 mt-2">— קרל רוג'רס</p>
                 </div>
             </div>
         </section>
@@ -842,19 +874,20 @@
                         <!-- COMPONENT: divider -->
                         <span
                             class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
-                        <div class="space-y-4 mb-10 text-muted text-base md:text-lg leading-relaxed md:pr-4 lg:pr-0">
+                        <div
+                            class="space-y-4 mb-10 text-muted-dark text-base md:text-lg leading-relaxed md:pr-4 lg:pr-0">
                             <p>
-                                עקרונות הגישה הפסיכודינמית מקבלים ביטוי ממשי בתוך המפגש הטיפולי.
+                                טיפול בגישת האקומי מאפשר לנו להפוך את המפגש בקליניקה למרחב של חקירה עדינה לגילוי עצמי.
                                 עבודתי כפסיכותרפיסט מבוססת על הכשרה ב<strong class="font-semibold text-navy-dark">תכנית
                                     הארבע-שנתית לפסיכותרפיה במכון האקומי</strong>, ועל ניסיון קליני ב<strong
                                     class="font-semibold text-navy-dark">מרכז הרפואי 'לב השרון'</strong> וב<strong
                                     class="font-semibold text-navy-dark">קליניקה פרטית בפרדס חנה</strong>.
                             </p>
                             <p>
-                                יחד ניצור מרחב בטוח שבו ניתן להפוך תגובות אוטומטיות לבחירה מודעת ומיטיבה. השילוב בין
-                                הבנה מעמיקה לבין קשב למה שמתרחש כאן ועכשיו, מאפשר לא רק לזהות דפוסים וקונפליקטים,
-                                אלא גם
-                                לפגוש ולעבד אותם באופן שמוביל לשינוי פנימי עמוק.
+                                יחד ניצור מרחב בטוח שבו נוכל להפנות קשב פנימה, לזהות אמונות לא מודעות ולהפוך תגובות
+                                אוטומטיות לבחירה מודעת ומיטיבה. השילוב בין ההתנסות החווייתית לבין
+                                הבנה פסיכולוגית מעמיקה, מאפשר לא רק לזהות דפוסים מעכבים, אלא גם לפגוש בזמן אמת את
+                                "החוויה החסרה" - אותה הזנה רגשית שמאפשרת למערכת הנפשית לנוע לעבר ריפוי עצמי.
                             </p>
                             <p>
                                 אם את.ה מרגיש.ה שזה הזמן עבורך להעלות את המודעות בנוגע לעצמך ולדפוסים המעכבים אותך,
@@ -887,6 +920,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
 

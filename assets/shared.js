@@ -340,9 +340,11 @@ document.addEventListener('DOMContentLoaded', () => {
 //  for the Hakomi timeline section.
 // ─────────────────────────────────────────────────────────────
 
-// ── Mobile/Tablet (All screens): Card Box-Shadow + Number Activation ──
+// ── Timeline: Card Activation (all screens) + Spine/Fill/Dots (desktop only) ──
 (function () {
-    // Collect all timeline cards and map them to their corresponding number blocks
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+    // Collect all timeline cards and map to their corresponding number elements
     const items = Array.from(document.querySelectorAll('.timeline-item__card')).map(function (card) {
         return {
             card: card,
@@ -352,104 +354,74 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 
-    if (!items.length) return; // Exit if no timeline cards on page
+    if (!items.length) return;
 
-    // Cache the absolute vertical center of each card on init and resize
-    // to avoid expensive layout thrashing (DOM reads) inside the scroll event.
-    function cache() {
+    // Desktop-only elements
+    const wrapper = isDesktop ? document.getElementById('timeline-wrapper') : null;
+    const spine = isDesktop ? document.getElementById('timeline-spine') : null;
+    const fill = isDesktop ? document.getElementById('timeline-fill') : null;
+    const dots = isDesktop ? Array.from(document.querySelectorAll('.timeline-dot')) : [];
+
+    let spineAbsTop = 0, spineHeight = 1, dotAbsYs = [];
+
+    // Cache card centers and spine geometry on init and resize
+    function init() {
+        const parentRect = spine ? (spine.offsetParent || wrapper).getBoundingClientRect() : null;
+
         items.forEach(function (item) {
             const r = item.card.getBoundingClientRect();
             item.y = r.top + window.scrollY + r.height / 2;
+
+            // Also compute center relative to spine parent for dot positioning
+            if (parentRect) item.relY = r.top + r.height / 2 - parentRect.top;
         });
+
+        if (spine && parentRect) {
+            const top = items[0].relY;
+            const height = items[items.length - 1].relY - items[0].relY;
+
+            spine.style.top = top + 'px';
+            spine.style.height = height + 'px';
+            spine.style.bottom = 'auto';
+
+            dots.forEach(function (dot, i) {
+                if (items[i]) {
+                    dot.style.top = (items[i].relY - top) + 'px';
+                    dot.style.transform = 'translateY(-50%)';
+                }
+            });
+
+            spineAbsTop = parentRect.top + window.scrollY + top;
+            spineHeight = height || 1;
+            dotAbsYs = items.map(item => parentRect.top + window.scrollY + item.relY);
+        }
+
         update();
     }
 
-    // On scroll, check if the viewport midpoint has passed the card's cached center Y.
-    // If yes, toggle the active classes.
+    // Single scroll handler for all activation and spine fill
     function update() {
-        const anchor = window.scrollY + window.innerHeight * 0.5;
-        items.forEach(function (item) {
+        const anchor = window.scrollY + window.innerHeight * (isDesktop ? 0.5 : 0.7);
+
+        items.forEach(function (item, i) {
             const on = anchor > item.y;
             item.card.classList.toggle('accent-active', on);
             item.number?.classList.toggle('tl-active', on);
             item.span?.classList.toggle('tl-active', on);
         });
+
+        if (fill) {
+            const p = Math.max(0, Math.min(1, (anchor - spineAbsTop) / spineHeight));
+            fill.style.height = (p * spineHeight) + 'px';
+            dots.forEach(function (dot, i) {
+                dot.classList.toggle('tl-active', anchor > dotAbsYs[i]);
+            });
+        }
     }
 
     window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', cache);
+    window.addEventListener('resize', init);
     document.readyState === 'loading'
-        ? document.addEventListener('DOMContentLoaded', cache)
-        : requestAnimationFrame(cache);
-})();
-
-// ── Desktop Only: Spine Track, Fill Progress, and Dots ──
-(function () {
-    // Exit if not large screen (Tailwind lg breakpoint)
-    if (!window.matchMedia('(min-width: 1024px)').matches) return;
-
-    const wrapper = document.getElementById('timeline-wrapper');
-    const spine = document.getElementById('timeline-spine');
-    const fill = document.getElementById('timeline-fill');
-    const dots = Array.from(document.querySelectorAll('.timeline-dot'));
-
-    // Exit if timeline HTML structure is missing
-    if (!wrapper || !spine || !fill) return;
-
-    let spineAbsTop = 0, spineHeight = 1, dotAbsYs = [];
-
-    // Measure positions once on init/resize and draw the spine perfectly
-    // from the vertical center of the first card to the vertical center of the last.
-    function init() {
-        const parentRect = (spine.offsetParent || wrapper).getBoundingClientRect();
-        
-        // Find centers relative to the spine's offset parent for precise relative positioning
-        const centers = Array.from(document.querySelectorAll('.timeline-item__card')).map(function (card) {
-            const r = card.getBoundingClientRect();
-            return r.top + r.height / 2 - parentRect.top;
-        });
-
-        if (!centers.length) return;
-
-        const top = centers[0];
-        const height = centers[centers.length - 1] - centers[0];
-
-        spine.style.top = top + 'px';
-        spine.style.height = height + 'px';
-        spine.style.bottom = 'auto';
-
-        // Position tracking dots at the correct relative Y offset on the spine
-        dots.forEach(function (dot, i) {
-            if (centers[i] !== undefined) {
-                dot.style.top = (centers[i] - top) + 'px';
-                dot.style.transform = 'translateY(-50%)';
-            }
-        });
-
-        // Cache absolute Y coordinates for the fast path in the scroll handler
-        spineAbsTop = parentRect.top + window.scrollY + top;
-        spineHeight = height || 1;
-        dotAbsYs = centers.map(c => parentRect.top + window.scrollY + c);
-
-        update();
-    }
-
-    // Rapidly calculate scroll progress through the spine and color the fill height.
-    // Toggles dots when anchor passes their absolute Y coordinates.
-    function update() {
-        const anchor = window.scrollY + window.innerHeight * 0.5;
-        const p = Math.max(0, Math.min(1, (anchor - spineAbsTop) / spineHeight));
-        
-        fill.style.height = (p * spineHeight) + 'px';
-
-        dots.forEach(function (dot, i) {
-            dot.classList.toggle('tl-active', anchor > dotAbsYs[i]);
-        });
-    }
-
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', function () { init(); update(); });
-    document.readyState === 'loading'
-        ? document.addEventListener('DOMContentLoaded', function () { init(); update(); })
-        : requestAnimationFrame(function () { init(); update(); });
+        ? document.addEventListener('DOMContentLoaded', init)
+        : requestAnimationFrame(init);
 })();

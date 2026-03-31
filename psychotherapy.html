@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 
 <!-- ════════════════════════════════════════════
@@ -35,6 +35,19 @@
   "telephone": "+972-52-8604102",
   "image": "https://abrahamdagan.co.il/assets/site-images/Gemini_Generated_Image_g7fzwrg7fzwrg7fz.png",
   "priceRange": "₪300-400",
+  "currenciesAccepted": "ILS",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "areaServed": [
+    { "@type": "City", "name": "פרדס חנה כרכור" },
+    { "@type": "City", "name": "חדרה" },
+    { "@type": "City", "name": "בנימינה" },
+    { "@type": "City", "name": "זכרון יעקב" },
+    { "@type": "City", "name": "קיסריה" },
+    { "@type": "City", "name": "חריש" },
+    { "@type": "City", "name": "עתלית" },
+    { "@type": "City", "name": "אור עקיבא" },
+    { "@type": "City", "name": "תלמי אלעזר" }
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "הגליל 42",
@@ -59,7 +72,7 @@
       { "@type": "Service", "name": "זוגיות ומערכות יחסים", "url": "https://abrahamdagan.co.il/relationships" },
       { "@type": "Service", "name": "דיכאון, חרדה ומצבי משבר", "url": "https://abrahamdagan.co.il/crisis" },
       { "@type": "Service", "name": "בניית זהות ועצמאות", "url": "https://abrahamdagan.co.il/young-adults" },
-      { "@type": "Service", "name": "שחיקה בעבודה", "url": "https://abrahamdagan.co.il/career" },
+      { "@type": "Service", "name": "שחיקה בעבורה", "url": "https://abrahamdagan.co.il/career" },
       { "@type": "Service", "name": "פסיכותרפיה דינמית", "url": "https://abrahamdagan.co.il/psychotherapy" },
       { "@type": "Service", "name": "מיינדפולנס", "url": "https://abrahamdagan.co.il/mindfulness" },
       { "@type": "Service", "name": "האקומי", "url": "https://abrahamdagan.co.il/hakomi" }
@@ -73,24 +86,32 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "אברהם דגן",
+  "url": "https://abrahamdagan.co.il",
+  "image": "https://abrahamdagan.co.il/assets/site-images/Gemini_Generated_Image_g7fzwrg7fzwrg7fz.png",
+  "description": "פסיכותרפיסט ומטפל רגשי בפרדס חנה בגישת מיינדפולנס, האקומי וטיפול דינמי",
   "jobTitle": "פסיכותרפיסט",
+  "knowsAbout": ["פסיכותרפיה", "האקומי", "מיינדפולנס"],
+  "alumniOf": {
+    "@type": "Hospital",
+    "name": "בית חולים לב השרון",
+    "url": "https://www.lev-hasharon.co.il/"
+  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "האיגוד הישראלי הרב-תחומי לפסיכותרפיה",
+      "url": "https://israel-psychotherapy.org/"
+    }
+  ],
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",
       "name": "מסלול ארבע שנתי לפסיכותרפיה",
-      "credentialCategory": "degree",
+      "credentialCategory": "professionalDesignation",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "מכון האקומי"
-      }
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "חבר האיגוד הישראלי הרב-תחומי לפסיכותרפיה",
-      "credentialCategory": "membership",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "האיגוד הישראלי הרב-תחומי לפסיכותרפיה"
+        "name": "Hakomi Institute Israel",
+        "url": "https://hakomiisrael.com/"
       }
     }
   ],
@@ -107,17 +128,18 @@
   "@type": "Service",
   "name": "פסיכותרפיה דינמית", /* TO CHANGE */
   "serviceType": "פסיכותרפיה", /* TO CHANGE */
+  "url": "https://abrahamdagan.co.il/psychotherapy", /* TO CHANGE */
   "description": "פסיכותרפיה דינמית בפרדס חנה – טיפול המבוסס על הבנת דפוסים לא מודעים, חוויות עבר ומערכות יחסים. עם אברהם דגן, פסיכותרפיסט ומטפל רגשי.", /* TO CHANGE */
   "areaServed": [
-    "פרדס חנה כרכור",
-    "חדרה",
-    "בנימינה",
-    "זכרון יעקב",
-    "קיסריה",
-    "חריש",
-    "עתלית",
-    "אור עקיבא",
-    "תלמי אלעזר"
+    { "@type": "City", "name": "פרדס חנה כרכור" },
+    { "@type": "City", "name": "חדרה" },
+    { "@type": "City", "name": "בנימינה" },
+    { "@type": "City", "name": "זכרון יעקב" },
+    { "@type": "City", "name": "קיסריה" },
+    { "@type": "City", "name": "חריש" },
+    { "@type": "City", "name": "עתלית" },
+    { "@type": "City", "name": "אור עקיבא" },
+    { "@type": "City", "name": "תלמי אלעזר" }
   ],
   "provider": {
     "@id": "https://abrahamdagan.co.il"
@@ -167,7 +189,7 @@
                         stone: { warm: '#F5F0EB', medium: '#E8DDD4', deep: '#C4B5A5' },
                         navy: { DEFAULT: '#2C3E50', dark: '#1A252F' },
                         cream: '#FAF7F4',
-                        muted: '#7A7068',
+                        muted: { DEFAULT: '#7A7068', dark: '#5A524C' },
                     },
                     fontFamily: { sans: ['Assistant', 'sans-serif'] },
                     keyframes: {
@@ -325,14 +347,14 @@
     <main id="main-content">
 
         <!-- PAGE HERO: video background -->
-        <section class="relative overflow-hidden pt-36 md:pt-44 pb-14 md:pb-20" aria-labelledby="page-title">
+        <section class="relative overflow-hidden pt-36 md:pt-44 pb-14 md:pb-20">
             <!-- Video background (md+) -->
             <video class="hidden md:block absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline
-                poster="assets/site-images/1ndV43aZeu.jpg">
-                <source src="assets/site-images/216462.mp4" type="video/mp4">
+                poster="assets/site-images/psychotherapy_bg_static.jpg">
+                <source src="assets/site-images/psychotherapy_bg.mp4" type="video/mp4">
             </video>
             <!-- Poster image (mobile fallback) -->
-            <img src="assets/site-images/1ndV43aZeu.jpg" alt=""
+            <img src="assets/site-images/psychotherapy_bg_static.jpg" alt=""
                 class="md:hidden absolute inset-0 w-full h-full object-cover object-center" aria-hidden="true">
             <!-- Main dark overlay -->
             <div class="hero-overlay-main absolute inset-0 pointer-events-none">
@@ -353,7 +375,7 @@
                         <li><span class="text-cream/90" aria-current="page">פסיכותרפיה דינמית</span></li>
                     </ol>
                 </nav>
-                <h1 id="page-title"
+                <h1
                     class="text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-4 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                     פסיכותרפיה דינמית
                 </h1>
@@ -366,7 +388,7 @@
         <!-- ════════════════════════════════════════════
        SECTION 1: מהי פסיכותרפיה דינמית
   ═════════════════════════════════════════════ -->
-        <section id="what" class="py-12 md:py-24 bg-cream" aria-labelledby="heading-what">
+        <section id="what" class="py-12 md:py-24 bg-cream">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
                     class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
@@ -380,8 +402,7 @@
 
                     <!-- Text side -->
                     <div class="order-1 lg:order-2 w-full lg:w-2/3">
-                        <h2 id="heading-what"
-                            class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
                             מהי פסיכותרפיה דינמית
                         </h2>
                         <!-- COMPONENT: divider -->
@@ -437,8 +458,7 @@
         <!-- ════════════════════════════════════════════
        SECTION 2: עקרונות הגישה הפסיכודינמית
   ═════════════════════════════════════════════ -->
-        <section id="unconscious" class="py-12 md:py-24 bg-white relative overflow-hidden"
-            aria-labelledby="heading-unconscious">
+        <section id="unconscious" class="py-12 md:py-24 bg-white relative overflow-hidden">
             <!-- COMPONENT: deco-blob (2 blobs) -->
             <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none">
                 <span class="deco-blob hidden lg:block" aria-hidden="true"
@@ -451,8 +471,7 @@
                 <!-- Section Heading -->
                 <div data-reveal
                     class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 text-center mb-12 md:mb-20">
-                    <h2 id="heading-unconscious"
-                        class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
                         עקרונות הגישה הפסיכודינמית
                     </h2>
                     <!-- COMPONENT: divider -->
@@ -621,7 +640,7 @@
         <!-- ════════════════════════════════════════════
        SECTION 3: הטיפול בפועל
   ═════════════════════════════════════════════ -->
-        <section id="process" class="py-12 md:py-24 bg-cream" aria-labelledby="heading-process">
+        <section id="process" class="py-12 md:py-24 bg-cream">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
                     class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
@@ -635,9 +654,8 @@
 
                     <!-- Text side -->
                     <div class="order-1 lg:order-2 w-full lg:w-1/2">
-                        <h2 id="heading-process"
-                            class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
-                            לראות את האדם שמאחורי הקושי
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            פסיכותרפיה דינמית: לראות את האדם שמאחורי הקושי
                         </h2>
                         <!-- COMPONENT: divider -->
                         <span
@@ -710,18 +728,21 @@
                         <!-- COMPONENT: divider -->
                         <span
                             class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
-                        <div class="space-y-4 mb-10 text-muted text-base md:text-lg leading-relaxed md:pr-4 lg:pr-0">
+                        <div
+                            class="space-y-4 mb-10 text-muted-dark text-base md:text-lg leading-relaxed md:pr-4 lg:pr-0">
                             <p>
-                                עקרונות הגישה הפסיכודינמית מקבלים ביטוי ממשי בתוך המפגש הטיפולי.
+                                עקרונות הגישה הפסיכודינמית מקבלים ביטוי ממשי בתוך המפגש הטיפולי, כדרך להבנת הכוחות
+                                הפועלים בנפש.
                                 עבודתי כפסיכותרפיסט מבוססת על הכשרה ב<strong class="font-semibold text-navy-dark">תכנית
                                     הארבע-שנתית לפסיכותרפיה במכון האקומי</strong>, ועל ניסיון קליני ב<strong
                                     class="font-semibold text-navy-dark">מרכז הרפואי 'לב השרון'</strong> וב<strong
                                     class="font-semibold text-navy-dark">קליניקה פרטית בפרדס חנה</strong>.
                             </p>
                             <p>
-                                יחד ניצור מרחב בטוח שבו ניתן להפוך תגובות אוטומטיות לבחירה מודעת ומיטיבה. השילוב בין
-                                הבנה מעמיקה לבין קשב למה שמתרחש כאן ועכשיו, מאפשר לא רק לזהות דפוסים וקונפליקטים, אלא גם
-                                לפגוש ולעבד אותם באופן שמוביל לשינוי פנימי עמוק.
+                                יחד ניצור מרחב בטוח שבו נוכל לחקור את שורשי הדפוסים המנהלים את חייך. השילוב
+                                בין
+                                הבנה מעמיקה של משקעי העבר לבין קשב למה שמתרחש כאן ועכשיו, מאפשר להפוך דפוסים מקובעים
+                                לבחירה מודעת ומטיבה, ולהוביל לשינוי פנימי ומתמשך.
                             </p>
                             <p>
                                 אם את.ה מרגיש.ה שזה הזמן עבורך להעלות את המודעות בנוגע לעצמך ולדפוסים המעכבים אותך,
@@ -754,6 +775,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
 
