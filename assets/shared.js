@@ -247,14 +247,25 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+
+            // Lazy-load any SVGs inside this revealed element
+            entry.target.querySelectorAll('.lazy-svg[data-src]').forEach(el => {
+                fetch(el.dataset.src)
+                    .then(r => r.text())
+                    .then(svg => {
+                        el.innerHTML = svg;
+                        const svgEl = el.querySelector('svg');
+                        svgEl?.removeAttribute('width');
+                        svgEl?.removeAttribute('height');
+                    });
+            });
+
             revealObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.12 });
 
-// Requires [data-reveal] attribute on elements in HTML
 document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
-
 
 // ─────────────────────────────────────────────────────────────
 //  7. CONTACT FORM — ASYNC SUBMIT (homepage only)
@@ -295,46 +306,6 @@ if (contactForm) {
         }
     });
 }
-
-// ─────────────────────────────────────────────────────────────
-//  8. LAZY LOAD SVG OBJECTS
-//  Linked to: .lazy-object, [data-src]
-//  Uses IntersectionObserver to swap data-src to data when in
-//  viewport. Replaces <object> with static <img> for Safari
-//  to avoid rendering bugs with complex SVGs.
-// ─────────────────────────────────────────────────────────────
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const lazySVGs = document.querySelectorAll('.lazy-svg');
-    if (!lazySVGs.length) return;
-
-    const svgObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-
-                const el = entry.target;
-
-                fetch(el.dataset.src)
-                    .then(r => r.text())
-                    .then(svg => {
-                        el.innerHTML = svg;
-                        const svgEl = el.querySelector('svg');
-                        svgEl?.removeAttribute('width');
-                        svgEl?.removeAttribute('height');
-                    });
-                svgObserver.unobserve(el);
-            });
-        },
-        {
-            threshold: 0.5
-        }
-    );
-
-    lazySVGs.forEach(target => svgObserver.observe(target));
-});
 
 
 // ─────────────────────────────────────────────────────────────
