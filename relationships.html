@@ -1,15 +1,182 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 
+<!-- ════════════════════════════════════════════
+   DOCUMENT CONFIGURATION & ASSETS
+═════════════════════════════════════════════ -->
+
 <head>
+    <!-- NON-SEO Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags - TO CHANGE per satellite page -->
     <title>זוגיות ומערכות יחסים | אברהם דגן – פסיכותרפיסט ומטפל רגשי</title>
+    <meta name="description" content="טיפול במערכות יחסים וזוגיות בפרדס חנה. עם אברהם דגן, פסיכותרפיסט ומטפל רגשי." />
+    <link rel="canonical" href="https://abrahamdagan.co.il/relationships" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="זוגיות ומערכות יחסים | אברהם דגן – פסיכותרפיסט ומטפל רגשי" />
+    <meta property="og:description"
+        content="טיפול במערכות יחסים וזוגיות בפרדס חנה. עם אברהם דגן, פסיכותרפיסט ומטפל רגשי." />
+    <meta property="og:url" content="https://abrahamdagan.co.il/relationships" />
+    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/bio.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="אברהם דגן - פסיכותרפיסט ומטפל רגשי" />
+    <!-- JSON-LD BLOCKS: SEO -->
+    <!-- JSON-LD: Business Entity — identical on every page, never change -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://abrahamdagan.co.il",
+  "url": "https://abrahamdagan.co.il",
+  "name": "אברהם דגן - פסיכותרפיסט ומטפל רגשי",
+  "telephone": "+972-52-8604102",
+  "image": "https://abrahamdagan.co.il/assets/site-images/bio.png",
+  "priceRange": "₪300-400",
+  "currenciesAccepted": "ILS",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "areaServed": [
+    { "@type": "City", "name": "פרדס חנה כרכור" },
+    { "@type": "City", "name": "חדרה" },
+    { "@type": "City", "name": "בנימינה" },
+    { "@type": "City", "name": "זכרון יעקב" },
+    { "@type": "City", "name": "קיסריה" },
+    { "@type": "City", "name": "חריש" },
+    { "@type": "City", "name": "עתלית" },
+    { "@type": "City", "name": "אור עקיבא" },
+    { "@type": "City", "name": "תלמי אלעזר" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "הגליל 42",
+    "addressLocality": "פרדס חנה כרכור",
+    "postalCode": "3706342",
+    "addressCountry": "IL"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "20:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/avi.dagan.private"
+    /* ADD Google Business Profile URL here after launch */
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "שירותי טיפול",
+    "itemListElement": [
+      { "@type": "Service", "name": "זוגיות ומערכות יחסים", "url": "https://abrahamdagan.co.il/relationships" },
+      { "@type": "Service", "name": "דיכאון, חרדה ומצבי משבר", "url": "https://abrahamdagan.co.il/crisis" },
+      { "@type": "Service", "name": "בניית זהות ועצמאות", "url": "https://abrahamdagan.co.il/young-adults" },
+      { "@type": "Service", "name": "שחיקה בעבורה", "url": "https://abrahamdagan.co.il/career" },
+      { "@type": "Service", "name": "פסיכותרפיה דינמית", "url": "https://abrahamdagan.co.il/psychotherapy" },
+      { "@type": "Service", "name": "מיינדפולנס", "url": "https://abrahamdagan.co.il/mindfulness" },
+      { "@type": "Service", "name": "האקומי", "url": "https://abrahamdagan.co.il/hakomi" }
+    ]
+  }
+}
+</script>
+    <!-- JSON-LD: Person — identical on every page, never change -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "אברהם דגן",
+  "url": "https://abrahamdagan.co.il",
+  "image": "https://abrahamdagan.co.il/assets/site-images/bio.png",
+  "description": "פסיכותרפיסט ומטפל רגשי בפרדס חנה בגישת מיינדפולנס, האקומי וטיפול דינמי",
+  "jobTitle": "פסיכותרפיסט",
+  "knowsAbout": ["פסיכותרפיה", "האקומי", "מיינדפולנס"],
+  "alumniOf": {
+    "@type": "Hospital",
+    "name": "בית חולים לב השרון",
+    "url": "https://www.lev-hasharon.co.il/"
+  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "האיגוד הישראלי הרב-תחומי לפסיכותרפיה",
+      "url": "https://israel-psychotherapy.org/"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "מסלול ארבע שנתי לפסיכותרפיה",
+      "credentialCategory": "professionalDesignation",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Hakomi Institute Israel",
+        "url": "https://hakomiisrael.com/"
+      }
+    }
+  ],
+  "worksFor": {
+    "@id": "https://abrahamdagan.co.il"
+  }
+}
+</script>
+
+    <!-- JSON-LD: Service — TO CHANGE per satellite page -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "זוגיות ומערכות יחסים", /* TO CHANGE */
+  "serviceType": "זוגיות ומערכות יחסים", /* TO CHANGE */
+  "url": "https://abrahamdagan.co.il/relationships", /* TO CHANGE */
+  "description": "טיפול במערכות יחסים וזוגיות בפרדס חנה. עם אברהם דגן, פסיכותרפיסט ומטפל רגשי.", /* TO CHANGE */
+  "areaServed": [
+    { "@type": "City", "name": "פרדס חנה כרכור" },
+    { "@type": "City", "name": "חדרה" },
+    { "@type": "City", "name": "בנימינה" },
+    { "@type": "City", "name": "זכרון יעקב" },
+    { "@type": "City", "name": "קיסריה" },
+    { "@type": "City", "name": "חריש" },
+    { "@type": "City", "name": "עתלית" },
+    { "@type": "City", "name": "אור עקיבא" },
+    { "@type": "City", "name": "תלמי אלעזר" }
+  ],
+  "provider": {
+    "@id": "https://abrahamdagan.co.il"
+  }
+}
+</script>
+
+    <!-- JSON-LD: BreadcrumbList — TO CHANGE per satellite page -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "דף הבית",
+      "item": "https://abrahamdagan.co.il"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "זוגיות ומערכות יחסים", /* TO CHANGE */
+      "item": "https://abrahamdagan.co.il/relationships" /* TO CHANGE */
+    }
+  ]
+}
+</script>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -22,28 +189,22 @@
                         cream: '#FAF7F4',
                         muted: { DEFAULT: '#7A7068', dark: '#5A524C' },
                     },
-                    fontFamily: {
-                        sans: ['Assistant', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Assistant', 'sans-serif'] },
                     keyframes: {
-                        'infinite-scroll': {
-                            from: { transform: 'translateX(0)' },
-                            to: { transform: 'translateX(-100%)' },
-                        }
+                        'infinite-scroll': { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-100%)' } }
                     },
-                    animation: {
-                        'infinite-scroll': 'infinite-scroll 25s linear infinite',
-                    }
+                    animation: { 'infinite-scroll': 'infinite-scroll 25s linear infinite' }
                 }
             }
         }
     </script>
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="/assets/shared.css">
 </head>
 
 <body class="antialiased bg-cream text-navy font-sans">
     <a href="#main-content" class="sr-only focus:not-sr-only">דלג לתוכן הראשי</a>
-
     <!-- ════════════════════════════════════════════
        STICKY NAVIGATION
   ═════════════════════════════════════════════ -->
@@ -51,6 +212,8 @@
     <header id="navbar" class="fixed top-0 right-0 left-0 z-[100] bg-white/50 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
+                <!--menu-->
+                <!-- Logo + Nav grouped on the right (first in DOM = right side in RTL) -->
                 <div class="flex items-center gap-2 sm:gap-6 lg:gap-8">
                     <!-- Hamburger (mobile only) -->
                     <button id="hamburger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobile-menu"
@@ -58,7 +221,8 @@
                         <span></span><span></span><span></span>
                     </button>
                     <!-- Logo / Name -->
-                    <a href="/" class="flex flex-col items-center leading-tight group">
+                    <a href="/" class="flex flex-col items-center leading-tight group rounded">
+
                         <span
                             class="text-lg sm:text-xl font-semibold tracking-tight text-navy-dark group-hover:text-sage transition-colors">אברהם
                             דגן</span>
@@ -67,15 +231,18 @@
                             ומטפל רגשי</span>
                     </a>
                     <!-- Desktop nav -->
-                    <nav class="hidden lg:block text-sm font-medium text-navy-dark" aria-label="ניווט ראשי">
+                    <nav class="hidden lg:block text-sm font-medium text-navy-dark">
                         <ul class="flex items-center gap-8 list-none m-0 p-0">
+
                             <li>
                                 <a href="/" class="nav-link hover:text-sage transition-colors rounded">דף
                                     הבית</a>
                             </li>
+
                             <li>
                                 <a href="/#about" class="nav-link hover:text-sage transition-colors rounded">אודות</a>
                             </li>
+
                             <!-- תחומי טיפול with dropdown -->
                             <li data-dropdown class="nav-dropdown">
                                 <a href="/#areas" class="nav-link hover:text-sage transition-colors rounded">תחומי
@@ -84,19 +251,20 @@
                                     class="nav-dropdown-chevron nav-link hover:text-sage transition-colors rounded"
                                     aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-areas"
                                     aria-label="הצג תפריט תחומי טיפול">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </button>
                                 <ul id="dropdown-areas" class="nav-dropdown-menu">
-                                    <li><a href="/relationships" class="rounded" aria-current="page">זוגיות ומערכות
+                                    <li><a href="/relationships" aria-current="page" class="rounded">זוגיות ומערכות
                                             יחסים</a></li>
                                     <li><a href="/crisis" class="rounded">דיכאון, חרדה ומצבי משבר</a></li>
                                     <li><a href="/young-adults" class="rounded">בניית זהות ועצמאות</a></li>
                                     <li><a href="/career" class="rounded">שחיקה בעבודה</a></li>
                                 </ul>
                             </li>
+
                             <!-- שיטות טיפול with dropdown -->
                             <li data-dropdown class="nav-dropdown">
                                 <a href="/#methods" class="nav-link hover:text-sage transition-colors rounded">שיטות
@@ -105,7 +273,7 @@
                                     class="nav-dropdown-chevron nav-link hover:text-sage transition-colors rounded"
                                     aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-methods"
                                     aria-label="הצג תפריט שיטות טיפול">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                     </svg>
@@ -116,15 +284,18 @@
                                     <li><a href="/hakomi" class="rounded">האקומי</a></li>
                                 </ul>
                             </li>
+
                             <li>
-                                <a href="#contact" class="nav-link hover:text-sage transition-colors rounded">צור
+                                <a href="/#contact" class="nav-link hover:text-sage transition-colors rounded">צור
                                     קשר</a>
                             </li>
+
                         </ul>
                     </nav>
                 </div>
-                <!-- CTA button -->
-                <!-- COMPONENT: btn-cta -->
+
+                <!-- CTA button (last in DOM = left side in RTL) -->
+                <!-- COMPONENT: btn-cta HEADER -->
                 <a id="nav-cta"
                     href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
                     target="_blank" rel="noopener noreferrer"
@@ -179,368 +350,604 @@
                     <li><a href="/hakomi" class="mobile-sublink">האקומי</a></li>
                 </ul>
             </li>
-            <li><a href="#contact" class="mobile-menu-link">צור קשר</a></li>
+            <li><a href="/#contact" class="mobile-menu-link">צור קשר</a></li>
         </ul>
     </nav>
 
     <main id="main-content">
 
         <!-- ════════════════════════════════════════════
-           PAGE HERO
-      ═════════════════════════════════════════════ -->
-        <section class="page-hero pt-36 md:pt-44 pb-14 md:pb-20" aria-labelledby="page-title">
+       PAGE HERO
+  ═════════════════════════════════════════════ -->
+        <section class="relative overflow-hidden pt-36 md:pt-44 pb-14 md:pb-20">
+            <!-- Video background (md+) -->
+            <video class="hidden md:block absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline
+                poster="assets/site-images/mindfulness_bg_static.jpg">
+                <source src="assets/site-images/mindfulness_bg.mp4" type="video/mp4">
+            </video>
+            <!-- Poster image (mobile fallback) -->
+            <img src="assets/site-images/mindfulness_bg_static.jpg" alt=""
+                class="md:hidden absolute inset-0 w-full h-full object-cover object-center" aria-hidden="true">
+            <!-- Main dark overlay -->
+            <div class="hero-overlay-main absolute inset-0 pointer-events-none">
+            </div>
+            <!-- Secondary overlay scoped to text side -->
+            <div class="hero-overlay-secondary absolute inset-0 pointer-events-none"></div>
+            <!-- Dot texture -->
+            <div class="hero-overlay-pattern absolute inset-0 pointer-events-none" aria-hidden="true">
+            </div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
                 <!-- Breadcrumb -->
                 <nav aria-label="נתיב ניווט" class="mb-6">
                     <ol class="flex items-center gap-1 text-sm text-cream/60 list-none m-0 p-0 flex-wrap">
-                        <li>
-                            <a href="/" class="hover:text-cream transition-colors rounded">דף
-                                הבית</a>
-                        </li>
+                        <li><a href="/" class="hover:text-cream transition-colors rounded">דף
+                                הבית</a></li>
                         <li aria-hidden="true"><span class="text-cream/40 mx-1">›</span></li>
                         <li><span class="text-cream/90" aria-current="page">זוגיות ומערכות יחסים</span></li>
                     </ol>
                 </nav>
-                <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-4">
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-4 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                     זוגיות ומערכות יחסים
                 </h1>
-                <p class="text-cream text-lg md:text-xl max-w-2xl leading-relaxed opacity-90">
-                    טיפול רגשי לזוגות ויחידים המסייע להבין דפוסי קשר
+                <p
+                    class="text-cream text-lg md:text-xl max-w-2xl leading-relaxed opacity-90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
+                    להיות נוכחים ברגע, ולפגוש את עצמנו כפי שאנחנו
                 </p>
             </div>
         </section>
 
         <!-- ════════════════════════════════════════════
-           DECORATIVE SCROLL STEPPER (xl+ only, fixed)
-      ═════════════════════════════════════════════ -->
-
-        <!-- ════════════════════════════════════════════
-           CONTENT SECTIONS
-      ═════════════════════════════════════════════ -->
-
-        <div id="timeline-wrapper" class="relative overflow-hidden">
-
-            <!-- Decorative blobs: lg+ only, positioned across full wrapper height -->
-            <div aria-hidden="true"
-                class="hidden lg:block pointer-events-none absolute -top-24 -right-24 w-[36rem] h-[36rem] rounded-full bg-stone-warm/40 blur-3xl">
-            </div>
-            <div aria-hidden="true"
-                class="hidden lg:block pointer-events-none absolute top-[18%] -left-28 w-[30rem] h-[30rem] rounded-full bg-stone-medium/35 blur-3xl">
-            </div>
-            <div aria-hidden="true"
-                class="hidden lg:block pointer-events-none absolute top-[40%] -right-20 w-[28rem] h-[28rem] rounded-full bg-stone/20 blur-3xl">
-            </div>
-            <div aria-hidden="true"
-                class="hidden lg:block pointer-events-none absolute top-[62%] -left-20 w-[32rem] h-[32rem] rounded-full bg-stone-deep/20 blur-3xl">
-            </div>
-            <div aria-hidden="true"
-                class="hidden lg:block pointer-events-none absolute bottom-0 right-1/3 w-80 h-80 rounded-full bg-stone-medium/35 blur-3xl">
-            </div>
-
-            <!-- Section 1: דפוסי קשר — text left, placeholder right -->
-            <section id="patterns" class="py-12 bg-cream" aria-labelledby="heading-patterns">
-                <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
-                    <div data-reveal
-                        class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-                        <!-- Image above text on mobile; right column on desktop (RTL flex-row: first child = right) -->
-                        <div class="w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
-                            <div aria-hidden="true"
-                                class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div class="w-80 h-80 rounded-full bg-sage-light/50 blur-2xl"></div>
-                            </div>
-                            <img src="assets/site-images/undraw_love_9mug.svg" alt="זוג בקשר רגשי עמוק"
-                                class="w-3/4 max-w-sm relative z-10" />
-                        </div>
-                        <!-- Text: left column on desktop -->
-                        <div
-                            class="w-full lg:w-1/2 bg-white rounded-3xl p-10 border border-stone-medium/20 card-accent-l">
-                            <!-- COMPONENT: section-heading -->
-                            <h2 id="heading-patterns"
-                                class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
-                                כיצד נוצרים דפוסי הקשר
-                            </h2>
-                            <span
-                                class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
-                            <p class="text-muted text-base md:text-lg leading-loose">
-                                דפוסי הקשר שלנו מתעצבים כבר בשנות חיינו הראשונות, דרך המפגשים עם דמויות ההתקשרות
-                                הראשוניות שלנו. מסרים – מפורשים ולא מפורשים – על אהבה, ביטחון, גבולות ונוכחות רגשית,
-                                הופכים עם הזמן למפה הפנימית שאנחנו מביאים לכל קשר חדש. בטיפול, אנחנו לומדים לזהות את
-                                אותן מפות, מבינים כיצד ציפיות מהעבר חודרות להווה, ומגלים שינוי אפשרי – לא כשינוי של
-                                האחר, אלא כצמיחה עמוקה ואמיתית שלנו עצמנו, מבפנים.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Section 2: תקשורת זוגית — placeholder left, text right -->
-            <section id="communication" class="py-12 bg-cream" aria-labelledby="heading-communication">
-                <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
-                    <div data-reveal
-                        class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
-                        <!-- Image above text on mobile; left column on desktop (RTL flex-row-reverse: first child = left) -->
-                        <div class="w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
-                            <div aria-hidden="true"
-                                class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div class="w-80 h-80 rounded-full bg-stone-deep/50 blur-2xl"></div>
-                            </div>
-                            <img src="assets/site-images/undraw_respond_o54z.svg" alt="תקשורת זוגית"
-                                class="w-3/4 max-w-sm relative z-10" />
-                        </div>
-                        <!-- Text: right column on desktop -->
-                        <div
-                            class="w-full lg:w-1/2 bg-white rounded-3xl p-10 border border-stone-medium/20 card-accent-r">
-                            <!-- COMPONENT: section-heading -->
-                            <h2 id="heading-communication"
-                                class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
-                                תקשורת כבסיס לקשר בריא
-                            </h2>
-                            <span
-                                class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
-                            <p class="text-muted text-base md:text-lg leading-loose">
-                                תקשורת טובה אינה רק הימנעות מריבות – היא היכולת להיות נוכחים, להקשיב ולהיות מוקשבים,
-                                גם ברגעים הקשים ביותר. רבים מאיתנו גדלנו בלי מודלים לתקשורת פתוחה ובריאה, ולכן מצאנו
-                                את עצמנו בתבניות חוזרות: שתיקה, ריחוק, ניסיון שוב ושוב להסביר מבלי להיות מובנים.
-                                בטיפול, נלמד לזהות את הצרכים שמסתתרים מאחורי המריבות, לפתח שפה רגשית משותפת ולהחזיר
-                                את תחושת הקרבה שנשחקה.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Section 3: משברי זוגיות — text left, placeholder right -->
-            <section id="crisis" class="py-12 bg-cream" aria-labelledby="heading-crisis">
-                <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
-                    <div data-reveal
-                        class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-                        <!-- Image above text on mobile; right column on desktop -->
-                        <div class="w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
-                            <div aria-hidden="true"
-                                class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div class="w-80 h-80 rounded-full bg-sage-light/50 blur-2xl"></div>
-                            </div>
-                            <img src="assets/site-images/undraw_effortless-love_zg5q.svg" alt="זוגיות ומשבר"
-                                class="w-1/2 max-w-sm relative z-10" />
-                        </div>
-                        <!-- Text: left column on desktop -->
-                        <div
-                            class="w-full lg:w-1/2 bg-white rounded-3xl p-10 border border-stone-medium/20 card-accent-l">
-                            <!-- COMPONENT: section-heading -->
-                            <h2 id="heading-crisis"
-                                class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
-                                משברי זוגיות: כשהקשר
-                            </h2>
-                            <span
-                                class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
-                            <p class="text-muted text-base md:text-lg leading-loose">
-                                לעיתים הקשר נתקל במשבר – בגידה, פרידה קרובה, אבדן אמון, או שחיקה ארוכה שנצברה בשקט.
-                                בנקודות האלה, קל להרגיש שאין דרך חזרה. אך בניגוד לתחושה הזו, משבר בזוגיות הוא לעיתים
-                                קרובות גם הזמן שבו שינוי אמיתי הופך אפשרי – בתנאי שיש מרחב בטוח לעבד אותו. הטיפול
-                                מציע בדיוק את זה: מקום ניטרלי, לא שיפוטי, שבו שני הצדדים יכולים להיות נוכחים
-                                ונשמעים.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Section 4: הטיפול — placeholder left, text right -->
-            <section id="therapy" class="py-12 bg-cream" aria-labelledby="heading-therapy">
-                <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
-                    <div data-reveal
-                        class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
-                        <!-- Image above text on mobile; left column on desktop -->
-                        <div class="w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
-                            <div aria-hidden="true"
-                                class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div class="w-80 h-80 rounded-full bg-stone-deep/50 blur-2xl"></div>
-                            </div>
-                            <img src="assets/site-images/undraw_couple-photo_vr7f.svg" alt="טיפול זוגי"
-                                class="w-3/4 max-w-sm relative z-10" />
-                        </div>
-                        <!-- Text: right column on desktop -->
-                        <div
-                            class="w-full lg:w-1/2 bg-white rounded-3xl p-10 border border-stone-medium/20 card-accent-r">
-                            <!-- COMPONENT: section-heading -->
-                            <h2 id="heading-therapy"
-                                class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
-                                הטיפול – מרחב בטוח לשינוי
-                            </h2>
-                            <span
-                                class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
-                            <p class="text-muted text-base md:text-lg leading-loose">
-                                בטיפול רגשי למערכות יחסים, המטרה אינה לקבוע מי צודק. המטרה היא לייצר מרחב שבו כל אחד
-                                יכול לחוות הבנה, ולגלות מה הוא מביא לקשר – מה הצרכים שלו, מה הפחדים ומה מונע ממנו
-                                לאהוב ולהיאהב באופן מלא. בין אם אתם מגיעים כזוג ובין אם כיחיד העובד על דפוסי הקשר
-                                שלו, התהליך הטיפולי יכול להיות גשר בין מה שיש לבין מה שאתם רוצים שיהיה.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Timeline spine: desktop only, purely additive -->
-            <div id="timeline-spine" class="hidden lg:block" aria-hidden="true">
-                <div id="timeline-track"></div>
-                <div id="timeline-fill"></div>
-                <div class="timeline-dot" data-index="0"></div>
-                <div class="timeline-dot" data-index="1"></div>
-                <div class="timeline-dot" data-index="2"></div>
-                <div class="timeline-dot" data-index="3"></div>
-            </div>
-
-        </div><!-- /#timeline-wrapper -->
-
-        <!-- ════════════════════════════════════════════
-           CTA BLOCK
-      ═════════════════════════════════════════════ -->
-        <section aria-label="קריאה לפעולה" class="bg-navy-dark py-20 px-4 md:px-8">
-            <div data-reveal
-                class="max-w-3xl mx-auto text-center opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                <span class="text-sage-light text-sm font-semibold tracking-widest uppercase block mb-4">מוכנים
-                    להתחיל?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-cream leading-tight mb-6">
-                    הקשר שלכם מגיע לטיפול ולתשומת לב
-                </h2>
-                <p class="text-cream/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-                    צרו קשר לשיחת היכרות קצרה ללא התחייבות, ונבדוק יחד כיצד אוכל לסייע.
-                </p>
-                <!-- COMPONENT: btn-cta -->
-                <a href="#contact"
-                    class="btn-cta inline-flex items-center gap-3 bg-sage-dark text-white font-bold text-base px-6 py-3.5 sm:text-lg sm:px-10 sm:py-4 rounded-full shadow-md hover:shadow-lg hover:bg-sage-accessible transform hover:scale-[1.02] transition-all duration-300">
-                    לקביעת פגישה
-                </a>
-            </div>
-        </section>
-
-        <!-- ════════════════════════════════════════════
-           CONTACT
-      ═════════════════════════════════════════════ -->
-        <section id="contact" class="py-12 md:py-24 bg-white">
-            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
+       SECTION 1: BRIEF
+  ═════════════════════════════════════════════ -->
+        <section id="section-1" class="py-12 md:py-24 bg-white">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
                 <div data-reveal
-                    class="text-center mb-10 md:mb-16 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
+                    class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/3 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/index_atmosphere.jpg" alt="" aria-hidden="true"
+                            class="w-full max-w-md aspect-[16/9] lg:aspect-[4/5] rounded-3xl object-cover relative z-10" />
+                    </div>
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-2/3">
+                        <!-- COMPONENT: section-heading -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            מערכות יחסים כמרחב של גילוי עצמי
+                        </h2>
+                        <span
+                            class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            מערכות יחסים הן המקום שבו אנו פוגשים את עצמנו בצורה החשופה ביותר. הן המרחב שבו מתעוררת
+                            הכמיהה העמוקה ביותר לקרבה, לצד הפחדים הראשוניים שלנו מפני פגיעה או דחייה. האופן שבו אנו
+                            אוהבים, חוששים, מתקרבים או מתרחקים אינו מקרי; הוא מושפע עמוקות מן <strong
+                                class="font-semibold text-navy-dark">״המפה הרגשית"</strong> שגיבשנו לאורך חיינו - אותם
+                            <strong class="font-semibold text-navy-dark">דפוסי התקשרות</strong> שנוצרו בילדות ומעצבים את
+                            הדרך שבה אנו רוקמים ומנהלים קשרים בבגרות.
+                        </p>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            בין אם אנו נמצאים בזוגיות ומבקשים לחזק אותה, ובין אם אנו חווים בדידות וקושי ביצירת קשר זוגי
+                            -
+                            בטיפול נוצר <strong class="font-semibold text-navy-dark">מרחב בטוח ולא שיפוטי</strong>
+                            להתבוננות במפה הרגשית שלנו. דרך פיתוח מודעות לדפוסי ההתקשרות שלנו, ניתן להבין כיצד הם פועלים
+                            במערכות היחסים בחיינו, להמיר תגובות אוטומטיות בבחירה מודעת, ומתוך כך לנוע לעבר <strong
+                                class="font-semibold text-navy-dark">חיבור בריא ואותנטי יותר</strong> - הן בקשר עם בן או
+                            בת הזוג, והן במפגש שלנו עם העולם ועם עצמנו.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ════════════════════════════════════════════
+       SECTION 2: ACCORDION PRINCIPLES
+  ═════════════════════════════════════════════ -->
+        <section id="section-2" class="py-12 md:py-24 bg-cream">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
+
+                <!-- Heading -->
+                <div data-reveal
+                    class="text-center max-w-3xl mx-auto mb-10 md:mb-16 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                     <!-- COMPONENT: section-heading -->
-                    <span class="text-sage font-semibold text-sm tracking-widest uppercase block mb-3">צרו קשר</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
-                        נדבר
+                        מהם דפוסי התקשרות
                     </h2>
                     <span
                         class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mx-auto mb-8 rounded-full"></span>
-                    <p class="text-muted text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-                        השאירו פרטים ואחזור אליכם בהקדם לתיאום פגישת היכרות
+
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        דפוסי התקשרות הם הדרכים שבהן אנו יוצרים קשרים, חווים קרבה ומתמודדים עם קונפליקטים במערכת
+                        יחסים. המושג מבוסס על <strong class="font-semibold text-navy-dark">תאוריית ההתקשרות</strong> של
+                        ג'ון בולבי, לפיה הקשר הראשוני של התינוק עם דמות הטיפול העיקרית משפיע על יחסיו כבוגר. בדומה
+                        לאופן שבו חוויות עבר משפיעות על ההווה בראי <a href="/psychotherapy"
+                            class="text-sage-accessible font-semibold hover:text-sage-accessible transition-colors underline underline-offset-4"
+                            aria-label="קרא עוד על פסיכותרפיה דינמית">הפסיכותרפיה הדינמית</a>, כך גם האופן שבו אנו
+                        נקשרים לאחרים מעוצב במידה רבה על ידי חוויות עבר ודמויות הוריות או דמויות סמכות מוקדמות בחיינו.
+                        </br>
+                        <strong class="font-semibold text-navy-dark">קיימים ארבעה דפוסי התקשרות עיקריים:</strong>
                     </p>
                 </div>
 
-                <!-- Contact form -->
-                <form id="contact-form" data-reveal
-                    class="bg-cream rounded-2xl p-8 md:p-12 shadow-sm opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0"
-                    action="https://formspree.io/f/xzdaoedj" method="POST">
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-sm font-medium text-navy-dark mb-2" for="name">שם*</label>
-                            <input id="name" name="name" type="text" placeholder="ישראל ישראלי" required
-                                class="w-full border border-stone-medium rounded-xl px-4 py-3 text-navy-dark bg-white focus:border-sage transition placeholder-muted/40" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-navy-dark mb-2" for="phone">טלפון*</label>
-                            <input id="phone" name="phone" type="tel" placeholder="05X-XXX-XXXX" required
-                                class="w-full border border-stone-medium rounded-xl px-4 py-3 text-navy-dark bg-white focus:border-sage transition placeholder-muted/40" />
-                        </div>
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-navy-dark mb-2" for="email">דוא"ל</label>
-                        <input id="email" name="email" type="email" placeholder="your@email.com"
-                            class="w-full border border-stone-medium rounded-xl px-4 py-3 text-navy-dark bg-white focus:border-sage transition placeholder-muted/40" />
-                    </div>
-                    <div class="mb-8">
-                        <label class="block text-sm font-medium text-navy-dark mb-2" for="message">הודעה</label>
-                        <textarea id="message" name="message" rows="4" placeholder="ספרו לי בקצרה על מה שמביא אתכם..."
-                            class="w-full border border-stone-medium rounded-xl px-4 py-3 text-navy-dark bg-white focus:border-sage transition resize-none placeholder-muted/40"></textarea>
-                    </div>
-                    <div class="text-center w-full mt-2">
-                        <!-- COMPONENT: btn-cta -->
-                        <button type="submit" id="submit-btn"
-                            class="btn-cta w-full md:w-auto inline-flex items-center justify-center gap-2 bg-sage-dark text-white font-bold text-base px-10 py-4 rounded-full shadow-lg hover:bg-sage-accessible transition-colors">
-                            שליחה
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-
-                <!-- Success feedback -->
-                <div id="form-feedback" data-reveal
-                    class="hidden bg-cream rounded-2xl p-10 text-center shadow-sm opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                    <div class="text-5xl mb-4">✅</div>
-                    <h3 class="text-xl font-bold text-navy-dark mb-2">תודה! הפנייה התקבלה.</h3>
-                    <p class="text-muted">אחזור אליך בהקדם לתיאום פגישת היכרות.</p>
-                </div>
-
-                <!-- Direct contact info -->
+                <!-- 2-column accordion grid -->
                 <div data-reveal
-                    class="mt-10 hidden sm:flex flex-wrap justify-center gap-8 text-muted text-sm opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
-                    <a href="tel:+972528604102"
-                        class="flex items-center gap-2 hover:text-sage transition-colors rounded"
-                        aria-label="חייגו לאברהם דגן">
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                            aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.539-4.062-7.236-7.118l1.264-1.077c.345-.295.478-.764.33-1.182L6.906 2.36C6.738 1.834 6.228 1.5 5.658 1.5H4.125C3.132 1.5 2.25 2.515 2.25 3.75v3z" />
-                        </svg>
-                        <span>צרו קשר טלפוני</span>
-                    </a>
-                    <a href="https://wa.me/972528604102?text=%D7%94%D7%99%D7%99%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
-                        target="_blank" rel="noopener noreferrer"
-                        class="flex items-center gap-2 hover:text-sage transition-colors rounded">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                        וואטסאפ
-                    </a>
-                    <span class="flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                            aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <span>פרדס חנה כרכור</span>
-                    </span>
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-4 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
+                    <!-- COLUMN 1 -->
+                    <div class="flex flex-col gap-4">
+                        <!-- COMPONENT: faq-card -->
+                        <div class="faq-card bg-white rounded-2xl overflow-hidden">
+                            <details class="group">
+                                <summary
+                                    class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none rounded font-semibold text-navy-dark text-base leading-snug">
+                                    <h3 class="flex-1 text-right"><span aria-hidden="true">🤝</span> התקשרות בטוחה</h3>
+                                    <span aria-hidden="true"
+                                        class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
+                                </summary>
+                                <div
+                                    class="faq-answer px-7 pb-6 text-muted text-sm leading-relaxed border-t border-stone-medium/40 pt-4">
+                                    <p>מתאפיינת באיזון בין תלות ועצמאות. אנשים בעלי דפוס התקשרות זה חשים בנוח עם קרבה
+                                        ואינטימיות, נותנים אמון באחרים, יודעים לבקש עזרה אך גם מסוגלים להיות עצמאיים,
+                                        ונוטים לבנות מערכות יחסים יציבות ובריאות.</p>
+                                </div>
+                            </details>
+                        </div>
+                        <!-- COMPONENT: faq-card -->
+                        <div class="faq-card bg-white rounded-2xl overflow-hidden">
+                            <details class="group">
+                                <summary
+                                    class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none rounded font-semibold text-navy-dark text-base leading-snug">
+                                    <h3 class="flex-1 text-right"><span aria-hidden="true">⚓</span> התקשרות
+                                        חרדתית/אמביוולנטית</h3>
+                                    <span aria-hidden="true"
+                                        class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
+                                </summary>
+                                <div
+                                    class="faq-answer px-7 pb-6 text-muted text-sm leading-relaxed border-t border-stone-medium/40 pt-4">
+                                    <p>מתאפיינת בצורך עז בקרבה לצד פחדי נטישה. אנשים עם דפוס התקשרות זה עשויים לחוות
+                                        חרדה רבה במערכות יחסים, והמפה הרגשית שלהם רגישה במיוחד לסימני מרחק, מה שמעורר
+                                        חשש שבן או בת הזוג אינם מחויבים מספיק, ומגביר צורך באישורים חיצוניים כדי לייצר
+                                        תחושת ביטחון.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- COLUMN 2 -->
+                    <div class="flex flex-col gap-4">
+                        <!-- COMPONENT: faq-card -->
+                        <div class="faq-card bg-white rounded-2xl overflow-hidden">
+                            <details class="group">
+                                <summary
+                                    class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none rounded font-semibold text-navy-dark text-base leading-snug">
+                                    <h3 class="flex-1 text-right"><span aria-hidden="true">🛡️</span> התקשרות נמנעת</h3>
+                                    <span aria-hidden="true"
+                                        class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
+                                </summary>
+                                <div
+                                    class="faq-answer px-7 pb-6 text-muted text-sm leading-relaxed border-t border-stone-medium/40 pt-4">
+                                    <p>מתאפיינת בהימנעות מאינטימיות, התרחקות או התנתקות במצבי קרבה או לחץ. אנשים עם דפוס
+                                        התקשרות זה נוטים לפרש קרבה יתרה כ"חנק" או כאובדן חופש. מתוך ניסיון לשלוט במידת
+                                        הקרבה, הם נמנעים מחשיפה רגשית, מתרחקים כשמערכת היחסים הופכת למחייבת, ולעיתים אף
+                                        מבטלים את הצורך באחר ו"מקדשים" את העצמאות שלהם.</p>
+                                </div>
+                            </details>
+                        </div>
+                        <!-- COMPONENT: faq-card -->
+                        <div class="faq-card bg-white rounded-2xl overflow-hidden">
+                            <details class="group">
+                                <summary
+                                    class="flex items-center justify-between gap-4 px-7 py-5 cursor-pointer list-none select-none rounded font-semibold text-navy-dark text-base leading-snug">
+                                    <h3 class="flex-1 text-right"><span aria-hidden="true">🌀</span> התקשרות בלתי
+                                        מאורגנת</h3>
+                                    <span aria-hidden="true"
+                                        class="flex-shrink-0 w-7 h-7 rounded-full bg-sage/15 flex items-center justify-center transition-transform duration-300 group-open:rotate-45 text-sage font-light text-xl leading-none">+</span>
+                                </summary>
+                                <div
+                                    class="faq-answer px-7 pb-6 text-muted text-sm leading-relaxed border-t border-stone-medium/40 pt-4">
+                                    <p>דפוס התקשרות זה מהווה שילוב של התקשרות חרדתית/אמביוולנטית והתקשרות נמנעת,
+                                        ומתאפיין בהתנהגות לא עקבית. זהו מצב של קונפליקט פנימי עמוק - הכמיהה העזה לקרבה
+                                        מתנגשת עם פחד משתק ממנה, מה שמוביל לתנודות חדות בין חרדה ותלותיות לבין הימנעות
+                                        וניתוק.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div><!-- /grid -->
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+       SECTION 3: COMMUNICATION & INTIMACY
+  ═════════════════════════════════════════════ -->
+        <section id="section-3" class="py-12 md:py-24 bg-white">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
+                <div data-reveal
+                    class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/index_atmosphere.jpg" alt="" aria-hidden="true"
+                            class="w-full max-w-md aspect-[16/9] lg:aspect-[4/5] rounded-3xl object-cover relative z-10" />
+                    </div>
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-1/2">
+                        <!-- COMPONENT: section-heading -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            תקשורת ואינטימיות
+                        </h2>
+                        <span
+                            class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            דפוס ההתקשרות שלנו אינו גזירת גורל; הוא המפה הרגשית שאיתה הגענו, אך בעזרת התהליך הטיפולי אנו
+                            יכולים ללמוד לשרטט נתיבים חדשים ולעבור מדפוס לא-בטוח לעבר דפוס בטוח יותר. בעזרת <a
+                                href="/mindfulness"
+                                class="text-sage-accessible font-semibold hover:text-sage-accessible transition-colors underline underline-offset-4"
+                                aria-label="קרא עוד על מיינדפולנס">מיינדפולנס</a> ניתן להעלות למודעות את הנחות היסוד
+                            שמנחות את דפוס ההתקשרות שלנו, ודרך עבודה עם <a href="/psychotherapy#principles"
+                                class="text-sage-accessible font-semibold hover:text-sage-accessible transition-colors underline underline-offset-4"
+                                aria-label="קרא עוד על פסיכותרפיה דינמית">העברה</a> וטכניקות של <a href="/hakomi"
+                                class="text-sage-accessible font-semibold hover:text-sage-accessible transition-colors underline underline-offset-4"
+                                aria-label="קרא עוד על האקומי">האקומי</a> נוכל להתנסות ב<strong
+                                class="font-semibold text-navy-dark">'חוויה החסרה'</strong> - אותה הזנה רגשית שהייתה
+                            חסרה בעבר. התהליך מאפשר טיפוח איכויות של <strong class="font-semibold text-navy-dark">נוכחות
+                                אוהבת</strong>, הכרה ב<strong class="font-semibold text-navy-dark">השפעה הדדית, רגישות
+                                וחמלה</strong> כלפי העצמי וכלפי האחר. דרך חיזוק היכולת לשהות עם רגשות מורכבים מבלי
+                            להיסחף לתגובה אוטומטית, אנו מאפשרים לאינטימיות לצמוח מחדש.
+                        </p>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            אינטימיות היא הרבה מעבר לקרבה פיזית - היא אחד היסודות החשובים ביותר של קשר זוגי בריא, והיא
+                            כוללת גם <strong class="font-semibold text-navy-dark">קרבה רגשית, שיח פתוח ותחושת ביטחון
+                                הדדית.</strong> תקשורת טובה מאפשרת אינטימיות אמיתית: כאשר בני הזוג מרגישים בטוחים לשתף
+                            ולהיחשף, נוצר חיבור עמוק ובריא שמחזק את הקשר לטווח הארוך. מנגד, תקשורת לקויה פוגעת
+                            באינטימיות, ועלולה ליצור תחושות של בדידות בתוך מערכת היחסים, חוסר שייכות, פגיעה באמון ואף
+                            להוביל למשבר זוגי. עבודה טיפולית על דפוסי התקשרות מאפשרת לשקם את הקרבה והאמון וליצור
+                            <strong class="font-semibold text-navy-dark">מערכת יחסים יציבה ותומכת</strong>, כך שהמפגש עם
+                            האחר – בין אם בזוגיות קיימת ובין אם בחיפוש אחר קשר חדש – יפסיק להיות זירה של מאבק או חשש,
+                            ויהפוך למרחב של הזנה, צמיחה וחיבור בטוח ופורה.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- ════════════════════════════════════════════
+       SECTION 4: RELATIONSHIP CRISES
+  ═════════════════════════════════════════════ -->
+        <section id="section-4" class="py-12 md:py-24 bg-cream">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
+                <div data-reveal
+                    class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/index_atmosphere.jpg" alt="" aria-hidden="true"
+                            class="w-full max-w-md aspect-[16/9] lg:aspect-[4/5] rounded-3xl object-cover relative z-10" />
+                    </div>
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-1/2">
+                        <!-- COMPONENT: section-heading -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            משברי זוגיות: הזדמנות לצמיחה מתוך השבר
+                        </h2>
+                        <span
+                            class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            משבר בזוגיות, בין אם הוא מתפרץ בעקבות אירועים חיצוניים כמו <a href="/crisis"
+                                class="text-sage-accessible font-semibold hover:text-sage-accessible transition-colors underline underline-offset-4"
+                                aria-label="קרא עוד על משברי חיים">משברי חיים</a>, אירוע נקודתי כמו בגידה, או מחלחל לאט
+                            מתוך שחיקה מצטברת, תחושת בדידות בתוך הקשר או תקשורת שהפכה למאבק - הוא לעיתים קרובות <strong
+                                class="font-semibold text-navy-dark">קריאה לשינוי של דינמיקה פנימית עמוקה</strong>. בתוך
+                            הקשר הזוגי, אנו נושאים לעיתים תקווה לא מודעת שהאחר ירפא את פצעי העבר שלנו או ימלא את חסכי
+                            הילדות שלנו. כאשר תקווה זו לא מתממשת במציאות, המשבר שנוצר אינו רק בעיה שיש לפתור, אלא
+                            <strong class="font-semibold text-navy-dark">הזמנה למפגש אמיתי עם עצמנו ועם האחר</strong>.
+                        </p>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            זוגיות מורכבת משני אנשים, שכל אחד מהם מקיים קודם כל מערכת יחסים עם עצמו. כאשר האיזון הפנימי
+                            של
+                            אחד מבני הזוג מופר, הדבר מהדהד ישירות אל תוך הקשר. בטיפול, אנו יוצרים מרחב שמאפשר <strong
+                                class="font-semibold text-navy-dark">לא רק "לשרוד" את המשבר הנוכחי</strong>, אלא <strong
+                                class="font-semibold text-navy-dark">להבין לעומק את שורשיו</strong> כדי ליצור שינוי
+                            מתמשך ויציב, ולבנות מערכת יחסים בריאה וחזקה יותר. בתהליך הטיפולי המשבר הופך ממרחב של כאב
+                            ל<strong class="font-semibold text-navy-dark">הזדמנות לצמיחה</strong> - לעבד את הפגיעות,
+                            להבין את הצרכים שלא נענו ולמצוא את <strong class="font-semibold text-navy-dark">כוח הריפוי
+                                הטבעי של הקשר</strong>, המאפשר להרפות
+                            מדפוסים ישנים ולנוע לעבר בניית יחסים מודעים וקרובים יותר.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+       SECTION 5: SINGLENESS & LONELINESS
+  ═════════════════════════════════════════════ -->
+        <section id="section-5" class="py-12 md:py-24 bg-white">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
+                <div data-reveal
+                    class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/index_atmosphere.jpg" alt="" aria-hidden="true"
+                            class="w-full max-w-md aspect-[16/9] lg:aspect-[4/5] rounded-3xl object-cover relative z-10" />
+                    </div>
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-1/2">
+                        <!-- COMPONENT: section-heading -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            רווקות, בדידות וחיפוש אחר זוגיות: הדרך לאחר עוברת דרך עצמי
+                        </h2>
+                        <span
+                            class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            עבור מי שנמצא בחיפוש ממושך אחר זוגיות, או חווה תקופה ארוכה של רווקות ובדידות, הטיפול מהווה
+                            <strong class="font-semibold text-navy-dark">מרחב בטוח לחקירה עדינה של המחסומים בדרך
+                                לקרבה</strong>.
+                            הכמיהה לקשר, לצד הקושי לממש אותו, עשויה לעורר תחושות עמוקות של תקיעות, יאוש או ספקות עצמיים.
+                            לעיתים קרובות, הניסיון הנחוש למצוא זוגיות הופך למסע מתיש שבו אנו שוכחים את הקשר הכי חשוב -
+                            הקשר שלנו עם עצמנו.
+                        </p>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            בטיפול נתבונן בהנחות היסוד הלא מודעות שעלולות לעכב את יצירת הקשר - אמונות כמו "זה תמיד נגמר
+                            בנטישה", "אני חייב.ת לבטל את עצמי כדי שיאהבו אותי" או "זוגיות היא מקום חונק". יחד נוכל לזהות
+                            את <a href="/psychotherapy#principles"
+                                class="text-sage-accessible font-semibold hover:text-sage-accessible transition-colors underline underline-offset-4"
+                                aria-label="קרא עוד על מנגנוני הגנה">מנגנוני ההגנה</a> שנועדו להגן עלינו בעבר מפני
+                            פגיעה,
+                            אך כיום משאירים אותנו במרחק בטוח אך בודד מהאחר. העבודה הטיפולית מאפשרת <strong
+                                class="font-semibold text-navy-dark">לחזק את מערכת היחסים שלנו עם עצמנו</strong>, ובדרך
+                            זו <strong class="font-semibold text-navy-dark">להגיע למפגש עם האחר מתוך מקום שלם, מעובד
+                                מודע
+                                יותר</strong>. כך תהליך החיפוש והדייטינג משתנה מזירה של חשש למרחב של <strong
+                                class="font-semibold text-navy-dark">גילוי עצמי</strong>, המאפשר לקשר חדש לצמוח מתוך
+                            קרקע
+                            יציבה, ביטחון וחופש בחירה.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+       SECTION 6: PARENTING & FAMILY
+  ═════════════════════════════════════════════ -->
+        <section id="section-6" class="py-12 md:py-24 bg-cream">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
+                <div data-reveal
+                    class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/index_atmosphere.jpg" alt="" aria-hidden="true"
+                            class="w-full max-w-md aspect-[16/9] lg:aspect-[4/5] rounded-3xl object-cover relative z-10" />
+                    </div>
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-1/2">
+                        <!-- COMPONENT: section-heading -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            הורות ומשפחה: לרפא את השרשרת הבין-דורית
+                        </h2>
+                        <span
+                            class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            המשפחה היא המערכת הראשונה שבה שורטטה "המפה הרגשית" שלנו. בתוך התא המשפחתי אנו פוגשים את
+                            הרגעים המרגשים ביותר, אך גם את המורכבים שבהם. שינויים בתא המשפחתי – מ<strong
+                                class="font-semibold text-navy-dark">הקמת משפחה והורות צעירה</strong>, ועד לאתגרי
+                            <strong class="font-semibold text-navy-dark">גיל ההתבגרות</strong> – מעוררים מתחים
+                            וקונפליקטים
+                            שנוגעים בשורשים העמוקים ביותר של דפוסי ההתקשרות שלנו.
+                        </p>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            פעמים רבות, כהורים, אנו מוצאים את עצמנו משחזרים באופן אוטומטי דפוסים, תגובות או אמונות
+                            שהפנמנו בילדותנו, לעיתים גם כאלה שהבטחנו לעצמנו שלא נאמץ. מחקרים קליניים מצביעים על <strong
+                                class="font-semibold text-navy-dark">העברה בין-דורית</strong> של דפוסי התקשרות בין הורים
+                            לילדיהם. זיהוי העברה זו של מטעני העבר מאפשר לנו להבין את מקור התגובות הרגשיות שלנו מול
+                            ילדינו
+                            ומול בן או בת הזוג, במיוחד ברגעי לחץ או קונפליקט.
+                        </p>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            הטיפול מאפשר לעצור את השרשרת האוטומטית הזו, ו<strong
+                                class="font-semibold text-navy-dark">לייצר במקומה בחירה מודעת ומטיבה</strong>. דרכו אנו
+                            לומדים להבחין בין מה ששייך להיסטוריה שלנו ואינו משרת אותנו עוד, לבין מה שמתרחש כאן ועכשיו
+                            מול
+                            הקרובים אלינו ביותר. תהליך זה מעניק הזדמנות ליצור <strong
+                                class="font-semibold text-navy-dark">חוויה מתקנת</strong> עבור עצמנו, ובכך להעניק לדור
+                            הבא
+                            <strong class="font-semibold text-navy-dark">בסיס בטוח וקשוב יותר</strong>. כך מתאפשרת
+                            תנועה שאינה נשענת על שחזור מכאובי העבר, אלא על בניית קשר משפחתי המבוסס על ביטחון וחופש -
+                            <strong class="font-semibold text-navy-dark">עבור ילדינו ועבורנו</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+       SECTION 7: CONCLUSION
+  ═════════════════════════════════════════════ -->
+        <section id="section-7" class="py-12 md:py-24 bg-white">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-6xl">
+                <div data-reveal
+                    class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
+
+                    <!-- Image side -->
+                    <div
+                        class="order-2 lg:order-1 w-full lg:w-1/2 flex-shrink-0 flex items-center justify-center py-4 relative">
+                        <img src="assets/site-images/index_atmosphere.jpg" alt="" aria-hidden="true"
+                            class="w-full max-w-md aspect-[16/9] lg:aspect-[4/5] rounded-3xl object-cover relative z-10" />
+                    </div>
+
+                    <!-- Text side -->
+                    <div class="order-1 lg:order-2 w-full lg:w-1/2">
+                        <!-- COMPONENT: section-heading -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            לא טוב היות האדם לבדו
+                        </h2>
+                        <span
+                            class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            מערכות היחסים בחיינו הן המצע שעליו נכתב סיפור חיינו. הן לא רק המקום שבו אנו פוגשים את האחר,
+                            אלא המרחב שבו אנו פוגשים את עצמנו בצורה החשופה ביותר - את הדפוסים, הפחדים והכמיהות העמוקות
+                            ביותר שלנו. בין אם מדובר בחיזוק זוגיות קיימת, בחיפוש אחר קשר, בהתמודדות עם משבר זוגי או
+                            בסוגיות של הורות, <strong class="font-semibold text-navy-dark">הקשרים בחיינו הם הזמנה מתמדת
+                                לצמיחה ולהתפתחות</strong>.
+                        </p>
+                        <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                            הבנת דפוסי ההתקשרות היא הרבה מעבר לתרגיל אקדמי; היא מפתח חיוני ל<strong
+                                class="font-semibold text-navy-dark">הפיכת מערכות היחסים בחיינו למקור של כוח
+                                והזנה</strong>. בעזרת פיתוח מודעות והתנסות בחוויות מיטיבות חדשות, אנו יכולים ליצור
+                            מערכות
+                            יחסים בהן שני הצדדים מרגישים בטוחים - ובכך הקשר עצמו הופך לבסיס בטוח לצמיחה של כל אחד ואחת.
+                            הטיפול מאפשר ליצור שינוי אשר צומח מבפנים, לקראת בניית קשרים שבהם אנו והאהובים עלינו יכולים
+                            להרגיש <strong class="font-semibold text-navy-dark">מוגנים, נראים וחופשיים</strong> לצמוח
+                            יחד.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+       CTA BAND
+  ═════════════════════════════════════════════ -->
+        <section aria-label="ציטוט וקריאה לפעולה" class="bg-navy-dark py-20 px-4 md:px-8">
+            <div data-reveal
+                class="max-w-3xl mx-auto text-center opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
+                <div class="relative max-w-2xl mx-auto text-center" dir="rtl">
+                    <!-- Right decorative quote mark -->
+                    <span
+                        class="hidden lg:block absolute -top-8 -right-6 text-7xl text-sage-dark font-sans leading-none select-none"
+                        aria-hidden="true">❞</span>
+
+                    <p
+                        class="text-2xl md:text-3xl lg:text-4xl font-semibold text-cream leading-tight mb-4 relative z-10 italic inline-block">
+                        אין זו אלא מודעותך הנוכחת שאין בה רבב,<br> והיא יודעת וריקה, עירומה וערה </p>
+
+                    <!-- Left decorative quote mark -->
+                    <span
+                        class="hidden lg:block absolute -bottom-5 left-12 text-7xl text-sage-dark font-sans leading-none select-none"
+                        aria-hidden="true">❝</span>
+
+                    <p class="text-sage-light text-lg font-medium opacity-90 mt-2">— ספר החיים והמתים הטיבטי
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════
+       CTA SECTION
+  ═════════════════════════════════════════════ -->
+        <section aria-label="כרטיסיית אודות" class="py-12 md:py-24 bg-white relative">
+            <div class="mx-auto px-4 max-w-6xl">
+                <div data-reveal
+                    class="opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 bg-sage-light/30 rounded-3xl shadow-sm border-0 flex flex-col lg:flex-row overflow-hidden">
+
+                    <!-- Image side -->
+                    <div class="w-1/2 flex-shrink-0 relative order-2 h-64 hidden lg:block lg:h-auto">
+                        <img src="assets/site-images/bio.png" alt="אברהם דגן - פסיכותרפיסט ומטפל רגשי"
+                            class="absolute inset-0 w-full h-full object-cover object-center opacity-85 hover:opacity-100 transition-opacity duration-700" />
+                    </div>
+
+                    <!-- Text side -->
+                    <!--Heading-->
+                    <div class="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center order-1">
+                        <!-- COMPONENT: section-heading -->
+                        <p class="text-3xl md:text-4xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                            לקחת את הצעד הראשון
+                        </p>
+                        <span
+                            class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-8 rounded-full"></span>
+                        <div
+                            class="space-y-4 mb-10 text-muted-dark text-base md:text-lg leading-relaxed md:pr-4 lg:pr-0">
+                            <p>
+                                בקליניקה נוכל לשלב תרגול מיינדפולנס לשיפור הרווחה הנפשית, ולהעמקת המודעות בתהליך
+                                הטיפולי. עבודתי כפסיכותרפיסט מבוססת על הכשרה ב<strong
+                                    class="font-semibold text-navy-dark">תכנית
+                                    הארבע-שנתית לפסיכותרפיה במכון האקומי </strong>(המתמחה בשילוב מיינדפולנס בטיפול), ועל
+                                ניסיון קליני ב<strong class="font-semibold text-navy-dark">מרכז הרפואי 'לב
+                                    השרון'</strong> וב<strong class="font-semibold text-navy-dark">קליניקה פרטית בפרדס
+                                    חנה</strong>.
+                            </p>
+                            <p>
+                                יחד ניצור מרחב בטוח שבו נוכל לעצור את ה״טייס האוטומטי״ ולהחליף מתח ופיזור דעת בנוכחות
+                                ערה
+                                וקשובה. השילוב בין קשב למה שמתרחש כאן ועכשיו לבין הבנה פסיכולוגית מעמיקה, מאפשר
+                                לא רק להשקיט את רעשי הרקע ולשפר את הויסות הרגשי, אלא גם לפגוש את עצמך מתוך חמלה וקבלה,
+                                וליצור שינוי פנימי עמוק.
+
+
+                            </p>
+                            <p>
+                                אם את.ה מרגיש.ה שזה הזמן עבורך להעלות את המודעות בנוגע לעצמך ולדפוסים המעכבים אותך,
+                                למצוא גישה חדשה שתאפשר לך לצאת ממעגל של סבל וקושי, ולעשות שינויים מיטיבים בחייך -
+                                <strong class="font-semibold text-navy-dark">אשמח ללוות אותך בתהליך</strong>.
+                            </p>
+                        </div>
+
+
+                        <!-- Actions & Credentials -->
+                        <!-- COMPONENT: btn-cta-header -->
+                        <div class="flex flex-col gap-6 lg:gap-10 w-full">
+                            <div class="flex flex-wrap gap-4 order-1 lg:order-2 justify-center lg:justify-start w-full">
+                                <a href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
+                                    title="קביעת פגישת היכרות עם אברהם בוואטסאפ" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn-cta inline-flex items-center justify-center gap-3 bg-sage-dark text-white font-semibold px-6 py-3.5 rounded-full shadow-md hover:shadow-lg hover:bg-sage-accessible transform hover:scale-[1.02] transition-all duration-300 text-base">
+                                    לקביעת פגישת היכרות
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                    </svg>
+                                </a>
+                                <!-- COMPONENT: btn-secondary -->
+                                <a href="/#about" aria-label="קראו עוד על הגישה הטיפולית של אברהם"
+                                    class="hidden lg:inline-flex items-center gap-2 border border-navy-dark/20 text-navy-dark font-medium px-7 py-4 rounded-full hover:border-sage hover:text-sage transition-colors text-base">
+                                    קראו עוד
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
-    <!-- ════════════════════════════════════════════
-       FOOTER
-  ═════════════════════════════════════════════ -->
-    <!-- COMPONENT: site-footer -->
+
+    </main>
+
+    <!-- FOOTER -->
     <footer id="site-footer"
         class="bg-navy-dark text-cream/70 py-16 lg:py-20 relative overflow-hidden border-t-4 border-sage">
         <!-- Subtle dot pattern overlay -->
-        <div class="absolute inset-0 opacity-5 bg-pattern-dots-cream"></div>
+        <div class="absolute inset-0 opacity-5 bg-pattern-dots-cream">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
             <!-- Main Grid: 4 Equal Columns on Desktop -->
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 items-stretch">
 
-                <!-- Col 1: Identity & Contact -->
+                <!-- Col 1: Identity & Contact (Right) -->
                 <div class="flex flex-col justify-between h-full gap-6 text-center lg:text-right">
                     <div>
                         <p class="text-2xl font-bold text-cream tracking-tight mb-1">אברהם דגן</p>
                         <span class="text-sage text-sm font-semibold tracking-widest uppercase block">פסיכותרפיסט
                             ומטפל רגשי</span>
                     </div>
+
                     <div class="space-y-4 text-sm leading-relaxed">
                         <address
                             class="not-italic flex items-center lg:items-start justify-center lg:justify-start gap-3">
@@ -553,8 +960,9 @@
                             </svg>
                             <span>רחוב הגליל 42<br>פרדס חנה כרכור</span>
                         </address>
+
                         <div class="flex items-center justify-center lg:justify-start gap-3 w-fit mx-auto lg:mx-0">
-                            <svg class="w-5 h-5 text-sage flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            <svg class="w-5 h-5 text-sage flex-shrink-0 lg:mt-0.5" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.539-4.062-7.236-7.118l1.264-1.077c.345-.295.478-.764.33-1.182L6.906 2.36C6.738 1.834 6.228 1.5 5.658 1.5H4.125C3.132 1.5 2.25 2.515 2.25 3.75v3z" />
@@ -563,6 +971,8 @@
                                 class="font-medium tracking-wide hover:text-white transition-colors rounded"
                                 aria-label="חייגו לאברהם דגן">052-8604102</a>
                         </div>
+
+                        <!-- LGBT-friendly badge -->
                         <div class="flex items-center justify-center lg:justify-start">
                             <span
                                 class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-cream/80 border border-white/15 tracking-wide">
@@ -572,10 +982,10 @@
                     </div>
                 </div>
 
-                <!-- Col 2: תחומי טיפול -->
+                <!-- Col 2: Navigation Links (Center) -->
                 <div class="flex flex-col justify-start h-full gap-5 lg:px-8 text-center lg:text-right">
-                    <p class="text-sage-light text-sm font-semibold tracking-widest uppercase">תחומי טיפול</p>
-                    <nav class="flex flex-col items-center lg:items-start gap-3 text-sm" aria-label="ניווט תחומי טיפול">
+                    <p class="text-sage text-sm font-semibold tracking-widest uppercase">תחומי טיפול</p>
+                    <nav class="flex flex-col items-center lg:items-start gap-3 text-sm" aria-label="ניווט תחתון">
                         <a href="/relationships" aria-current="page"
                             class="text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
                             <span class="hidden lg:inline text-sage text-xs" aria-hidden="true">←</span>
@@ -585,7 +995,8 @@
                             class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
                             <span class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
                                 aria-hidden="true">←</span>
-                            דיכאון, חרדה ומצבי משבר
+                            דיכאון, חרדה
+                            ומצבי משבר
                         </a>
                         <a href="/young-adults"
                             class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
@@ -597,25 +1008,24 @@
                             class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
                             <span class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
                                 aria-hidden="true">←</span>
-                            שחיקה בעבודה
+                            שחיקה
+                            בעבודה
                         </a>
                     </nav>
                 </div>
 
-                <!-- Col 3: שיטות טיפול & Social -->
+                <!-- Col 3: Navigation Links (Methods) & Social Icons -->
                 <div class="flex flex-col justify-between h-full lg:px-8 text-center lg:text-right">
                     <div class="flex flex-col gap-5">
-                        <p class="text-sage-light text-sm font-semibold tracking-widest uppercase">שיטות טיפול
-                        </p>
+                        <p class="text-sage text-sm font-semibold tracking-widest uppercase">שיטות טיפול</p>
+
                         <nav class="flex flex-col items-center lg:items-start gap-3.5 text-sm"
                             aria-label="ניווט שיטות טיפול">
                             <a href="/psychotherapy"
-                                class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
-                                <span
+                                class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group"><span
                                     class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
-                                    aria-hidden="true">←</span>
-                                פסיכותרפיה דינמית
-                            </a>
+                                    aria-hidden="true">←</span> פסיכותרפיה
+                                דינמית</a>
                             <a href="/mindfulness"
                                 class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
                                 <span
@@ -632,8 +1042,10 @@
                             </a>
                         </nav>
                     </div>
-                    <!-- Social Icons -->
+
+                    <!-- Contact/Social Icons Block -->
                     <div class="mt-4 flex items-center justify-center lg:justify-start gap-4">
+                        <!-- WhatsApp -->
                         <a href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
                             target="_blank" rel="noopener noreferrer" title="וואטסאפ"
                             class="flex items-center justify-center w-10 h-10 rounded-full bg-cream/10 text-cream hover:bg-sage-dark hover:text-white transition-all duration-300 transform hover:scale-110">
@@ -642,7 +1054,8 @@
                                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                             </svg>
                         </a>
-                        <a href="tel:+972528604102" title="טלפון" aria-label="חייגו לאברהם דגן"
+                        <!-- Phone -->
+                        <a href="tel:+972528604102" title="טלפון"
                             class="flex items-center justify-center w-10 h-10 rounded-full bg-cream/10 text-cream hover:bg-sage-dark hover:text-white transition-all duration-300 transform hover:scale-110">
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                 aria-hidden="true">
@@ -650,6 +1063,7 @@
                                     d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.539-4.062-7.236-7.118l1.264-1.077c.345-.295.478-.764.33-1.182L6.906 2.36C6.738 1.834 6.228 1.5 5.658 1.5H4.125C3.132 1.5 2.25 2.515 2.25 3.75v3z" />
                             </svg>
                         </a>
+                        <!-- Email -->
                         <a href="mailto:abraham@abrahamdagan.co.il" title="אימייל" aria-label="שלחו אימייל"
                             class="flex items-center justify-center w-10 h-10 rounded-full bg-cream/10 text-cream hover:bg-sage-dark hover:text-white transition-all duration-300 transform hover:scale-110">
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
@@ -661,14 +1075,15 @@
                     </div>
                 </div>
 
-                <!-- Col 4: Map -->
+                <!-- Col 4: Map Embed (Left) -->
                 <div class="flex flex-col justify-between h-full gap-4 text-center lg:text-right">
                     <p class="text-sage text-sm font-semibold tracking-widest uppercase">מיקום הקליניקה</p>
                     <div class="rounded-2xl overflow-hidden border border-cream/10 shadow-2xl bg-white/5 h-40 group">
                         <iframe title="מיקום הקליניקה – רחוב הגליל 42, פרדס חנה כרכור"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.709897228142!2d34.98669871177265!3d32.480450373679716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d0e542a7ada7f%3A0xd17f024f6f97da16!2sKidmat%20HaGalil%2C%20Pardes%20Hana-Karkur!5e0!3m2!1sen!2sil!4v1772116909393!5m2!1sen!2sil"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.7206241888907!2d34.98977191177254!3d32.48016087367979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d0e5505d4de3f%3A0xe6f8de1ecc8f4a95!2sKidmat%20HaGalil%20St%2042%2C%20Pardes%20Hana-Karkur!5e0!3m2!1sen!2sil!4v1773790657934!5m2!1sen!2sil"
                             class="w-full h-full border-0 grayscale-[0.2] contrast-[1.05] opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
 
@@ -685,70 +1100,11 @@
         </div>
     </footer>
 
+    <!-- ════════════════════════════════════════════
+       JAVASCRIPT
+  ═════════════════════════════════════════════ -->
     <script src="/assets/shared.js" defer></script>
-    <script>
-            (function () {
-                if (!window.matchMedia('(min-width: 1024px)').matches) return;
 
-                const wrapper = document.getElementById('timeline-wrapper');
-                const spine = document.getElementById('timeline-spine');
-                const fill = document.getElementById('timeline-fill');
-                const dots = Array.from(document.querySelectorAll('.timeline-dot'));
-                const sectionIds = ['patterns', 'communication', 'crisis', 'therapy'];
-                const sectionImgs = sectionIds.map(function (id) {
-                    return document.querySelector('#' + id + ' img');
-                });
-                const sectionCards = sectionIds.map(function (id) {
-                    return document.querySelector('#' + id + ' .card-accent-l, #' + id + ' .card-accent-r');
-                });
-
-                function positionSpine() {
-                    const wBase = wrapper.getBoundingClientRect().top + window.scrollY;
-                    const dotPositions = sectionIds.map(function (id) {
-                        const sec = document.getElementById(id);
-                        return sec.getBoundingClientRect().top + window.scrollY - wBase + sec.offsetHeight / 2;
-                    });
-
-                    const spineTop = dotPositions[0];
-                    const spineHeight = dotPositions[dotPositions.length - 1] - dotPositions[0];
-
-                    spine.style.top = spineTop + 'px';
-                    spine.style.height = spineHeight + 'px';
-
-                    dots.forEach(function (dot, i) {
-                        dot.style.top = (dotPositions[i] - spineTop) + 'px';
-                    });
-                }
-
-                function update() {
-                    const wBase = wrapper.getBoundingClientRect().top + window.scrollY;
-                    const spineTop = parseFloat(spine.style.top) || 0;
-                    const spineHeight = parseFloat(spine.style.height) || 1;
-                    const anchor = window.scrollY + window.innerHeight * 0.5;
-
-                    const progress = Math.max(0, Math.min(1, (anchor - wBase - spineTop) / spineHeight));
-                    fill.style.height = (progress * spineHeight) + 'px';
-
-                    dots.forEach(function (dot, i) {
-                        const dotAbsY = wBase + spineTop + (parseFloat(dot.style.top) || 0);
-                        const isActive = anchor > dotAbsY;
-                        dot.classList.toggle('tl-active', isActive);
-                        if (sectionImgs[i]) sectionImgs[i].classList.toggle('section-img-active', isActive);
-                        if (sectionCards[i]) sectionCards[i].classList.toggle('accent-active', isActive);
-                    });
-                }
-
-                function init() { positionSpine(); update(); }
-
-                window.addEventListener('scroll', update, { passive: true });
-                window.addEventListener('resize', function () { positionSpine(); update(); });
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', init);
-                } else {
-                    requestAnimationFrame(init);
-                }
-            })();
-    </script>
 
 </body>
 

@@ -304,6 +304,8 @@ if (contactForm) {
 //  to avoid rendering bugs with complex SVGs.
 // ─────────────────────────────────────────────────────────────
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const lazySVGs = document.querySelectorAll('.lazy-svg');
     if (!lazySVGs.length) return;
@@ -333,6 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lazySVGs.forEach(target => svgObserver.observe(target));
 });
+
 
 // ─────────────────────────────────────────────────────────────
 //  9. TIMELINE COMPONENT

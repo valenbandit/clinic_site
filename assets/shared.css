@@ -811,7 +811,7 @@ html {
 
 /* Number color uses CSS vars + bespoke JS-toggled state timing */
 .timeline-item__number {
-  color: var(--color-stone-deep, #7A7068);
+  color: var(--color-muted, #7A7068);
   transition: color 0.35s ease;
   font-size: 1rem;
   font-weight: 700;
@@ -819,7 +819,7 @@ html {
 
 /* Active Number state */
 .timeline-item__number.tl-active {
-  color: var(--color-sage, #8B9E8D);
+  color: var(--color-sage-dark, #5C7A5E);
 }
 
 @media (min-width: 1024px) {
