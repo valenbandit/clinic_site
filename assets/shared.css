@@ -828,3 +828,27 @@ html {
     font-weight: 800;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   COOKIE NOTICE
+   Tailwind cannot express: JS-class-driven transitions.
+   The .cookie-notice--visible class is toggled by JS (never a
+   Tailwind utility), so the enter/exit animation must live here.
+   ───────────────────────────────────────────────────────────── */
+
+#cookie-notice {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#cookie-notice.cookie-notice--visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cookie-notice {
+    transition: none !important;
+  }
+}

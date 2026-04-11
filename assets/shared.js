@@ -399,3 +399,35 @@ if (contactForm) {
         ? document.addEventListener('DOMContentLoaded', init)
         : requestAnimationFrame(init);
 })();
+
+
+// ─────────────────────────────────────────────────────────────
+//  10. COOKIE NOTICE
+//  Shows after 1500 ms if not already dismissed.
+//  JS-state class: cookie-notice--visible (not a Tailwind class).
+//  Dismissal: slides out, waits for transition, then hides.
+// ─────────────────────────────────────────────────────────────
+
+(function () {
+    var notice = document.getElementById('cookie-notice');
+    if (!notice) return;
+
+    // Already dismissed — stay hidden forever
+    if (localStorage.getItem('cookieDismissed')) return;
+
+    // Show after 1500 ms
+    setTimeout(function () {
+        notice.removeAttribute('hidden');
+        // Force reflow so the transition fires from the hidden state
+        notice.offsetHeight;
+        notice.classList.add('cookie-notice--visible');
+    }, 1500);
+
+    // Dismiss
+    document.getElementById('cookie-dismiss').addEventListener('click', function () {
+        notice.classList.remove('cookie-notice--visible');
+        localStorage.setItem('cookieDismissed', '1');
+        // Wait for transition before hiding from accessibility tree
+        setTimeout(function () { notice.setAttribute('hidden', ''); }, 400);
+    });
+})();
