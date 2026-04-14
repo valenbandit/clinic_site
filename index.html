@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" class="scroll-smooth">
 
 <!-- ════════════════════════════════════════════
    DOCUMENT CONFIGURATION & ASSETS
@@ -10,21 +10,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO Meta Tags -->
-    <title>אברהם דגן | פסיכותרפיסט ומטפל רגשי – פרדס חנה</title>
+    <title>אברהם דגן | פסיכותרפיסט ומטפל רגשי בפרדס חנה</title>
     <meta name="description"
-        content="פסיכותרפיה וטיפול רגשי בפרדס חנה. בגישת האקומי, מיינדפולנס וטיפול דינמי. חבר באיגוד הישראלי הרב-תחומי לפסיכותרפיה." />
+        content="לא חייבים להיות במשבר כדי להתחיל שינוי. אברהם דגן, פסיכותרפיסט מוסמך בפרדס חנה - מלווה תהליכים שמביאים לשינוי אמיתי, גם אונליין." />
 
     <link rel="canonical" href="https://abrahamdagan.co.il" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="אברהם דגן | פסיכותרפיסט ומטפל רגשי – פרדס חנה" />
+    <meta property="og:title" content="אברהם דגן | פסיכותרפיסט ומטפל רגשי בפרדס חנה" />
     <meta property="og:description"
-        content="פסיכותרפיה וטיפול רגשי בפרדס חנה. בגישת האקומי, מיינדפולנס וטיפול דינמי. חבר באיגוד הישראלי הרב-תחומי לפסיכותרפיה." />
+        content="לא חייבים להיות במשבר כדי להתחיל שינוי. אברהם דגן, פסיכותרפיסט מוסמך בפרדס חנה - מלווה תהליכים שמביאים לשינוי אמיתי, גם אונליין." />
 
     <meta property="og:url" content="https://abrahamdagan.co.il" />
-    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/bio.png" />
+    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/bio.png" /> <!-- PLACEHOLDER -->
+    <meta property="og:image:width" content="1200" /><!-- PLACEHOLDER -->
+    <meta property="og:image:height" content="630" /><!-- PLACEHOLDER -->
+    <meta property="og:image:alt" content="אברהם דגן - פסיכותרפיסט ומטפל רגשי בפרדס חנה" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="אברהם דגן - פסיכותרפיסט ומטפל רגשי" />
+    <meta property="og:locale" content="he_IL" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="אברהם דגן | פסיכותרפיסט ומטפל רגשי בפרדס חנה" />
+    <meta name="twitter:description"
+        content="לא חייבים להיות במשבר כדי להתחיל שינוי. אברהם דגן, פסיכותרפיסט מוסמך בפרדס חנה - מלווה תהליכים שמביאים לשינוי אמיתי, גם אונליין." />
+    <meta name="twitter:image" content="https://abrahamdagan.co.il/assets/site-images/bio.png" /><!-- PLACEHOLDER -->
     <!-- JSON-LD BLOCKS: SEO -->
     <!-- JSON-LD: WebSite -->
     <script type="application/ld+json">
@@ -34,10 +44,8 @@
   "@id": "https://abrahamdagan.co.il/#website",
   "url": "https://abrahamdagan.co.il",
   "name": "אברהם דגן - פסיכותרפיסט ומטפל רגשי",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://abrahamdagan.co.il/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
+  "about": {
+    "@id": "https://abrahamdagan.co.il/#business"
   }
 }
 </script>
@@ -47,11 +55,11 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "@id": "https://abrahamdagan.co.il",
+  "@id": "https://abrahamdagan.co.il/#business",
   "url": "https://abrahamdagan.co.il",
   "name": "אברהם דגן - פסיכותרפיסט ומטפל רגשי",
   "telephone": "+972-52-8604102",
-  "image": "https://abrahamdagan.co.il/assets/site-images/bio.png",
+  "image": "https://abrahamdagan.co.il/assets/site-images/bio.png", /* PLACEHOLDER */
   "priceRange": "₪300-400",
   "currenciesAccepted": "ILS",
   "paymentAccepted": "Cash, Credit Card, Bank Transfer",
@@ -79,10 +87,9 @@
     "opens": "08:00",
     "closes": "20:00"
   },
-  "sameAs": [
-    "https://www.facebook.com/avi.dagan.private"
-    /* ADD Google Business Profile URL here after launch */
-  ],
+
+    /* ADD sameAs: business accounts after launch: NOT personal accounts. e.g Google Business Profile url, professional directories, etc */
+
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "שירותי טיפול",
@@ -90,12 +97,15 @@
       { "@type": "Service", "name": "זוגיות ומערכות יחסים", "url": "https://abrahamdagan.co.il/relationships" },
       { "@type": "Service", "name": "דיכאון, חרדה ומצבי משבר", "url": "https://abrahamdagan.co.il/crisis" },
       { "@type": "Service", "name": "בניית זהות ועצמאות", "url": "https://abrahamdagan.co.il/young-adults" },
-      { "@type": "Service", "name": "שחיקה בעבורה", "url": "https://abrahamdagan.co.il/career" },
+      { "@type": "Service", "name": "שחיקה בעבודה", "url": "https://abrahamdagan.co.il/career" },
       { "@type": "Service", "name": "פסיכותרפיה דינמית", "url": "https://abrahamdagan.co.il/psychotherapy" },
       { "@type": "Service", "name": "מיינדפולנס", "url": "https://abrahamdagan.co.il/mindfulness" },
       { "@type": "Service", "name": "האקומי", "url": "https://abrahamdagan.co.il/hakomi" }
     ]
-  }
+  },
+  "employee": {
+  "@id": "https://abrahamdagan.co.il/#person"
+}
 }
 </script>
 
@@ -104,17 +114,23 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://abrahamdagan.co.il/#person",
   "name": "אברהם דגן",
-  "url": "https://abrahamdagan.co.il",
-  "image": "https://abrahamdagan.co.il/assets/site-images/bio.png",
-  "description": "פסיכותרפיסט ומטפל רגשי בפרדס חנה בגישת מיינדפולנס, האקומי וטיפול דינמי",
+  "url": "https://abrahamdagan.co.il/#about",
+  "image": "https://abrahamdagan.co.il/assets/site-images/bio.png", /* PLACEHOLDER */
+  "description": "פסיכותרפיסט ומטפל רגשי מוסמך בפרדס חנה כרכור, בעל התמחות קלינית בבית חולים לב השרון והסמכה מטעם מכון האקומי. עוסק בטיפול רגשי בגישת האקומי, מיינדפולנס וטיפול דינמי.",
   "jobTitle": "פסיכותרפיסט",
-  "knowsAbout": ["פסיכותרפיה", "האקומי", "מיינדפולנס"],
-  "alumniOf": {
-    "@type": "Hospital",
-    "name": "בית חולים לב השרון",
-    "url": "https://www.lev-hasharon.co.il/"
-  },
+  "knowsAbout": [
+    "פסיכותרפיה דינמית",
+    "האקומי",
+    "מיינדפולנס",
+    "טיפול רגשי",
+    "זוגיות ומערכות יחסים",
+    "דיכאון וחרדה",
+    "מצבי משבר",
+    "בניית זהות ועצמאות",
+    "שחיקה בעבודה"
+  ],
   "memberOf": [
     {
       "@type": "Organization",
@@ -134,8 +150,11 @@
       }
     }
   ],
+
+    /* ADD sameAs personal profiles here: Facebook, LinkedIn, profile page on Israeli Psychotherapy Association website, etc. */
+
   "worksFor": {
-    "@id": "https://abrahamdagan.co.il"
+    "@id": "https://abrahamdagan.co.il/#business"
   }
 }
 </script>
@@ -468,7 +487,7 @@
                 </div><!-- /content z-wrapper -->
             </div>
 
-            <!-- Image side -->
+            <!-- Image side (PLACEHOLDER) -->
             <div class="flex-1 order-1 sm:order-2 min-h-[45vh] sm:min-h-0 lg:min-h-screen relative overflow-hidden">
                 <img id="hero-parallax-img" src="assets/site-images/index_hero.png"
                     alt="אברהם דגן - פסיכותרפיסט בקליניקה בפרדס חנה"
