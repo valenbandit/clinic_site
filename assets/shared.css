@@ -92,7 +92,7 @@ html {
 #navbar {
   transition: background 0.35s ease, box-shadow 0.35s ease;
   z-index: 100;
-  backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px); */
 }
 
 /* Solid background once user scrolls past 40 px */
