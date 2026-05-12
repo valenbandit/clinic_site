@@ -127,49 +127,54 @@ html {
    4. NAVIGATION — DROPDOWN
    ───────────────────────────────────────────────────────────── */
 
-/* Tailwind cannot express: required positioning context grouping */
+/* Positioning context for the absolute dropdown panel */
 
 .nav-dropdown {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.15rem;
 }
 
+/* Single trigger button: label text + chevron icon */
 
-/* Chevron-only button (used in the split a + button pattern) */
-
-.nav-dropdown-chevron {
+.nav-dropdown-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  gap: 0.35rem;
   background: none;
   border: none;
-  padding: 0 0.1rem;
+  cursor: pointer;
   color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
   line-height: 1;
 }
 
-/* Hide underline on chevron button */
+/* Suppress nav-link underline pseudo-element on button */
 
-.nav-dropdown-chevron::after {
-  display: none !important;
+.nav-dropdown-btn::after {
+  display: none;
 }
 
+/* Active state: hover (mouse) or .dropdown-open (keyboard/touch) */
 
-/* Rotate chevron on hover / keyboard-open */
+.nav-dropdown:is(:hover, .dropdown-open) .nav-dropdown-btn {
+  color: var(--color-sage);
+}
 
-/* Tailwind cannot express: complex nested hover/focus-within state targeting svg child */
+.nav-dropdown-btn svg {
+  transition: transform 0.2s ease;
+}
 
-.nav-dropdown:hover .nav-dropdown-chevron svg {
+.nav-dropdown:is(:hover, .dropdown-open) .nav-dropdown-btn svg {
   transform: rotate(180deg);
 }
 
-/* Tailwind cannot express: complex dropdown positioning overlay with custom backdrop filter */
+/* Dropdown panel */
 
 .nav-dropdown-menu {
-  display: none;
+  visibility: hidden;
   position: absolute;
   top: 100%;
   right: 0;
@@ -183,33 +188,11 @@ html {
   backdrop-filter: blur(12px);
 }
 
-/* Invisible bridge so the menu doesn't close when moving from trigger to panel */
 
-/* Tailwind cannot express: invisible hover bridge using ::before pseudo-element */
+/* Show panel on hover (mouse) or when JS sets .dropdown-open (keyboard/touch) */
 
-.nav-dropdown-menu::before {
-  content: '';
-  position: absolute;
-  top: -0.75rem;
-  left: 0;
-  right: 0;
-  height: 0.75rem;
-}
-
-/* Show on hover or keyboard focus */
-
-/* Tailwind cannot express: complex nested hover/focus-within state targeting menu child */
-
-.nav-dropdown:hover .nav-dropdown-menu {
-  display: block;
-}
-
-/* Show when JS adds .dropdown-open (keyboard toggle) */
-
-/* Tailwind cannot express: custom JS state class toggling display !important */
-
-.nav-dropdown.dropdown-open .nav-dropdown-menu {
-  display: block !important;
+.nav-dropdown:is(:hover, .dropdown-open) .nav-dropdown-menu {
+  visibility: visible;
 }
 
 /* Tailwind cannot express: custom sub-rem font sizing and transition on dropdown links */
@@ -345,49 +328,33 @@ html {
 
 /* Accordion trigger button */
 
-/* Mobile Accordion Split Button Pattern */
-
-.mobile-accordion-header {
+.mobile-accordion-btn {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-}
-
-.mobile-accordion-link {
-  flex: 1;
-  display: block;
-  width: 100%;
-  text-align: right;
   padding: 0.75rem 1.25rem;
   color: var(--color-cream);
+  font-size: 1rem;
   font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.mobile-accordion-chevron {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  color: var(--color-cream);
-  transition: all 0.3s ease;
-  cursor: pointer;
   background: none;
   border: none;
-  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
-.mobile-accordion-header[aria-expanded="true"] .mobile-accordion-chevron,
-.mobile-accordion-chevron[aria-expanded="true"] {
+.mobile-accordion-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.mobile-accordion-btn:hover,
+.mobile-accordion-btn[aria-expanded="true"] {
   color: var(--color-sage-light);
+  background: rgba(var(--color-sage-rgb), 0.08);
 }
 
-.mobile-accordion-header[aria-expanded="true"] .mobile-accordion-chevron svg,
-.mobile-accordion-chevron[aria-expanded="true"] svg {
+.mobile-accordion-btn[aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
 
@@ -661,12 +628,13 @@ html {
 
   #navbar,
   .nav-link::after,
+  .nav-dropdown-btn svg,
   .nav-dropdown-menu a,
   #hamburger span,
   #mobile-menu,
   .mobile-menu-link,
-  .mobile-accordion-chevron,
-  .mobile-accordion-link,
+  .mobile-accordion-btn,
+  .mobile-accordion-btn svg,
   .mobile-accordion-panel,
   .mobile-sublink,
   .hero-img,

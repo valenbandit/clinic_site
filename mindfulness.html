@@ -168,21 +168,26 @@
 <body class="antialiased bg-cream text-navy font-sans">
     <a href="#main-content" class="sr-only focus:not-sr-only">דלג לתוכן הראשי</a>
     <!-- ════════════════════════════════════════════
-       STICKY NAVIGATION
-  ═════════════════════════════════════════════ -->
-    <!-- COMPONENT: sticky-nav -->
+         STICKY NAVIGATION  ·  header#navbar  +  nav#mobile-menu
+         RTL layout: first child in DOM = right side of screen
+      ════════════════════════════════════════════ -->
+
+    <!-- ─── HEADER ────────────────────────────────────────────────────────────
+         Flex row with two children:
+           [1] Right group  →  hamburger (mobile) · logo · desktop nav
+           [2] Left group   →  WhatsApp CTA button
+    ──────────────────────────────────────────────────────────────── -->
     <header id="navbar" class="fixed top-0 right-0 left-0 z-[100] bg-white/50 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
-                <!--menu-->
-                <!-- Logo + Nav grouped on the right (first in DOM = right side in RTL) -->
+                <!-- [1] Right group ────────────────────────────────── -->
                 <div class="flex items-center gap-2 sm:gap-6 lg:gap-8">
-                    <!-- Hamburger (mobile only) -->
+                    <!-- Hamburger · mobile only (lg:hidden) -->
                     <button id="hamburger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobile-menu"
                         class="lg:hidden p-2 rounded">
                         <span></span><span></span><span></span>
                     </button>
-                    <!-- Logo / Name -->
+                    <!-- Logo -->
                     <a href="/" class="flex flex-col items-center leading-tight group rounded">
 
                         <span
@@ -192,7 +197,7 @@
                             class="hidden sm:block text-xs sm:text-sm font-light text-navy tracking-tight sm:tracking-wide">פסיכותרפיסט
                             ומטפל רגשי</span>
                     </a>
-                    <!-- Desktop nav -->
+                    <!-- Desktop nav · hidden below lg ──────────────────── -->
                     <nav class="hidden lg:block text-sm font-medium text-navy-dark">
                         <ul class="flex items-center gap-8 list-none m-0 p-0">
 
@@ -205,20 +210,16 @@
                                 <a href="/#about" class="nav-link hover:text-sage transition-colors rounded">אודות</a>
                             </li>
 
-                            <!-- תחומי טיפול with dropdown -->
-                            <li data-dropdown class="nav-dropdown">
-                                <a href="/#areas" class="nav-link hover:text-sage transition-colors rounded">תחומי
-                                    טיפול</a>
-                                <button data-dropdown-toggle
-                                    class="nav-dropdown-chevron nav-link hover:text-sage transition-colors rounded"
-                                    aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-areas"
-                                    aria-label="הצג תפריט תחומי טיפול">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-                                <ul id="dropdown-areas" class="nav-dropdown-menu">
+                            <!-- Dropdown · תחומי טיפול -->
+                            <li class="nav-dropdown">
+                                <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+                                תחומי טיפול
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                            </button>
+                                <ul class="nav-dropdown-menu">
                                     <li><a href="/relationships" class="rounded">זוגיות ומערכות יחסים</a></li>
                                     <li><a href="/depression-anxiety" class="rounded">דיכאון, חרדה וערך עצמי</a></li>
                                     <li><a href="/young-adults" class="rounded">בניית זהות ועצמאות</a></li>
@@ -227,20 +228,16 @@
                                 </ul>
                             </li>
 
-                            <!-- שיטות טיפול with dropdown -->
-                            <li data-dropdown class="nav-dropdown">
-                                <a href="/#methods" class="nav-link hover:text-sage transition-colors rounded">שיטות
-                                    טיפול</a>
-                                <button data-dropdown-toggle
-                                    class="nav-dropdown-chevron nav-link hover:text-sage transition-colors rounded"
-                                    aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-methods"
-                                    aria-label="הצג תפריט שיטות טיפול">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-                                <ul id="dropdown-methods" class="nav-dropdown-menu">
+                            <!-- Dropdown · שיטות טיפול -->
+                            <li class="nav-dropdown">
+                                <button class="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+                                שיטות טיפול
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                            </button>
+                                <ul class="nav-dropdown-menu">
                                     <li><a href="/psychotherapy" class="rounded">פסיכותרפיה דינמית</a></li>
                                     <li><a href="/mindfulness" aria-current="page" class="rounded">מיינדפולנס</a></li>
                                     <li><a href="/hakomi" class="rounded">האקומי</a></li>
@@ -253,11 +250,11 @@
                             </li>
 
                         </ul>
-                    </nav>
-                </div>
+                    </nav><!-- /desktop nav -->
+                </div><!-- /right group -->
 
-                <!-- CTA button (last in DOM = left side in RTL) -->
-                <!-- COMPONENT: btn-cta HEADER -->
+
+                <!-- [2] Left group ─────────────────────────────────── -->
                 <a id="nav-cta"
                     href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
                     target="_blank" rel="noopener noreferrer"
@@ -268,26 +265,28 @@
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
-                </a>
-            </div>
-        </div>
+                </a><!-- /CTA -->
+            </div><!-- /navbar row -->
+        </div><!-- /container -->
     </header>
 
-    <!-- COMPONENT: mobile-menu -->
-    <nav id="mobile-menu" aria-label="תפריט נייד" aria-hidden="true" inert>
+    <!-- ─── MOBILE MENU ────────────────────────────────────────────────────────────
+         Fixed below navbar · slides in when hamburger is activated
+         JS: openMobileMenu / closeMobileMenu  (shared.js)
+    ──────────────────────────────────────────────────────────────── -->
+    <nav id="mobile-menu" aria-label="תפריט נייד" aria-hidden="true">
         <ul class="mobile-menu-list">
             <li><a href="/" class="mobile-menu-link">דף הבית</a></li>
             <li><a href="/#about" class="mobile-menu-link">אודות</a></li>
+            <!-- Accordion · תחומי טיפול -->
             <li class="mobile-accordion">
-                <div class="mobile-accordion-header">
-                    <a href="/#areas" class="mobile-accordion-link">תחומי טיפול</a>
-                    <button class="mobile-accordion-chevron" aria-expanded="false" aria-label="הצג תפריט תחומי טיפול">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                </div>
+                <button class="mobile-accordion-btn" aria-expanded="false">
+                תחומי טיפול
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+            </button>
                 <ul class="mobile-accordion-panel">
                     <li><a href="/relationships" class="mobile-sublink">זוגיות ומערכות יחסים</a></li>
                     <li><a href="/depression-anxiety" class="mobile-sublink">דיכאון, חרדה וערך עצמי</a></li>
@@ -295,26 +294,25 @@
                     <li><a href="/career" class="mobile-sublink">שחיקה בעבודה</a></li>
                     <li><a href="/trauma" class="mobile-sublink">טראומה ומצבי משבר</a></li>
                 </ul>
-            </li>
+            </li><!-- /accordion תחומי טיפול -->
+            <!-- Accordion · שיטות טיפול -->
             <li class="mobile-accordion">
-                <div class="mobile-accordion-header">
-                    <a href="/#methods" class="mobile-accordion-link">שיטות טיפול</a>
-                    <button class="mobile-accordion-chevron" aria-expanded="false" aria-label="הצג תפריט שיטות טיפול">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                </div>
+                <button class="mobile-accordion-btn" aria-expanded="false">
+                שיטות טיפול
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+            </button>
                 <ul class="mobile-accordion-panel">
                     <li><a href="/psychotherapy" class="mobile-sublink">פסיכותרפיה דינמית</a></li>
                     <li><a href="/mindfulness" class="mobile-sublink" aria-current="page">מיינדפולנס</a></li>
                     <li><a href="/hakomi" class="mobile-sublink">האקומי</a></li>
                 </ul>
-            </li>
+            </li><!-- /accordion שיטות טיפול -->
             <li><a href="/#contact" class="mobile-menu-link">צור קשר</a></li>
         </ul>
-    </nav>
+    </nav><!-- /mobile-menu -->
 
     <main id="main-content">
 
@@ -713,8 +711,8 @@
                                 aria-hidden="true">←</span>
                             טראומה ומצבי משבר
                         </a>
-                    </nav>
-                </div>
+                    </nav><!-- /desktop nav -->
+                </div><!-- /right group -->
 
                 <!-- Col 3: Navigation Links (Methods) & Social Icons -->
                 <div class="flex flex-col justify-between h-full lg:px-8 text-center lg:text-right">
@@ -740,8 +738,8 @@
                                     aria-hidden="true">←</span>
                                 האקומי
                             </a>
-                        </nav>
-                    </div>
+                        </nav><!-- /desktop nav -->
+                    </div><!-- /right group -->
 
                     <!-- Contact/Social Icons Block -->
                     <div class="mt-4 flex items-center justify-center lg:justify-start gap-4">
