@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+
+<!-- ════════════════════════════════════════════
+   DOCUMENT CONFIGURATION & ASSETS
+═════════════════════════════════════════════ -->
+
+<head>
+    <!-- NON-SEO Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags -->
+    <title>מדיניות פרטיות | אברהם דגן – פסיכותרפיסט ומטפל רגשי</title>
+    <meta name="description" content="מדיניות הפרטיות לאתר של אברהם דגן – פסיכותרפיסט ומטפל רגשי בפרדס חנה." />
+
+    <link rel="canonical" href="https://abrahamdagan.co.il/privacy-policy" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="מדיניות פרטיות | אברהם דגן – פסיכותרפיסט ומטפל רגשי" />
+    <meta property="og:description" content="מדיניות הפרטיות לאתר של אברהם דגן – פסיכותרפיסט ומטפל רגשי בפרדס חנה." />
+
+    <meta property="og:url" content="https://abrahamdagan.co.il/privacy-policy" />
+    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/og-image.jpg" />
+    <!-- PLACEHOLDER -->
+    <meta property="og:image:width" content="1200" /><!-- PLACEHOLDER -->
+    <meta property="og:image:height" content="630" /><!-- PLACEHOLDER -->
+    <meta property="og:image:alt" content="מדיניות פרטיות - אברהם דגן" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="אברהם דגן - פסיכותרפיסט ומטפל רגשי" />
+    <meta property="og:locale" content="he_IL" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="מדיניות פרטיות | אברהם דגן – פסיכותרפיסט ומטפל רגשי" />
+    <meta name="twitter:description" content="מדיניות הפרטיות לאתר של אברהם דגן – פסיכותרפיסט ומטפל רגשי בפרדס חנה." />
+    <meta name="twitter:image" content="https://abrahamdagan.co.il/assets/site-images/og-image.jpg" />
+    <!-- PLACEHOLDER -->
+    <!-- JSON-LD BLOCKS: SEO -->
+    <!-- TODO: Add proper schema JSON-LD here later -->
+    <script type="application/ld+json">
+    {
+      // Empty spot for schemas with proper comment, ill add it later
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mutedAccessible: '#6B6159',
+                        sage: { DEFAULT: '#8B9E8D', light: '#C8D5C9', dark: '#5C7A5E', accessible: '#527054' },
+                        stone: { warm: '#F5F0EB', medium: '#E8DDD4', deep: '#C4B5A5' },
+                        navy: { DEFAULT: '#2C3E50', dark: '#1A252F' },
+                        cream: '#FAF7F4',
+                        muted: { DEFAULT: '#7A7068', dark: '#5A524C' },
+                    },
+                    fontFamily: { sans: ['Assistant', 'sans-serif'] },
+                    keyframes: {
+                        'infinite-scroll': { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-100%)' } }
+                    },
+                    animation: { 'infinite-scroll': 'infinite-scroll 25s linear infinite' }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/assets/shared.css">
+</head>
+
+<body class="antialiased bg-cream text-navy font-sans">
+    <a href="#main-content" class="sr-only focus:not-sr-only">דלג לתוכן הראשי</a>
+    <!-- ════════════════════════════════════════════
+       STICKY NAVIGATION
+  ═════════════════════════════════════════════ -->
+    <!-- COMPONENT: sticky-nav -->
+    <header id="navbar" class="fixed top-0 right-0 left-0 z-[100] bg-white/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <!--menu-->
+                <!-- Logo + Nav grouped on the right (first in DOM = right side in RTL) -->
+                <div class="flex items-center gap-2 sm:gap-6 lg:gap-8">
+                    <!-- Hamburger (mobile only) -->
+                    <button id="hamburger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobile-menu"
+                        class="lg:hidden p-2 rounded">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <!-- Logo / Name -->
+                    <a href="/" class="flex flex-col items-center leading-tight group rounded">
+
+                        <span
+                            class="text-lg sm:text-xl font-semibold tracking-tight text-navy-dark group-hover:text-sage transition-colors">אברהם
+                            דגן</span>
+                        <span
+                            class="hidden sm:block text-xs sm:text-sm font-light text-navy tracking-tight sm:tracking-wide">פסיכותרפיסט
+                            ומטפל רגשי</span>
+                    </a>
+                    <!-- Desktop nav -->
+                    <nav class="hidden lg:block text-sm font-medium text-navy-dark">
+                        <ul class="flex items-center gap-8 list-none m-0 p-0">
+
+                            <li>
+                                <a href="/" class="nav-link hover:text-sage transition-colors rounded">דף
+                                    הבית</a>
+                            </li>
+
+                            <li>
+                                <a href="/#about" class="nav-link hover:text-sage transition-colors rounded">אודות</a>
+                            </li>
+
+                            <!-- תחומי טיפול with dropdown -->
+                            <li data-dropdown class="nav-dropdown">
+                                <a href="/#areas" class="nav-link hover:text-sage transition-colors rounded">תחומי
+                                    טיפול</a>
+                                <button data-dropdown-toggle
+                                    class="nav-dropdown-chevron nav-link hover:text-sage transition-colors rounded"
+                                    aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-areas"
+                                    aria-label="הצג תפריט תחומי טיפול">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <ul id="dropdown-areas" class="nav-dropdown-menu">
+                                    <li><a href="/relationships" class="rounded">זוגיות ומערכות
+                                            יחסים</a></li>
+                                    <li><a href="/depression-anxiety" class="rounded">דיכאון, חרדה
+                                            וערך עצמי</a></li>
+                                    <li><a href="/young-adults" class="rounded">בניית זהות ועצמאות</a></li>
+                                    <li><a href="/career" class="rounded">שחיקה בעבודה</a></li>
+                                    <li><a href="/trauma" class="rounded">טראומה ומצבי משבר</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- שיטות טיפול with dropdown -->
+                            <li data-dropdown class="nav-dropdown">
+                                <a href="/#methods" class="nav-link hover:text-sage transition-colors rounded">שיטות
+                                    טיפול</a>
+                                <button data-dropdown-toggle
+                                    class="nav-dropdown-chevron nav-link hover:text-sage transition-colors rounded"
+                                    aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-methods"
+                                    aria-label="הצג תפריט שיטות טיפול">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <ul id="dropdown-methods" class="nav-dropdown-menu">
+                                    <li><a href="/psychotherapy" class="rounded">פסיכותרפיה דינמית</a></li>
+                                    <li><a href="/mindfulness" class="rounded">מיינדפולנס</a></li>
+                                    <li><a href="/hakomi" class="rounded">האקומי</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="/#contact" class="nav-link hover:text-sage transition-colors rounded">צור
+                                    קשר</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- CTA button (last in DOM = left side in RTL) -->
+                <!-- COMPONENT: btn-cta HEADER -->
+                <a id="nav-cta"
+                    href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
+                    target="_blank" rel="noopener noreferrer"
+                    class="btn-cta inline-flex items-center gap-2 sm:gap-3 bg-sage-dark text-white text-sm font-semibold p-2 sm:px-5 sm:py-2.5 rounded-full shadow-md hover:shadow-lg hover:bg-sage-accessible transform hover:scale-[1.02] transition-all duration-300">
+                    <span class="hidden lg:inline">לקביעת פגישת היכרות</span><span class="inline lg:hidden">לקביעת
+                        פגישה</span>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- COMPONENT: mobile-menu -->
+    <nav id="mobile-menu" aria-label="תפריט נייד" aria-hidden="true" inert>
+        <ul class="mobile-menu-list">
+            <li><a href="/" class="mobile-menu-link">דף הבית</a></li>
+            <li><a href="/#about" class="mobile-menu-link">אודות</a></li>
+            <li class="mobile-accordion">
+                <div class="mobile-accordion-header">
+                    <a href="/#areas" class="mobile-accordion-link">תחומי טיפול</a>
+                    <button class="mobile-accordion-chevron" aria-expanded="false" aria-label="הצג תפריט תחומי טיפול">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-accordion-panel">
+                    <li><a href="/relationships" class="mobile-sublink">זוגיות ומערכות יחסים</a>
+                    </li>
+                    <li><a href="/depression-anxiety" class="mobile-sublink">דיכאון, חרדה וערך
+                            עצמי</a></li>
+                    <li><a href="/young-adults" class="mobile-sublink">בניית זהות ועצמאות</a></li>
+                    <li><a href="/career" class="mobile-sublink">שחיקה בעבודה</a></li>
+                    <li><a href="/trauma" class="mobile-sublink">טראומה ומצבי משבר</a></li>
+                </ul>
+            </li>
+            <li class="mobile-accordion">
+                <div class="mobile-accordion-header">
+                    <a href="/#methods" class="mobile-accordion-link">שיטות טיפול</a>
+                    <button class="mobile-accordion-chevron" aria-expanded="false" aria-label="הצג תפריט שיטות טיפול">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-accordion-panel">
+                    <li><a href="/psychotherapy" class="mobile-sublink">פסיכותרפיה דינמית</a></li>
+                    <li><a href="/mindfulness" class="mobile-sublink">מיינדפולנס</a></li>
+                    <li><a href="/hakomi" class="mobile-sublink">האקומי</a></li>
+                </ul>
+            </li>
+            <li><a href="/#contact" class="mobile-menu-link">צור קשר</a></li>
+        </ul>
+    </nav>
+    <!-- SECTION 1: ACCESSABILITY -->
+    <main id="main-content">
+        <!-- SECTION 1: PRIVACY POLICY -->
+        <section class="py-24 md:py-32 bg-white mt-20">
+            <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
+                <!-- COMPONENT: section-heading -->
+                <h1 class="text-4xl md:text-5xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
+                    מדיניות פרטיות
+                </h1>
+                <span class="w-14 h-[2px] bg-gradient-to-r from-sage via-sage-light to-transparent block mb-12 rounded-full"></span>
+
+                <div class="space-y-6">
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        עדכון אחרון: אפריל 2026
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">1. כללי</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        אברהם דגן, פסיכותרפיסט ("אנחנו", "בעל האתר") מחויב להגנה על פרטיות המשתמשים באתר. מדיניות זו מפרטת אילו נתונים נאספים, כיצד הם מעובדים ולאילו מטרות, בהתאם לחוק הגנת הפרטיות, תשמ"א-1981, ותיקון מס' 13 לחוק (התשפ"ד-2025).<br>
+                        <strong class="font-semibold text-navy-dark">פרטי בעל השליטה:</strong> אברהם דגן, הגליל 42, פרדס חנה, ישראל. <a href="mailto:avi.dagan@012.net.il" class="text-sage-accessible font-semibold underline underline-offset-4">avi.dagan@012.net.il</a>
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">2. מידע הנאסף ישירות</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        בעת שליחת טופס יצירת הקשר באתר, נאספים הפרטים הבאים מרצונך החופשי: שם מלא, מספר טלפון, כתובת דוא"ל ותוכן הפנייה.<br>
+                        מסירת פרטים אלה היא מרצון. ללא מסירתם לא ניתן יהיה להגיב לפנייתך.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">3. מידע הנאסף אוטומטית</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        בעת גלישה באתר נאסף מידע טכני אוטומטית, ובכלל זה: כתובת IP, סוג דפדפן ומכשיר, מערכת הפעלה, עמודים שנצפו, משך הגלישה, ומידע על פעולות שבוצעו באתר (לחיצה על כפתורי וואטסאפ, טלפון, דוא"ל ושליחת טופס).
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">4. מטרות עיבוד המידע</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        המידע הנאסף משמש למטרות הבאות:
+                    </p>
+                    <ul class="list-disc list-inside text-muted text-base md:text-lg leading-loose mb-5 space-y-2">
+                        <li>מענה לפניות ויצירת קשר</li>
+                        <li>ניתוח תנועה לאתר ושיפור ביצועיו</li>
+                        <li>הצגת מודעות פרסום ממוקדות</li>
+                        <li>הצגת מודעות רימרקטינג למבקרים שטרם יצרו קשר</li>
+                        <li>מדידת אפקטיביות הקמפיינים הפרסומיים</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">5. עוגיות וטכנולוגיות מעקב</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        האתר עושה שימוש בעוגיות (Cookies) לצורך תפעול תקין, ניתוח גלישה ופרסום ממוקד. ניתן לנהל או לחסום עוגיות דרך הגדרות הדפדפן; חסימה עשויה לפגוע בחלק מהפונקציות.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">6. צדדים שלישיים</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        המידע עשוי להיות מועבר לספקים החיצוניים הבאים:
+                    </p>
+                    <ul class="list-disc list-inside text-muted text-base md:text-lg leading-loose mb-5 space-y-2">
+                        <li><strong class="font-semibold text-navy-dark">Formspree Inc.</strong> - עיבוד ושידור טפסי קשר (<a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">מדיניות פרטיות</a>)</li>
+                        <li><strong class="font-semibold text-navy-dark">Google Analytics (GA4)</strong> - ניתוח תנועה לאתר (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">מדיניות פרטיות</a>)</li>
+                        <li><strong class="font-semibold text-navy-dark">Google Ads</strong> - פרסום ממוקד ומדידת המרות (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">מדיניות פרטיות</a>)</li>
+                        <li><strong class="font-semibold text-navy-dark">Google Ads Remarketing</strong> - רימרקטינג למבקרים (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">מדיניות פרטיות</a>)</li>
+                        <li><strong class="font-semibold text-navy-dark">Google Analytics Remarketing</strong> - רימרקטינג על בסיס נתוני Analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">מדיניות פרטיות</a>)</li>
+                        <li><strong class="font-semibold text-navy-dark">Google Fonts</strong> - הצגת גופנים (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">מדיניות פרטיות</a>)</li>
+                    </ul>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        ניתן לבטל את ההסכמה לפרסום מותאם אישית על ידי גוגל דרך: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">adssettings.google.com</a><br>
+                        ניתן לבטל מעקב של Google Analytics דרך: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-sage-accessible font-semibold underline underline-offset-4">tools.google.com/dlpage/gaoptout</a>
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">7. שמירת מידע ואבטחה</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        המידע נשמר לפרק הזמן הנדרש למטרה שלשמה נאסף, ולא יותר מכך. ננקטים אמצעי אבטחה סבירים להגנה על המידע. יחד עם זאת, אין אפשרות להבטיח אבטחה מוחלטת של מידע המועבר ברשת.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">8. זכויות המשתמש</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        בהתאם לחוק הגנת הפרטיות (תיקון 13), עומדות לך הזכויות הבאות:
+                    </p>
+                    <ul class="list-disc list-inside text-muted text-base md:text-lg leading-loose mb-5 space-y-2">
+                        <li><strong class="font-semibold text-navy-dark">עיון</strong> — לעיין במידע השמור עליך ולקבל ממנו עותק</li>
+                        <li><strong class="font-semibold text-navy-dark">תיקון</strong> — לבקש תיקון פרטים שגויים</li>
+                        <li><strong class="font-semibold text-navy-dark">מחיקה</strong> — לבקש מחיקת המידע, ככל שאין חובה חוקית לשמרו</li>
+                        <li><strong class="font-semibold text-navy-dark">התנגדות</strong> — להתנגד לעיבוד המידע למטרות מסוימות</li>
+                    </ul>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        לממש זכויות אלה, ניתן לפנות אלינו בדוא"ל: <a href="mailto:avi.dagan@012.net.il" class="text-sage-accessible font-semibold underline underline-offset-4">avi.dagan@012.net.il</a>. נענה לבקשות תוך 30 יום.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">9. שינויים במדיניות</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        מדיניות זו עשויה להתעדכן מעת לעת. כל שינוי מהותי יפורסם בעמוד זה עם תאריך עדכון מעודכן.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy-dark mt-8 mb-4">10. יצירת קשר</h2>
+                    <p class="text-muted text-base md:text-lg leading-loose mb-5">
+                        לשאלות בנושא פרטיות: <a href="mailto:avi.dagan@012.net.il" class="text-sage-accessible font-semibold underline underline-offset-4">avi.dagan@012.net.il</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+</main>
+
+
+    <!-- FOOTER -->
+    <footer id="site-footer"
+        class="bg-navy-dark text-cream/70 py-16 lg:py-20 relative overflow-hidden border-t-4 border-sage">
+        <!-- Subtle dot pattern overlay -->
+        <div class="absolute inset-0 opacity-5 bg-pattern-dots-cream">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <!-- Main Grid: 4 Equal Columns on Desktop -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 items-stretch">
+
+                <!-- Col 1: Identity & Contact (Right) -->
+                <div class="flex flex-col justify-between h-full gap-6 text-center lg:text-right">
+                    <div>
+                        <p class="text-2xl font-bold text-cream tracking-tight mb-1">אברהם דגן</p>
+                        <span class="text-sage text-sm font-semibold tracking-widest uppercase block">פסיכותרפיסט
+                            ומטפל רגשי</span>
+                    </div>
+
+                    <div class="space-y-4 text-sm leading-relaxed">
+                        <address
+                            class="not-italic flex items-center lg:items-start justify-center lg:justify-start gap-3">
+                            <svg class="w-5 h-5 text-sage flex-shrink-0 lg:mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            <span>רחוב הגליל 42<br>פרדס חנה כרכור</span>
+                        </address>
+
+                        <div class="flex items-center justify-center lg:justify-start gap-3 w-fit mx-auto lg:mx-0">
+                            <svg class="w-5 h-5 text-sage flex-shrink-0 lg:mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.539-4.062-7.236-7.118l1.264-1.077c.345-.295.478-.764.33-1.182L6.906 2.36C6.738 1.834 6.228 1.5 5.658 1.5H4.125C3.132 1.5 2.25 2.515 2.25 3.75v3z" />
+                            </svg>
+                            <a href="tel:+972528604102"
+                                class="font-medium tracking-wide hover:text-white transition-colors rounded"
+                                aria-label="חייגו לאברהם דגן">052-8604102</a>
+                        </div>
+
+                        <!-- LGBT-friendly badge -->
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-cream/80 border border-white/15 tracking-wide">
+                                <span aria-hidden="true">🏳️‍🌈</span> להט"ב פרנדלי
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links (Center) -->
+                <div class="flex flex-col justify-start h-full gap-5 lg:px-8 text-center lg:text-right">
+                    <p class="text-sage text-sm font-semibold tracking-widest uppercase">תחומי טיפול</p>
+                    <nav class="flex flex-col items-center lg:items-start gap-3 text-sm" aria-label="ניווט תחתון">
+                        <a href="/relationships"
+                            class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
+                            <span class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                aria-hidden="true">←</span>
+                            זוגיות ומערכות יחסים
+                        </a>
+                        <a href="/depression-anxiety"
+                            class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
+                            <span class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                aria-hidden="true">←</span>
+                            דיכאון, חרדה
+                            וערך עצמי
+                        </a>
+                        <a href="/young-adults"
+                            class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
+                            <span class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                aria-hidden="true">←</span>
+                            בניית זהות ועצמאות
+                        </a>
+                        <a href="/career"
+                            class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
+                            <span class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                aria-hidden="true">←</span>
+                            שחיקה
+                            בעבודה
+                        </a>
+                        <a href="/trauma"
+                            class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
+                            <span class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                aria-hidden="true">←</span>
+                            טראומה ומצבי משבר
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Col 3: Navigation Links (Methods) & Social Icons -->
+                <div class="flex flex-col justify-between h-full lg:px-8 text-center lg:text-right">
+                    <div class="flex flex-col gap-5">
+                        <p class="text-sage text-sm font-semibold tracking-widest uppercase">שיטות טיפול</p>
+
+                        <nav class="flex flex-col items-center lg:items-start gap-3.5 text-sm"
+                            aria-label="ניווט שיטות טיפול">
+                            <a href="/psychotherapy"
+                                class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group"><span
+                                    class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                    aria-hidden="true">←</span> פסיכותרפיה
+                                דינמית</a>
+                            <a href="/mindfulness"
+                                class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
+                                <span
+                                    class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                    aria-hidden="true">←</span>
+                                מיינדפולנס
+                            </a>
+                            <a href="/hakomi"
+                                class="hover:text-white transition-colors duration-300 w-fit rounded inline-flex items-center gap-2 group">
+                                <span
+                                    class="hidden lg:inline text-sage/0 group-hover:text-sage transition-colors text-xs"
+                                    aria-hidden="true">←</span>
+                                האקומי
+                            </a>
+                        </nav>
+                    </div>
+
+                    <!-- Contact/Social Icons Block -->
+                    <div class="mt-4 flex items-center justify-center lg:justify-start gap-4">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
+                            target="_blank" rel="noopener noreferrer" title="וואטסאפ"
+                            class="flex items-center justify-center w-11 h-11 rounded-full bg-cream/10 text-cream hover:bg-sage-dark hover:text-white transition-all duration-300 transform hover:scale-110">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                        </a>
+                        <!-- Phone -->
+                        <a href="tel:+972528604102" title="טלפון"
+                            class="flex items-center justify-center w-11 h-11 rounded-full bg-cream/10 text-cream hover:bg-sage-dark hover:text-white transition-all duration-300 transform hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.539-4.062-7.236-7.118l1.264-1.077c.345-.295.478-.764.33-1.182L6.906 2.36C6.738 1.834 6.228 1.5 5.658 1.5H4.125C3.132 1.5 2.25 2.515 2.25 3.75v3z" />
+                            </svg>
+                        </a>
+                        <!-- Email -->
+                        <a href="mailto:avi.dagan@012.net.il" title="אימייל" aria-label="שלחו אימייל"
+                            class="flex items-center justify-center w-11 h-11 rounded-full bg-cream/10 text-cream hover:bg-sage-dark hover:text-white transition-all duration-300 transform hover:scale-110">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 4: Map Embed (Left) -->
+                <div class="flex flex-col justify-between h-full gap-4 text-center lg:text-right">
+                    <p class="text-sage text-sm font-semibold tracking-widest uppercase">מיקום הקליניקה</p>
+                    <div class="rounded-2xl overflow-hidden border border-cream/10 shadow-2xl bg-white/5 h-40 group">
+                        <iframe title="מיקום הקליניקה – רחוב הגליל 42, פרדס חנה כרכור"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.7206241888907!2d34.98977191177254!3d32.48016087367979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d0e5505d4de3f%3A0xe6f8de1ecc8f4a95!2sKidmat%20HaGalil%20St%2042%2C%20Pardes%20Hana-Karkur!5e0!3m2!1sen!2sil!4v1773790657934!5m2!1sen!2sil"
+                            class="w-full h-full border-0 grayscale-[0.2] contrast-[1.05] opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div
+                class="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-wider text-cream/70 uppercase">
+                <p>© 2026 אברהם דגן. כל הזכויות שמורות.</p>
+                <div class="flex gap-4">
+                    <a href="/accessibility" class="hover:text-white transition-colors rounded">הצהרת
+                        נגישות</a>
+                    <a href="/privacy-policy" aria-current="page" class="text-white transition-colors rounded">מדיניות פרטיות</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ════════════════════════════════════════════
+       COMPONENT: cookie-notice
+  ═════════════════════════════════════════════ -->
+    <div id="cookie-notice" role="alertdialog" aria-labelledby="cookie-notice-title"
+        aria-describedby="cookie-notice-desc" hidden class="fixed bottom-0 left-0 right-0 z-[200] px-4 pb-4 sm:pb-6">
+        <div
+            class="max-w-3xl mx-auto bg-navy-dark/95 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <!-- Text -->
+            <p id="cookie-notice-desc" class="flex-1 text-cream/80 text-sm leading-relaxed">
+                <span id="cookie-notice-title" class="font-semibold text-cream">עוגיות ופרטיות</span>
+                &ensp;האתר משתמש בעוגיות לצורך ניתוח סטטיסטי ושיפור חוויית המשתמש.
+                <a href="/privacy-policy"
+                    class="text-sage-light underline underline-offset-2 hover:text-white transition-colors whitespace-nowrap">למידע
+                    נוסף</a>
+            </p>
+            <!-- Dismiss button -->
+            <button id="cookie-dismiss" aria-label="סגור הודעת עוגיות"
+                class="flex-shrink-0 inline-flex items-center gap-2 bg-sage-dark hover:bg-sage-accessible text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200 whitespace-nowrap">
+                הבנתי
+            </button>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════
+       JAVASCRIPT
+  ═════════════════════════════════════════════ -->
+    <script src="/assets/shared.js" defer></script>
+
+
+</body>
+
+</html>
