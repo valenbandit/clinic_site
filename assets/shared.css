@@ -174,7 +174,7 @@ html {
 /* Dropdown panel */
 
 .nav-dropdown-menu {
-  visibility: hidden;
+  display: none;
   position: absolute;
   top: 100%;
   right: 0;
@@ -192,7 +192,7 @@ html {
 /* Show panel on hover (mouse) or when JS sets .dropdown-open (keyboard/touch) */
 
 .nav-dropdown:is(:hover, .dropdown-open) .nav-dropdown-menu {
-  visibility: visible;
+  display: block;
 }
 
 /* Tailwind cannot express: custom sub-rem font sizing and transition on dropdown links */
@@ -295,40 +295,45 @@ html {
   overflow-y: auto;
 }
 
-/* Mobile menu list — reset + dividers */
+/* Mobile menu — list reset + dividers */
 
-.mobile-menu-list {
+#mobile-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid rgba(var(--color-sage-rgb), 0.15);
 }
 
-.mobile-menu-list>li {
+
+#mobile-menu > ul > li {
   border-bottom: 1px solid rgba(var(--color-sage-rgb), 0.15);
 }
 
-/* Top-level nav links */
+/* Links — shared base */
 
-.mobile-menu-link {
+#mobile-menu a {
   display: block;
-  padding: 1rem 1.5rem;
   color: var(--color-cream);
-  font-size: 1rem;
-  font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-.mobile-menu-link:hover,
-.mobile-menu-link:focus-visible {
+#mobile-menu a:active,
+#mobile-menu a[aria-current="page"] {
   color: var(--color-sage-light);
   background: rgba(var(--color-sage-rgb), 0.08);
 }
 
+/* Top-level links */
+
+#mobile-menu > ul > li > a {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 /* Accordion trigger button */
 
-.mobile-accordion-btn {
+#mobile-menu button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -343,18 +348,17 @@ html {
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-.mobile-accordion-btn svg {
+#mobile-menu button svg {
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
 
-.mobile-accordion-btn:hover,
-.mobile-accordion-btn[aria-expanded="true"] {
+#mobile-menu button[aria-expanded="true"] {
   color: var(--color-sage-light);
   background: rgba(var(--color-sage-rgb), 0.08);
 }
 
-.mobile-accordion-btn[aria-expanded="true"] svg {
+#mobile-menu button[aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
 
@@ -374,23 +378,18 @@ html {
   max-height: 280px;
 }
 
-/* Indented sub-links */
+/* Sub-links — indented, smaller, dimmer */
 
-.mobile-sublink {
-  display: block;
-  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+.mobile-accordion-panel a {
+  padding: 0.7rem 1.5rem;
   padding-inline-start: 2.75rem;
-  color: var(--color-cream);
   font-size: 0.9rem;
   font-weight: 400;
-  text-decoration: none;
   opacity: 0.78;
-  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.mobile-sublink:hover,
-.mobile-sublink:focus-visible {
-  color: var(--color-sage-light);
+.mobile-accordion-panel a:active,
+.mobile-accordion-panel a[aria-current="page"] {
   opacity: 1;
 }
 
@@ -632,11 +631,10 @@ html {
   .nav-dropdown-menu a,
   #hamburger span,
   #mobile-menu,
-  .mobile-menu-link,
-  .mobile-accordion-btn,
-  .mobile-accordion-btn svg,
+  #mobile-menu a,
+  #mobile-menu button,
+  #mobile-menu button svg,
   .mobile-accordion-panel,
-  .mobile-sublink,
   .hero-img,
   .approach-card,
   .approach-card:hover,

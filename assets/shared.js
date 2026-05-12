@@ -7,7 +7,7 @@
 //    1. Navbar — Scroll Effect
 //    3. Navbar — Parallax Hero (homepage only)
 //    4. Navbar — Mobile Hamburger Menu
-//    5. Navbar — Dropdown (keyboard toggle + outside-click close)
+//    5. Navbar — Dropdown (hover + keyboard toggle)
 //    6. Scroll Reveal (IntersectionObserver)
 //    7. Contact Form — Async Submit (homepage only)
 //    8. Lazy Load SVG Objects
@@ -58,59 +58,30 @@ onScroll();
 //  Toggles a compact dropdown panel below the navbar.
 //  Hamburger animates into ×. Closes on: hamburger re-tap,
 //  outside click, Escape key, or nav link activation.
-//  Focus is trapped inside while open, released on close.
+//  `inert` manages tab order + accessibility (replaces aria-hidden).
 // ─────────────────────────────────────────────────────────────
 
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
-// ── Focus trap ───────────────────────────────────────────────
-let _trapHandler = null;
-
-function trapFocus(container) {
-    const focusable = Array.from(
-        container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
-    ).filter(el => !el.closest('[inert]'));
-    if (!focusable.length) return;
-    focusable[0].focus();
-
-    _trapHandler = e => {
-        if (e.key !== 'Tab') return;
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (e.shiftKey) {
-            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-        } else {
-            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
-        }
-    };
-    document.addEventListener('keydown', _trapHandler);
-}
-
-function releaseFocus() {
-    if (_trapHandler) {
-        document.removeEventListener('keydown', _trapHandler);
-        _trapHandler = null;
-    }
-}
-
 // ── Open / Close ─────────────────────────────────────────────
 function openMobileMenu() {
-    mobileMenu.removeAttribute('inert');
     mobileMenu.classList.add('open');
-    mobileMenu.setAttribute('aria-hidden', 'false');
+    mobileMenu.removeAttribute('inert');
     hamburger.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
-    trapFocus(mobileMenu);
 }
 
 function closeMobileMenu() {
     mobileMenu.classList.remove('open');
-    mobileMenu.setAttribute('aria-hidden', 'true');
     mobileMenu.setAttribute('inert', '');
     hamburger.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
-    releaseFocus();
+    mobileMenu.querySelectorAll('.mobile-accordion-panel.open').forEach(panel => {
+        panel.classList.remove('open');
+        panel.setAttribute('inert', '');
+        panel.previousElementSibling.setAttribute('aria-expanded', 'false');
+    });
     hamburger.focus();
 }
 
@@ -138,100 +109,58 @@ document.addEventListener('keydown', e => {
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
 
 // ── Accordion ────────────────────────────────────────────────
-mobileMenu.querySelectorAll('.mobile-accordion-chevron').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // Prevent click from bubbling if needed, though they don't overlap with the link
-        e.stopPropagation();
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        // The panel is the next sibling of the .mobile-accordion-header
-        const header = btn.closest('.mobile-accordion-header');
-        if (header && header.nextElementSibling) {
-            header.nextElementSibling.classList.toggle('open', !expanded);
-        }
+mobileMenu.querySelectorAll('.mobile-accordion').forEach(item => {
+    const btn = item.querySelector('button');
+    const panel = item.querySelector('.mobile-accordion-panel');
+
+    btn.addEventListener('click', () => {
+        const open = panel.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+        open ? panel.removeAttribute('inert') : panel.setAttribute('inert', '');
     });
 });
 
 
 // ─────────────────────────────────────────────────────────────
 //  5. NAVBAR — DROPDOWN
-//  Mouse: opens on hover (mouseenter/mouseleave on the [data-dropdown] li).
-//  Keyboard: click the chevron [data-dropdown-toggle] button to toggle.
-//  Only one dropdown can be open at a time.
+//  Mouse hover is handled entirely by CSS (:hover on .nav-dropdown).
+//  JS manages .dropdown-open for keyboard and touch: click toggles,
+//  focusout / outside-click / Escape close it.
 // ─────────────────────────────────────────────────────────────
 
-function closeAllDropdowns(except) {
-    document.querySelectorAll('[data-dropdown]').forEach(dd => {
-        if (dd === except) return;
-        dd.classList.remove('dropdown-open');
-        const toggle = dd.querySelector('[data-dropdown-toggle]');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+function openDD(dd) {
+    document.querySelectorAll('.nav-dropdown').forEach(other => {
+        if (other !== dd) closeDD(other);
     });
+    dd.classList.add('dropdown-open');
+    dd.querySelector('button').setAttribute('aria-expanded', 'true');
 }
 
-// ── Hover (mouse users) ──────────────────────────────────────
-document.querySelectorAll('[data-dropdown]').forEach(dd => {
-    dd.addEventListener('mouseenter', () => {
-        closeAllDropdowns(dd);
-        dd.classList.add('dropdown-open');
-        const toggle = dd.querySelector('[data-dropdown-toggle]');
-        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+function closeDD(dd) {
+    dd.classList.remove('dropdown-open');
+    dd.querySelector('button').setAttribute('aria-expanded', 'false');
+}
+
+document.querySelectorAll('.nav-dropdown').forEach(dd => {
+    dd.querySelector('button').addEventListener('click', () => {
+        dd.classList.contains('dropdown-open') ? closeDD(dd) : openDD(dd);
     });
 
-    dd.addEventListener('mouseleave', () => {
-        dd.classList.remove('dropdown-open');
-        const toggle = dd.querySelector('[data-dropdown-toggle]');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-    });
-});
-
-// ── Click-toggle (keyboard / chevron button users) ───────────
-// Requires [data-dropdown-toggle] attribute on the chevron button in HTML
-document.querySelectorAll('[data-dropdown-toggle]').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const dd = btn.closest('[data-dropdown]');
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        if (!expanded) closeAllDropdowns(dd);
-        btn.setAttribute('aria-expanded', String(!expanded));
-        dd.classList.toggle('dropdown-open', !expanded);
-    });
-
-    btn.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            btn.click();
-        }
-    });
-});
-
-// ── Outside click — closes all ───────────────────────────────
-document.addEventListener('click', e => {
-    if (!e.target.closest('[data-dropdown]')) {
-        closeAllDropdowns(null);
-    }
-});
-
-// ── Tab away — close that specific dropdown ──────────────────
-document.querySelectorAll('[data-dropdown]').forEach(dd => {
     dd.addEventListener('focusout', e => {
-        if (!dd.contains(e.relatedTarget)) {
-            dd.classList.remove('dropdown-open');
-            const toggle = dd.querySelector('[data-dropdown-toggle]');
-            if (toggle) toggle.setAttribute('aria-expanded', 'false');
-        }
+        if (!dd.contains(e.relatedTarget)) closeDD(dd);
     });
 });
 
-// ── Escape — close all, return focus to chevron ──────────────
+document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown'))
+        document.querySelectorAll('.nav-dropdown').forEach(closeDD);
+});
+
 document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
-    document.querySelectorAll('[data-dropdown].dropdown-open').forEach(dd => {
-        dd.classList.remove('dropdown-open');
-        const toggle = dd.querySelector('[data-dropdown-toggle]');
-        if (toggle) {
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.focus();
-        }
+    document.querySelectorAll('.nav-dropdown.dropdown-open').forEach(dd => {
+        closeDD(dd);
+        dd.querySelector('button').focus();
     });
 });
 
