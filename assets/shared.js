@@ -34,9 +34,6 @@ function onScroll() {
     requestAnimationFrame(() => {
         const scrollY = window.scrollY;
 
-        // Toggle scrolled state
-        navbar.classList.toggle('scrolled', scrollY > 40);
-
         // ── 3. NAVBAR — PARALLAX HERO (homepage only) ──────────
         // Only runs when #hero-parallax-img exists and on desktop
         // to avoid wasting CPU on mobile/tablet.
@@ -332,31 +329,43 @@ if (contactForm) {
 
 // ─────────────────────────────────────────────────────────────
 //  10. COOKIE NOTICE
-//  Shows after 1500 ms if not already dismissed.
-//  JS-state class: cookie-notice--visible (not a Tailwind class).
-//  Dismissal: slides out, waits for transition, then hides.
+//  GTM Consent Mode v2 + Israeli Privacy Protection Law.
+//  Shows after 1500 ms when no prior choice is stored.
+//  Accept → push consent_accept, store 'accepted'
+//  Reject → push consent_reject, store 'rejected'
 // ─────────────────────────────────────────────────────────────
 
 (function () {
+    window.dataLayer = window.dataLayer || [];
+
     var notice = document.getElementById('cookie-notice');
     if (!notice) return;
 
-    // Already dismissed — stay hidden forever
-    if (localStorage.getItem('cookieDismissed')) return;
+    var stored = localStorage.getItem('cookieConsent');
 
-    // Show after 1500 ms
+    if (stored === 'accepted') {
+        window.dataLayer.push({ event: 'consent_accept' });
+        return;
+    }
+    if (stored === 'rejected') {
+        window.dataLayer.push({ event: 'consent_reject' });
+        return;
+    }
+
+    // No prior choice — show banner after 1500 ms
     setTimeout(function () {
         notice.removeAttribute('hidden');
-        // Force reflow so the transition fires from the hidden state
-        notice.offsetHeight;
+        notice.offsetHeight; // force reflow so transition fires
         notice.classList.add('cookie-notice--visible');
     }, 1500);
 
-    // Dismiss
-    document.getElementById('cookie-dismiss').addEventListener('click', function () {
+    function dismiss(choice) {
         notice.classList.remove('cookie-notice--visible');
-        localStorage.setItem('cookieDismissed', '1');
-        // Wait for transition before hiding from accessibility tree
+        localStorage.setItem('cookieConsent', choice);
+        window.dataLayer.push({ event: choice === 'accepted' ? 'consent_accept' : 'consent_reject' });
         setTimeout(function () { notice.setAttribute('hidden', ''); }, 400);
-    });
+    }
+
+    document.getElementById('cookie-accept').addEventListener('click', function () { dismiss('accepted'); });
+    document.getElementById('cookie-reject').addEventListener('click', function () { dismiss('rejected'); });
 })();

@@ -87,23 +87,6 @@ html {
    3. NAVIGATION — STICKY HEADER
    ───────────────────────────────────────────────────────────── */
 
-/* Tailwind cannot express: complex multi-property custom transition */
-
-#navbar {
-  transition: background 0.35s ease, box-shadow 0.35s ease;
-  z-index: 100;
-  /* backdrop-filter: blur(12px); */
-}
-
-/* Solid background once user scrolls past 40 px */
-
-/* Tailwind cannot express: custom relative rgb color modification with !important */
-
-#navbar.scrolled {
-  background: rgba(var(--color-cream-rgb), 0.97) !important;
-  box-shadow: 0 2px 20px rgba(var(--color-navy-rgb), 0.08);
-}
-
 /* Underline animation on each nav link */
 
 /* Tailwind cannot express: ::after pseudo-element with dynamic dimension */
