@@ -27,7 +27,7 @@
         content="לא חייבים להיות במשבר כדי להתחיל שינוי. אברהם דגן, פסיכותרפיסט מוסמך בפרדס חנה - מלווה תהליכים שמביאים לשינוי אמיתי, גם אונליין." />
 
     <meta property="og:url" content="https://abrahamdagan.co.il" />
-    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/bio.jpg" />
+    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/bio.webp" />
     <meta property="og:image:width" content="1455" />
     <meta property="og:image:height" content="1940" />
     <meta property="og:image:alt" content="אברהם דגן - פסיכותרפיסט ומטפל רגשי בפרדס חנה" />
@@ -62,7 +62,7 @@
   "url": "https://abrahamdagan.co.il",
   "name": "אברהם דגן - פסיכותרפיסט ומטפל רגשי",
   "telephone": "+972-52-8604102",
-  "image": "https://abrahamdagan.co.il/assets/site-images/bio.png",
+  "image": "https://abrahamdagan.co.il/assets/site-images/bio.webp",
   "priceRange": "₪300-400",
   "currenciesAccepted": "ILS",
   "paymentAccepted": "Cash, Bit, PayBox, Bank Transfer",
@@ -126,7 +126,7 @@
   "@id": "https://abrahamdagan.co.il/#person",
   "name": "אברהם דגן",
   "url": "https://abrahamdagan.co.il/#about",
-  "image": "https://abrahamdagan.co.il/assets/site-images/bio.jpg",
+  "image": "https://abrahamdagan.co.il/assets/site-images/bio.webp",
   "description": "פסיכותרפיסט ומטפל רגשי מוסמך בפרדס חנה כרכור, בעל התמחות קלינית בבית חולים לב השרון והסמכה מטעם מכון האקומי. עוסק בטיפול רגשי בגישת האקומי, מיינדפולנס וטיפול דינמי.",
   "jobTitle": "פסיכותרפיסט",
   "knowsAbout": [
@@ -219,14 +219,13 @@
          ASSETS
     ------------------------------------------------------------ -->
     <!-- fonts -->
-    <!-- tailwind cdn + config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- tailwind cdn + config -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -257,7 +256,6 @@
     </script>
 
     <!-- custom styles -->
-    <!-- javascript / hooks -->
     <link rel="stylesheet" href="/assets/shared.css">
     <style>
         .hero-blob-1,
@@ -265,7 +263,9 @@
             animation: none !important;
         }
     </style>
-    <!-- JSON-LD BLOCK SEO-->
+
+    <!-- javascript / hooks -->
+    <script src="/assets/shared.js" defer></script>
 
 </head>
 
@@ -301,7 +301,7 @@
          HEADER
     ------------------------------------------------------------ -->
 
-    <!-- navigation bar -->
+    <!-- NAVIGATION BAR -->
     <header id="navbar" class="fixed top-0 right-0 left-0 z-[100] bg-white/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
@@ -390,11 +390,11 @@
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
-                </a><!-- /CTA -->
+                </a><!-- /cta -->
             </div><!-- /navbar row -->
         </div><!-- /container -->
     </header>
-    <!-- mobile menu -->
+    <!-- MOBILE MENU -->
     <nav id="mobile-menu" aria-label="תפריט נייד" inert>
         <ul>
             <li><a href="/">דף הבית</a>
@@ -440,7 +440,7 @@
          MAIN CONTENT
     ------------------------------------------------------------ -->
 
-        <!-- hero -->
+        <!-- PAGE HERO -->
         <section id="hero" class="min-h-screen flex flex-col sm:flex-row">
 
             <!-- text side -->
@@ -451,27 +451,27 @@
                     style="width:34rem;height:34rem;top:-8rem;right:-8rem;background:rgba(139,158,141,0.16)"></span>
                 <span class="deco-blob hidden lg:block" aria-hidden="true"
                     style="width:26rem;height:26rem;bottom:-3rem;left:-3rem;background:rgba(196,181,165,0.16)"></span>
-                <!-- Content sits above blobs -->
+                <!-- content sits above blobs -->
                 <div class="relative z-[1]">
                     <!-- headline -->
                     <p class="font-normal text-navy-dark leading-tight mb-3">
-                        <!-- Line 1: slightly smaller -->
+                        <!-- line 1: slightly smaller -->
                         <span class="block text-3xl sm:text-4xl md:text-5xl xl:text-6xl">הגיע הזמן</span>
-                        <!-- Line 2: larger -->
+                        <!-- line 2: larger -->
                         <span class="block text-4xl sm:text-5xl md:text-6xl xl:text-7xl mt-1">
                             <strong><span class="text-highlight">לתת
                                     לעצמך</span></strong> מקום
                         </span>
                     </p>
 
-                    <!-- H1 -->
+                    <!-- h1 -->
                     <h1
                         class="block text-sage-accessible font-medium text-lg sm:text-xl md:text-2xl xl:text-3xl tracking-wide mb-6 mt-1">
                         טיפול רגשי בפרדס חנה והסביבה
                     </h1>
 
                     <!-- actions & credentials -->
-                    <!-- COMPONENT: btn-cta-header -->
+                    <!-- btn-cta-header -->
                     <div class="flex flex-col gap-6 lg:gap-10 mb-2 lg:mb-10 w-full">
                         <div class="flex flex-wrap gap-4 order-1 lg:order-2 justify-center lg:justify-start w-full">
                             <a href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
@@ -483,15 +483,15 @@
                                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                                 </svg>
                             </a>
-                            <!-- COMPONENT: btn-secondary -->
+                            <!-- btn-secondary -->
                             <a href="/#about" aria-label="קראו עוד על הגישה הטיפולית של אברהם"
                                 class="hidden lg:inline-flex items-center gap-2 border border-navy-dark/20 text-navy-dark font-medium px-7 py-4 rounded-full hover:border-sage hover:text-sage transition-colors text-base">
                                 קראו עוד
                             </a>
                         </div>
 
-                        <!-- Credentials & Mobile Secondary Button (Mobile: Order 2, Centered row | Desktop: Order 1) -->
-                        <!-- COMPONENT: credential-badge -->
+                        <!-- credentials & mobile secondary button (mobile: order 2, centered row | desktop: order 1) -->
+                        <!-- credential badge -->
                         <div
                             class="flex flex-row flex-wrap justify-center lg:justify-start items-center gap-3 order-2 lg:order-1 w-full mt-[-6px] lg:mt-0 mb-8 lg:mb-0">
                             <span
@@ -499,12 +499,12 @@
                                 <span aria-hidden=true>📍</span> <strong>פרדס חנה כרכור</strong>
                             </span>
 
-                            <!-- Mobile secondary button (styled like badge) -->
+                            <!-- mobile secondary button (styled like badge) -->
                             <a href="#about" aria-label="קראו עוד על הגישה הטיפולית של אברהם"
                                 class="lg:hidden credential-badge inline-flex text-center items-center justify-center text-xs font-medium text-navy-dark px-4 py-2 rounded-full hover:bg-sage/10 transition-colors border border-navy-dark/10">
                                 קראו עוד
                             </a>
-                            <!-- COMPONENT: credential-badge -->
+                            <!-- credential badge -->
                             <span
                                 class="hidden lg:inline-flex credential-badge text-xs xl:text-sm font-medium text-navy-dark px-4 py-2 rounded-full items-center">
                                 <span aria-hidden=true>🏛️</span> חבר ב<strong>איגוד הישראלי הרב-תחומי
@@ -517,10 +517,10 @@
 
             <!-- image side (placeholder) -->
             <div class="flex-1 order-1 sm:order-2 min-h-[45vh] sm:min-h-0 lg:min-h-screen relative overflow-hidden">
-                <img id="hero-parallax-img" src="assets/site-images/index_hero.png"
+                <img id="hero-parallax-img" src="assets/site-images/index_hero.webp"
                     alt="אברהם דגן - פסיכותרפיסט בקליניקה בפרדס חנה"
                     class="hero-img absolute inset-0 w-full object-cover object-top sm:object-center" />
-                <!-- Soft overlay gradient -->
+                <!-- soft overlay gradient -->
                 <div
                     class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-cream/20 pointer-events-none">
                 </div>
@@ -572,7 +572,7 @@
                         קליניקה בפרדס חנה כרכור
                     </span>
                 </div>
-                <!-- Duplicate -->
+                <!-- duplicate -->
                 <div class="flex flex-nowrap shrink-0 gap-12 animate-infinite-scroll pr-12 w-max" aria-hidden="true">
                     <span class="flex items-center gap-2 whitespace-nowrap text-sm font-light tracking-wide" dir="rtl">
                         <svg class="w-4 h-4 text-sage flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -648,7 +648,7 @@
             </div>
         </section>
 
-        <!-- about -->
+        <!-- SECTION 1: ABOUT -->
         <section id="about" class="py-12 md:py-24 bg-white relative overflow-hidden">
 
             <span class="deco-blob hidden lg:block" aria-hidden="true"
@@ -661,7 +661,7 @@
                         class="order-2 lg:order-1 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <div class="relative block w-full max-w-sm mx-auto">
                             <div class="absolute -inset-4 bg-stone-warm rounded-2xl -z-10"></div>
-                            <img src="assets/site-images/bio.png"
+                            <img src="assets/site-images/bio.webp"
                                 alt="אברהם דגן - פסיכותרפיסט מומחה בשיטת האקומי וטיפול דינמי"
                                 class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover aspect-[4/5]" />
                         </div>
@@ -761,7 +761,7 @@
             </div>
         </section>
 
-        <!-- areas of treatment -->
+        <!-- SECTION 2: AREAS OF TREATMENT -->
         <section id="areas" class="py-12 md:py-24 bg-cream">
             <div class="section-padding max-w-6xl mx-auto px-4 md:px-8 lg:px-16">
                 <div class="grid lg:grid-cols-2 items-center gap-16 items-start">
@@ -799,12 +799,12 @@
                         </div>
                     </div>
 
-                    <!-- Areas cards — Microdata ItemList inside OfferCatalog -->
+                    <!-- areas cards - microdata itemlist inside offercatalog -->
                     <div>
                         <ul data-reveal
                             class="flex flex-col gap-4 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0 list-none">
 
-                            <!-- Card 1: זוגיות ומערכות יחסים -->
+                            <!-- card 1: זוגיות ומערכות יחסים -->
                             <li>
 
                                 <a id="area-relationships" href="/relationships"
@@ -833,7 +833,7 @@
                                 </a>
                             </li>
 
-                            <!-- Card 2: דיכאון, חרדה וערך עצמי -->
+                            <!-- card 2: דיכאון, חרדה וערך עצמי -->
                             <li>
 
                                 <a id="area-depression-anxiety" href="/depression-anxiety"
@@ -863,7 +863,7 @@
                                 </a>
                             </li>
 
-                            <!-- Card 3: בניית זהות ועצמאות -->
+                            <!-- card 3: בניית זהות ועצמאות -->
                             <li>
 
                                 <a id="area-young-adults" href="/young-adults"
@@ -892,7 +892,7 @@
                                 </a>
                             </li>
 
-                            <!-- Card 4: שחיקה בעבודה -->
+                            <!-- card 4: שחיקה בעבודה -->
                             <li>
 
                                 <a id="area-career" href="/career"
@@ -920,7 +920,7 @@
                                 </a>
                             </li>
 
-                            <!-- Card 5: טראומה ומצבי משבר -->
+                            <!-- card 5: טראומה ומצבי משבר -->
                             <li>
 
                                 <a id="area-trauma" href="/trauma"
@@ -954,7 +954,7 @@
             </div>
         </section>
 
-        <!-- methods -->
+        <!-- SECTION 3: METHODS -->
         <section id="methods" class="py-12 md:py-24 bg-white relative overflow-hidden">
 
             <span class="deco-blob hidden lg:block" aria-hidden="true"
@@ -1054,7 +1054,7 @@
                 </ul>
             </div>
         </section>
-        <!-- faq -->
+        <!-- SECTION 4: FAQ -->
         <section id="faq" class="py-12 md:py-24 bg-cream" aria-label="שאלות נפוצות">
             <div class="section-padding  mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
 
@@ -1074,7 +1074,7 @@
                 <div data-reveal
                     class="flex flex-col gap-4 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
 
-                    <!-- Q1: Practical tools vs just talking -->
+                    <!-- q1: practical tools vs just talking -->
 
                     <div id="faq-1" class="faq-card bg-white rounded-2xl overflow-hidden">
                         <details class="group">
@@ -1108,7 +1108,7 @@
                         </details>
                     </div>
 
-                    <!-- Q2: Not just for crisis -->
+                    <!-- q2: not just for crisis -->
 
                     <div id="faq-2" class="faq-card bg-white rounded-2xl overflow-hidden">
                         <details class="group">
@@ -1135,7 +1135,7 @@
                         </details>
                     </div>
 
-                    <!-- Q3: Online therapy -->
+                    <!-- q3: online therapy -->
 
                     <div id="faq-3" class="faq-card bg-white rounded-2xl overflow-hidden">
                         <details class="group">
@@ -1160,7 +1160,7 @@
                         </details>
                     </div>
 
-                    <!-- Q4: Treatment duration -->
+                    <!-- q4: treatment duration -->
 
                     <div id="faq-4" class="faq-card bg-white rounded-2xl overflow-hidden">
                         <details class="group">
@@ -1186,7 +1186,7 @@
                         </details>
                     </div>
 
-                    <!-- Q5: First session and how to start -->
+                    <!-- q5: first session and how to start -->
 
                     <div id="faq-5" class="faq-card bg-white rounded-2xl overflow-hidden">
                         <details class="group">
@@ -1222,7 +1222,7 @@
 
         </section>
 
-        <!-- gallery / atmosphere -->
+        <!-- SECTION 5: GALLERY / ATMOSPHERE -->
         <section aria-label="הקליניקה" class="py-12 md:py-24 bg-white relative overflow-hidden">
 
             <span class="deco-blob hidden lg:block" aria-hidden="true"
@@ -1251,7 +1251,7 @@
                         class="grid grid-cols-1 md:grid-cols-3 gap-4 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <!-- clinic image -->
                         <div class="md:col-span-2 rounded-2xl overflow-hidden h-64 md:h-80 shadow-md">
-                            <img src="assets/site-images/index_atmosphere.jpg"
+                            <img src="assets/site-images/index_atmosphere.webp"
                                 alt="קליניקה לפסיכותרפיה בפרדס חנה - אברהם דגן" class="object-cover w-full h-full" />
                         </div>
                         <!-- decorative ambient tiles -->
@@ -1277,7 +1277,7 @@
             </div>
         </section>
 
-        <!-- cta band -->
+        <!-- CTA BAND -->
         <section aria-label="ציטוט וקריאה לפעולה" class="bg-navy-dark py-20 px-4 md:px-8">
             <div data-reveal
                 class="max-w-3xl mx-auto text-center opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
@@ -1300,7 +1300,7 @@
 
                     <p class="text-sage-light text-lg font-medium opacity-90 mt-2">— קארל יונג</p>
                 </div>
-                <!-- COMPONENT: btn-cta -->
+                <!-- btn-cta -->
                 <a href="https://wa.me/972528604102?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%90%D7%91%D7%A8%D7%94%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A4%D7%92%D7%99%D7%A9%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA."
                     target="_blank" rel="noopener noreferrer"
                     class="btn-cta inline-flex items-center gap-3 bg-sage-dark text-white font-bold text-base px-6 py-3.5 sm:text-lg sm:px-10 sm:py-4 rounded-full shadow-md hover:shadow-lg hover:bg-sage-accessible transform hover:scale-[1.02] transition-all duration-300">
@@ -1313,7 +1313,7 @@
             </div>
         </section>
 
-        <!-- contact -->
+        <!-- SECTION 6: CONTACT -->
         <section id="contact" aria-label="צרו קשר" class="py-12 md:py-24 bg-white">
             <div class="section-padding  mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
                 <div data-reveal
@@ -1423,7 +1423,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-            <!-- footer grid -->
+            <!-- FOOTER GRID -->
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 items-stretch">
 
                 <!-- column 1: identity & contact -->
@@ -1572,20 +1572,17 @@
                 </div>
 
                 <!-- column 4: map -->
-                <div class="flex flex-col justify-between h-full gap-4 text-center lg:text-right">
+                <div class="flex flex-col gap-5 text-center lg:text-right">
                     <p class="text-sage text-sm font-semibold tracking-widest uppercase">מיקום הקליניקה</p>
-                    <div class="rounded-2xl overflow-hidden border border-cream/10 shadow-2xl bg-white/5 h-40 group">
-                        <iframe title="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.7206241888907!2d34.98977191177254!3d32.48016087367979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d0e5505d4de3f%3A0xe6f8de1ecc8f4a95!2sKidmat%20HaGalil%20St%2042%2C%20Pardes%20Hana-Karkur!5e0!3m2!1sen!2sil!4v1773790657934!5m2!1sen!2sil"
-                            class="w-full h-full border-0 grayscale-[0.2] contrast-[1.05] opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                    <a href="https://maps.app.goo.gl/HRKHkv56q174TshS6" target="_blank" rel="noopener noreferrer" aria-label="מפת הגעה לקליניקה בפרדס חנה כרכור" class="block rounded-2xl overflow-hidden h-40">
+                        <img src="assets/site-images/map.webp" alt="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
+                            class="w-full h-full object-cover" loading="lazy" />
+                    </a>
                 </div>
 
             </div>
 
-            <!-- bottom copyright bar -->
+            <!-- BOTTOM COPYRIGHT BAR -->
             <div
                 class="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-wider text-cream/70 uppercase">
                 <p>© 2026 אברהם דגן. כל הזכויות שמורות.</p>
@@ -1600,7 +1597,7 @@
     <!-- ------------------------------------------------------------
          GLOBAL OVERLAYS
     ------------------------------------------------------------ -->
-    <!-- cookie notice -->
+    <!-- COOKIE NOTICE -->
     <div id="cookie-notice" role="alertdialog" aria-labelledby="cookie-notice-title"
         aria-describedby="cookie-notice-desc" hidden class="fixed bottom-0 left-0 right-0 z-[200] px-4 pb-4 sm:pb-6">
         <div
@@ -1627,7 +1624,6 @@
         </div>
     </div>
 
-    <script src="/assets/shared.js" defer></script>
 
 </body>
 

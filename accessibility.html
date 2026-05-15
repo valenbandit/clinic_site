@@ -25,7 +25,7 @@
     <meta property="og:description" content="הצהרת נגישות לאתר של אברהם דגן – פסיכותרפיסט ומטפל רגשי בפרדס חנה." />
 
     <meta property="og:url" content="https://abrahamdagan.co.il/accessibility" />
-    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/bio.jpg" />
+    <meta property="og:image" content="https://abrahamdagan.co.il/assets/site-images/bio.webp" />
     <meta property="og:image:width" content="1455" />
     <meta property="og:image:height" content="1940" />
     <meta property="og:image:alt" content="הצהרת נגישות - אברהם דגן" />
@@ -46,7 +46,7 @@
   "name": "הצהרת נגישות | אברהם דגן – פסיכותרפיסט ומטפל רגשי",
   "description": "הצהרת נגישות לאתר של אברהם דגן – פסיכותרפיסט ומטפל רגשי בפרדס חנה.",
   "inLanguage": "he",
-  "dateModified": "2026-05-01",
+  "dateModified": "2026-05-15",
   "isPartOf": { "@id": "https://abrahamdagan.co.il/#website" },
   "about": { "@id": "https://abrahamdagan.co.il/#business" },
   "author": { "@id": "https://abrahamdagan.co.il/#person" }
@@ -79,14 +79,13 @@
          ASSETS
     ------------------------------------------------------------ -->
     <!-- fonts -->
-    <!-- tailwind cdn + config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- tailwind cdn + config -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -111,6 +110,7 @@
 
     <!-- custom styles -->
     <link rel="stylesheet" href="/assets/shared.css">
+
     <!-- javascript / hooks -->
     <script src="/assets/shared.js" defer></script>
 
@@ -285,7 +285,7 @@
     <main id="main-content">
         <section class="py-24 md:py-32 bg-white mt-20">
             <div class="mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
-                <!-- COMPONENT: section-heading -->
+                <!-- section heading -->
                 <h1 class="text-4xl md:text-5xl font-bold text-navy-dark mb-5 leading-tight tracking-tight">
                     הצהרת נגישות
                 </h1>
@@ -502,15 +502,12 @@
                 </div>
 
                 <!-- column 4: map -->
-                <div class="flex flex-col justify-between h-full gap-4 text-center lg:text-right">
+                <div class="flex flex-col gap-5 text-center lg:text-right">
                     <p class="text-sage text-sm font-semibold tracking-widest uppercase">מיקום הקליניקה</p>
-                    <div class="rounded-2xl overflow-hidden border border-cream/10 shadow-2xl bg-white/5 h-40 group">
-                        <iframe title="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.7206241888907!2d34.98977191177254!3d32.48016087367979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d0e5505d4de3f%3A0xe6f8de1ecc8f4a95!2sKidmat%20HaGalil%20St%2042%2C%20Pardes%20Hana-Karkur!5e0!3m2!1sen!2sil!4v1773790657934!5m2!1sen!2sil"
-                            class="w-full h-full border-0 grayscale-[0.2] contrast-[1.05] opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                    <a href="https://maps.app.goo.gl/HRKHkv56q174TshS6" target="_blank" rel="noopener noreferrer" aria-label="מפת הגעה לקליניקה בפרדס חנה כרכור" class="block rounded-2xl overflow-hidden h-40">
+                        <img src="assets/site-images/map.webp" alt="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
+                            class="w-full h-full object-cover" loading="lazy" />
+                    </a>
                 </div>
 
             </div>
