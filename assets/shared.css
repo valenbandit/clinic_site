@@ -287,7 +287,7 @@ html {
 }
 
 
-#mobile-menu > ul > li {
+#mobile-menu>ul>li {
   border-bottom: 1px solid rgba(var(--color-sage-rgb), 0.15);
 }
 
@@ -308,7 +308,7 @@ html {
 
 /* Top-level links */
 
-#mobile-menu > ul > li > a {
+#mobile-menu>ul>li>a {
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -658,16 +658,7 @@ html {
    without heavily bloating the class list. Extracting these into dedicated classes improves maintainability. */
 
 .hero-overlay-main {
-  background: linear-gradient(160deg, rgba(15, 22, 28, 0.90) 0%, rgba(26, 37, 47, 0.75) 50%, rgba(26, 37, 47, 0.55) 100%);
-}
-
-.hero-overlay-secondary {
-  background: linear-gradient(to right, transparent 40%, rgba(10, 15, 20, 0.65) 100%);
-}
-
-.hero-overlay-pattern {
-  background-image: radial-gradient(circle, rgba(139, 158, 141, 0.07) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background: linear-gradient(300deg, rgba(15, 22, 28, 0.90) 0%, rgba(26, 37, 47, 0.75) 50%, rgba(26, 37, 47, 0.55) 100%);
 }
 
 /* Tailwind CDN applies transitions via class attribute —

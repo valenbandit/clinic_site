@@ -1,0 +1,17 @@
+{
+  "name": "clinic_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./assets/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./input.css -o ./assets/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

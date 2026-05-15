@@ -218,42 +218,16 @@
     <!-- ------------------------------------------------------------
          ASSETS
     ------------------------------------------------------------ -->
+    <!-- preload hero -->
+    <link rel="preload" as="image" fetchpriority="high" href="assets/site-images/index_hero.webp" />
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- tailwind cdn + config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        mutedAccessible: '#6B6159',
-                        sage: { DEFAULT: '#8B9E8D', light: '#C8D5C9', dark: '#5C7A5E', accessible: '#527054' },
-                        stone: { warm: '#F5F0EB', medium: '#E8DDD4', deep: '#C4B5A5' },
-                        navy: { DEFAULT: '#2C3E50', dark: '#1A252F' },
-                        cream: '#FAF7F4',
-                        muted: { DEFAULT: '#7A7068', dark: '#5A524C' },
-                    },
-                    fontFamily: {
-                        sans: ['Assistant', 'sans-serif'],
-                    },
-                    keyframes: {
-                        'infinite-scroll': {
-                            from: { transform: 'translateX(0)' },
-                            to: { transform: 'translateX(-100%)' },
-                        }
-                    },
-                    animation: {
-                        'infinite-scroll': 'infinite-scroll 25s linear infinite',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- tailwind -->
+    <link rel="stylesheet" href="/assets/tailwind.css">
 
     <!-- custom styles -->
     <link rel="stylesheet" href="/assets/shared.css">
@@ -515,11 +489,12 @@
                 </div><!-- /content z-wrapper -->
             </div>
 
-            <!-- image side (placeholder) -->
+            <!-- image side -->
             <div class="flex-1 order-1 sm:order-2 min-h-[45vh] sm:min-h-0 lg:min-h-screen relative overflow-hidden">
                 <img id="hero-parallax-img" src="assets/site-images/index_hero.webp"
                     alt="אברהם דגן - פסיכותרפיסט בקליניקה בפרדס חנה"
-                    class="hero-img absolute inset-0 w-full object-cover object-top sm:object-center" />
+                    class="hero-img absolute inset-0 w-full object-cover object-top sm:object-center" width="1025"
+                    height="1025" loading="eager" fetchpriority="high" />
                 <!-- soft overlay gradient -->
                 <div
                     class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-cream/20 pointer-events-none">
@@ -661,9 +636,10 @@
                         class="order-2 lg:order-1 opacity-0 translate-y-6 transition-all duration-700 ease-out [&.visible]:opacity-100 [&.visible]:translate-y-0">
                         <div class="relative block w-full max-w-sm mx-auto">
                             <div class="absolute -inset-4 bg-stone-warm rounded-2xl -z-10"></div>
-                            <img src="assets/site-images/bio.webp"
+                            <img src="assets/site-images/bio2.webp"
                                 alt="אברהם דגן - פסיכותרפיסט מומחה בשיטת האקומי וטיפול דינמי"
-                                class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover aspect-[4/5]" />
+                                class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover aspect-[4/5]"
+                                width="1601" height="1626" loading="lazy" />
                         </div>
                     </div>
 
@@ -990,7 +966,7 @@
                             <div
                                 class="flex-shrink-0 w-16 h-16 rounded-2xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                 <img src="assets/site-images/svg/chat-communication-message-talk-chatting-conference-svgrepo-com.svg"
-                                    class="w-10 h-10" aria-hidden="true" alt="">
+                                    class="w-10 h-10" aria-hidden="true" alt="" width="847" height="847"loading="lazy" >
                             </div>
                             <div class="flex flex-col flex-1">
                                 <h3 class="font-bold text-navy-dark text-[1.15rem] leading-tight mb-3">
@@ -1013,7 +989,7 @@
                             <div
                                 class="flex-shrink-0 w-16 h-16 rounded-2xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                 <img src="assets/site-images/svg/yoga-svgrepo-com.svg" class="w-10 h-10"
-                                    aria-hidden="true" alt="">
+                                    aria-hidden="true" alt="" width="512" height="512"loading="lazy" >
                             </div>
                             <div class="flex flex-col flex-1">
                                 <h3 class="font-bold text-navy-dark text-[1.15rem] leading-tight mb-3">
@@ -1035,7 +1011,7 @@
                             <div
                                 class="flex-shrink-0 w-16 h-16 rounded-2xl bg-sage/10 flex items-center justify-center group-hover:bg-sage/20 transition-colors duration-300">
                                 <img src="assets/site-images/svg/lotus-flower-svgrepo-com.svg" class="w-10 h-10"
-                                    aria-hidden="true" alt="">
+                                    aria-hidden="true" alt="" width="512" height="512"loading="lazy" >
                             </div>
                             <div class="flex flex-col flex-1">
                                 <h3 class="font-bold text-navy-dark text-[1.15rem] leading-tight mb-3">
@@ -1252,7 +1228,8 @@
                         <!-- clinic image -->
                         <div class="md:col-span-2 rounded-2xl overflow-hidden h-64 md:h-80 shadow-md">
                             <img src="assets/site-images/index_atmosphere.webp"
-                                alt="קליניקה לפסיכותרפיה בפרדס חנה - אברהם דגן" class="object-cover w-full h-full" />
+                                alt="קליניקה לפסיכותרפיה בפרדס חנה - אברהם דגן" class="object-cover w-full h-full"
+                                width="1201" height="1197" loading="lazy" />
                         </div>
                         <!-- decorative ambient tiles -->
                         <div class="flex flex-col gap-4 col-span-1">
@@ -1574,9 +1551,10 @@
                 <!-- column 4: map -->
                 <div class="flex flex-col gap-5 text-center lg:text-right">
                     <p class="text-sage text-sm font-semibold tracking-widest uppercase">מיקום הקליניקה</p>
-                    <a href="https://maps.app.goo.gl/HRKHkv56q174TshS6" target="_blank" rel="noopener noreferrer" aria-label="מפת הגעה לקליניקה בפרדס חנה כרכור" class="block rounded-2xl overflow-hidden h-40">
+                    <a href="https://maps.app.goo.gl/HRKHkv56q174TshS6" target="_blank" rel="noopener noreferrer"
+                        aria-label="מפת הגעה לקליניקה בפרדס חנה כרכור" class="block rounded-2xl overflow-hidden h-40">
                         <img src="assets/site-images/map.webp" alt="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
-                            class="w-full h-full object-cover" loading="lazy" />
+                            class="w-full h-full object-cover" loading="lazy" width="873" height="643" />
                     </a>
                 </div>
 

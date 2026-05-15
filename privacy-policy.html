@@ -84,29 +84,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- tailwind cdn + config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        mutedAccessible: '#6B6159',
-                        sage: { DEFAULT: '#8B9E8D', light: '#C8D5C9', dark: '#5C7A5E', accessible: '#527054' },
-                        stone: { warm: '#F5F0EB', medium: '#E8DDD4', deep: '#C4B5A5' },
-                        navy: { DEFAULT: '#2C3E50', dark: '#1A252F' },
-                        cream: '#FAF7F4',
-                        muted: { DEFAULT: '#7A7068', dark: '#5A524C' },
-                    },
-                    fontFamily: { sans: ['Assistant', 'sans-serif'] },
-                    keyframes: {
-                        'infinite-scroll': { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-100%)' } }
-                    },
-                    animation: { 'infinite-scroll': 'infinite-scroll 25s linear infinite' }
-                }
-            }
-        }
-    </script>
+    <!-- tailwind -->
+    <link rel="stylesheet" href="/assets/tailwind.css">
 
     <!-- custom styles -->
     <link rel="stylesheet" href="/assets/shared.css">
@@ -582,7 +561,7 @@
                     <p class="text-sage text-sm font-semibold tracking-widest uppercase">מיקום הקליניקה</p>
                     <a href="https://maps.app.goo.gl/HRKHkv56q174TshS6" target="_blank" rel="noopener noreferrer" aria-label="מפת הגעה לקליניקה בפרדס חנה כרכור" class="block rounded-2xl overflow-hidden h-40">
                         <img src="assets/site-images/map.webp" alt="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
-                            class="w-full h-full object-cover" loading="lazy" />
+                            class="w-full h-full object-cover" loading="lazy" width="873" height="643" />
                     </a>
                 </div>
 
