@@ -3,6 +3,142 @@
            young-adults.html, fatherhood.html, depression-anxiety.html
    ============================================================= */
 
+/* ─── Assistant font (self-hosted) ─────────────────────────── */
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('fonts/assistant-latin-ext-300-normal.woff2') format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('fonts/assistant-latin-300-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('fonts/assistant-hebrew-300-normal.woff2') format('woff2');
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/assistant-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/assistant-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/assistant-hebrew-400-normal.woff2') format('woff2');
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/assistant-latin-ext-500-normal.woff2') format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/assistant-latin-500-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/assistant-hebrew-500-normal.woff2') format('woff2');
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/assistant-latin-ext-600-normal.woff2') format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/assistant-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/assistant-hebrew-600-normal.woff2') format('woff2');
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/assistant-latin-ext-700-normal.woff2') format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/assistant-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Assistant';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/assistant-hebrew-700-normal.woff2') format('woff2');
+  unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
 /* ─────────────────────────────────────────────────────────────
    DESIGN TOKENS
    ───────────────────────────────────────────────────────────── */
@@ -35,62 +171,35 @@
    1. GLOBAL / RESET
    ───────────────────────────────────────────────────────────── */
 
-/* Tailwind cannot express: global box-sizing reset for pseudo-elements */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Tailwind cannot express: global focus-visible override restoring browser-managed outline */
-/*:focus-visible {
-    outline: auto;
-}
-
-/* Tailwind cannot express: global smooth scroll-behavior override */
-
 html {
   scroll-behavior: smooth;
 }
 
-/* Tailwind cannot express: a linear-gradient used as a partial underline highlight,
-   because gradient background-image cannot be combined with an arbitrary stop-position
-   percentage using Tailwind utility classes alone. */
-
+/* Tailwind cannot express: linear-gradient used as a partial underline highlight */
 .text-highlight {
   background: linear-gradient(transparent 52%, rgba(var(--color-sage-dark-rgb), 0.22) 52%);
   padding-bottom: 2px;
 }
 
-/* REMOVED: body — font-family and colors now handled by Tailwind classes in HTML */
-
 /* ─────────────────────────────────────────────────────────────
    2. LAYOUT UTILITIES
    ───────────────────────────────────────────────────────────── */
 
-/* Centered content column with responsive side padding */
-
 /* REMOVED: .section-padding — convert to Tailwind utilities on elements in HTML */
-
-/* Sage gradient divider line */
-
 /* REMOVED: .divider / .divider-right — convert to Tailwind utilities on elements in HTML */
-
-/* Right-align variant (RTL: pushes divider to the left edge) */
-
-/* Scroll-triggered fade-up reveal */
-
 /* REMOVED: .reveal — convert to Tailwind utilities and data-attributes using JS */
 
 /* ─────────────────────────────────────────────────────────────
    3. NAVIGATION — STICKY HEADER
    ───────────────────────────────────────────────────────────── */
 
-/* Underline animation on each nav link */
-
 /* Tailwind cannot express: ::after pseudo-element with dynamic dimension */
-
 .nav-link::after {
   content: '';
   display: block;
@@ -100,8 +209,6 @@ html {
   transition: width 0.25s ease;
 }
 
-/* Tailwind cannot express: hover state targeting ::after pseudo-element */
-
 .nav-link:hover::after {
   width: 100%;
 }
@@ -110,15 +217,11 @@ html {
    4. NAVIGATION — DROPDOWN
    ───────────────────────────────────────────────────────────── */
 
-/* Positioning context for the absolute dropdown panel */
-
 .nav-dropdown {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
-
-/* Single trigger button: label text + chevron icon */
 
 .nav-dropdown-btn {
   display: inline-flex;
@@ -135,12 +238,9 @@ html {
 }
 
 /* Suppress nav-link underline pseudo-element on button */
-
 .nav-dropdown-btn::after {
   display: none;
 }
-
-/* Active state: hover (mouse) or .dropdown-open (keyboard/touch) */
 
 .nav-dropdown:is(:hover, .dropdown-open) .nav-dropdown-btn {
   color: var(--color-sage);
@@ -153,8 +253,6 @@ html {
 .nav-dropdown:is(:hover, .dropdown-open) .nav-dropdown-btn svg {
   transform: rotate(180deg);
 }
-
-/* Dropdown panel */
 
 .nav-dropdown-menu {
   display: none;
@@ -171,15 +269,11 @@ html {
   backdrop-filter: blur(12px);
 }
 
-
-/* Show panel on hover (mouse) or when JS sets .dropdown-open (keyboard/touch) */
-
 .nav-dropdown:is(:hover, .dropdown-open) .nav-dropdown-menu {
   display: block;
 }
 
 /* Tailwind cannot express: custom sub-rem font sizing and transition on dropdown links */
-
 .nav-dropdown-menu a {
   display: block;
   padding: 0.55rem 1rem;
@@ -191,8 +285,6 @@ html {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Tailwind cannot express: custom rgb background hover state */
-
 .nav-dropdown-menu a:hover {
   background: rgba(var(--color-sage-rgb), 0.12);
   color: var(--color-sage);
@@ -201,8 +293,6 @@ html {
 /* ─────────────────────────────────────────────────────────────
    5. NAVIGATION — MOBILE HAMBURGER + OVERLAY
    ───────────────────────────────────────────────────────────── */
-
-/* Tailwind cannot express: complex flex layout for custom hamburger icon */
 
 #hamburger {
   display: none;
@@ -215,15 +305,11 @@ html {
   z-index: 120;
 }
 
-/* Tailwind cannot express: custom media query targeting ID selector */
-
 @media (max-width: 1023px) {
   #hamburger {
     display: flex;
   }
 }
-
-/* Tailwind cannot express: complex multi-property transition on individual hamburger bars */
 
 #hamburger span {
   display: block;
@@ -235,29 +321,19 @@ html {
 }
 
 /* Animated X state */
-
-/* Tailwind cannot express: nth-child targeting with custom transform states */
-
 #hamburger.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-
-/* Tailwind cannot express: nth-child targeting with custom transform states */
 
 #hamburger.open span:nth-child(2) {
   opacity: 0;
 }
 
-/* Tailwind cannot express: nth-child targeting with custom transform states */
-
 #hamburger.open span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Compact dropdown panel — slides down from navbar */
-
 /* Tailwind cannot express: fixed positioning anchored below navbar with slide animation */
-
 #mobile-menu {
   position: fixed;
   top: 80px;
@@ -271,14 +347,10 @@ html {
   transition: max-height 0.35s ease;
 }
 
-/* Tailwind cannot express: custom state class toggling max-height for slide reveal */
-
 #mobile-menu.open {
   max-height: calc(100vh - 80px);
   overflow-y: auto;
 }
-
-/* Mobile menu — list reset + dividers */
 
 #mobile-menu ul {
   list-style: none;
@@ -286,12 +358,9 @@ html {
   padding: 0;
 }
 
-
 #mobile-menu>ul>li {
   border-bottom: 1px solid rgba(var(--color-sage-rgb), 0.15);
 }
-
-/* Links — shared base */
 
 #mobile-menu a {
   display: block;
@@ -306,15 +375,11 @@ html {
   background: rgba(var(--color-sage-rgb), 0.08);
 }
 
-/* Top-level links */
-
 #mobile-menu>ul>li>a {
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
 }
-
-/* Accordion trigger button */
 
 #mobile-menu button {
   display: flex;
@@ -345,8 +410,6 @@ html {
   transform: rotate(180deg);
 }
 
-/* Accordion sub-panel */
-
 .mobile-accordion-panel {
   list-style: none;
   margin: 0;
@@ -360,8 +423,6 @@ html {
 .mobile-accordion-panel.open {
   max-height: 280px;
 }
-
-/* Sub-links — indented, smaller, dimmer */
 
 .mobile-accordion-panel a {
   padding: 0.7rem 1.5rem;
@@ -380,8 +441,6 @@ html {
    6. BUTTONS & CTA
    ───────────────────────────────────────────────────────────── */
 
-/* Tailwind cannot express: @keyframes for custom pulse animation */
-
 @keyframes soft-pulse {
 
   0%,
@@ -394,18 +453,11 @@ html {
   }
 }
 
-/* Pulsing outline on the primary CTA button */
-
-/* Tailwind cannot express: custom infinite soft-pulse animation application */
-
 .btn-cta {
   animation: soft-pulse 3s ease-in-out infinite;
 }
 
-/* Highlighted credential / badge pill */
-
 /* Tailwind cannot express: complex linear gradient background with hex variable transparencies */
-
 .credential-badge {
   background: linear-gradient(135deg,
       rgba(var(--color-sage-rgb), 0.13),
@@ -417,10 +469,7 @@ html {
    7. HERO — HOMEPAGE ONLY
    ───────────────────────────────────────────────────────────── */
 
-/* Parallax portrait — height overshoot so translateY stays in frame */
-
 /* Tailwind cannot express: custom height overshoot and transform will-change optimization */
-
 .hero-img {
   height: 110%;
   top: -5%;
@@ -428,81 +477,39 @@ html {
   will-change: transform;
 }
 
-/*beta
-@media (min-width: 640px) and (max-width: 1023px) {
-  .hero-img {
-    height: 80%;
-    top: 10%;
-  }
+/* Tailwind cannot express: multi-stop linear gradient with specific angle intervals */
+.hero-overlay-main {
+  background: linear-gradient(300deg, rgba(15, 22, 28, 0.90) 0%, rgba(26, 37, 47, 0.75) 50%, rgba(26, 37, 47, 0.55) 100%);
 }
-*/
+
 /* ─────────────────────────────────────────────────────────────
-   8. PAGE HERO — INNER PAGES
+   8. DECORATIVE
    ───────────────────────────────────────────────────────────── */
 
-/* Dark gradient header used on all service/about pages */
-
-/* Tailwind cannot express: complex multi-stop linear gradient background */
-
-.page-hero {
-  background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 60%, var(--color-navy-mid) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle dot-grid texture overlay */
-
-/* Tailwind cannot express: ::before pseudo-element with radial gradient dot pattern */
-
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(var(--color-sage-rgb), 0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-}
-
-/* Subtle dot pattern for dark backgrounds (like the footer) */
-
 /* Tailwind cannot express: responsive radial gradient dot pattern background */
-
 .bg-pattern-dots-cream {
   background-image: radial-gradient(circle, var(--color-cream) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+/* Base class shared by every decorative blob */
+.deco-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
 }
 
 /* ─────────────────────────────────────────────────────────────
    9. CARDS
    ───────────────────────────────────────────────────────────── */
 
-/* Hover-lift for homepage approach/area cards */
-
 /* Tailwind cannot express: complex multi-property hover transition */
-
 .approach-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Tailwind cannot express: custom transform and rgb box-shadow on hover */
-
 .approach-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
-}
-
-/* Hover-lift for inner-page theme cards */
-
-/* Tailwind cannot express: custom solid border combined with multi-property transition */
-
-.theme-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--color-stone-medium);
-}
-
-/* Tailwind cannot express: custom transform and rgb box-shadow on hover */
-
-.theme-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(var(--color-navy-rgb), 0.10);
 }
@@ -510,10 +517,8 @@ html {
 /* REMOVED: .gallery-img / .gallery-wrap — no gallery in current build */
 
 /* ─────────────────────────────────────────────────────────────
-   12. FAQ ACCORDION — HOMEPAGE ONLY
+   10. FAQ ACCORDION — HOMEPAGE ONLY
    ───────────────────────────────────────────────────────────── */
-
-/* Tailwind cannot express: complex multi-property transition on component */
 
 .faq-card {
   border: 1px solid var(--color-stone-medium);
@@ -522,9 +527,6 @@ html {
 }
 
 /* Sage accent stripe on the right edge */
-
-/* Tailwind cannot express: ::after pseudo-element with dynamic linear gradient background */
-
 .faq-card::after {
   content: '';
   position: absolute;
@@ -538,39 +540,28 @@ html {
   transition: opacity 0.35s ease;
 }
 
-/* Tailwind cannot express: custom box-shadow and border color on hover */
-
 .faq-card:hover {
   box-shadow: 0 6px 24px rgba(var(--color-navy-rgb), 0.07);
   border-color: var(--color-sage-light);
 }
 
-/* Tailwind cannot express: pseudo-class selector Tailwind cannot target (:has) */
-
+/* Tailwind cannot express: :has pseudo-class */
 .faq-card:has(details[open]) {
   box-shadow: 0 8px 32px rgba(var(--color-navy-rgb), 0.11);
   border-color: var(--color-sage);
 }
 
-/* Tailwind cannot express: pseudo-class selector combined with ::after element opacity */
-
 .faq-card:has(details[open])::after {
   opacity: 1;
 }
-
-/* Tailwind cannot express: explicit transition on specific summary child element */
 
 .faq-card summary {
   transition: background 0.25s ease;
 }
 
-/* Tailwind cannot express: pseudo-class selector targeting summary background */
-
 .faq-card:has(details[open]) summary {
   background: rgba(var(--color-sage-rgb), 0.06);
 }
-
-/* Tailwind cannot express: @keyframes for custom slide-in animation */
 
 @keyframes faq-slide-in {
   from {
@@ -584,16 +575,104 @@ html {
   }
 }
 
-/* Tailwind cannot express: custom forwards animation application */
-
 .faq-answer {
   animation: faq-slide-in 0.25s ease forwards;
 }
 
-/* Tailwind cannot express: outline offset */
 .faq-card summary:focus-visible {
   outline: auto;
   outline-offset: -3px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   11. TIMELINE COMPONENT
+   ───────────────────────────────────────────────────────────── */
+
+#timeline-spine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#timeline-track {
+  position: absolute;
+  inset: 0;
+  background: var(--color-stone-deep, #C4B5A5);
+  opacity: 0.45;
+  border-radius: 9999px;
+}
+
+#timeline-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: var(--color-sage, #8B9E8D);
+  border-radius: 9999px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-cream, #FAF7F4);
+  border: 2px solid var(--color-stone-deep, #C4B5A5);
+  transition: background 0.25s ease, border-color 0.25s ease;
+  z-index: 1;
+}
+
+.timeline-dot.tl-active {
+  background: var(--color-sage, #8B9E8D);
+  border-color: var(--color-sage, #8B9E8D);
+}
+
+.card-accent {
+  box-shadow: 0 4px 24px 2px rgba(var(--color-navy-dark-rgb), 0);
+  transition: box-shadow 0.5s ease;
+}
+
+.card-accent.accent-active {
+  box-shadow: 0 4px 24px 2px rgba(var(--color-navy-dark-rgb), 0.13);
+}
+
+.timeline-item__number {
+  color: var(--color-muted, #7A7068);
+  transition: color 0.35s ease;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.timeline-item__number.tl-active {
+  color: var(--color-sage-dark, #5C7A5E);
+}
+
+@media (min-width: 1024px) {
+  .timeline-item__number {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   12. COOKIE NOTICE
+   ───────────────────────────────────────────────────────────── */
+
+#cookie-notice {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#cookie-notice.cookie-notice--visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -604,7 +683,8 @@ html {
 
   .btn-cta,
   .faq-answer,
-  [class*="animate-infinite-scroll"] {
+  [class*="animate-infinite-scroll"],
+  [class*="animate-"] {
     animation: none !important;
   }
 
@@ -621,174 +701,19 @@ html {
   .hero-img,
   .approach-card,
   .approach-card:hover,
-  .theme-card,
-  .theme-card:hover,
   .faq-card,
   .faq-card::after,
   .faq-card summary,
   .timeline-dot,
-  .timeline-item__number {
-    transition: none !important;
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────────
-   13. DECORATIVE ELEMENTS
-   Ambient blobs: soft radial blur shapes that drift slowly.
-   Grain: fixed film-grain overlay for tactile depth.
-   ───────────────────────────────────────────────────────────── */
-
-/* Base class shared by every decorative blob */
-
-.deco-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(48px);
-  pointer-events: none;
-}
-
-
-
-/* ─────────────────────────────────────────────────────────────
-   HERO OVERLAYS
-   ───────────────────────────────────────────────────────────── */
-/* Tailwind does not natively support multi-stop linear gradients with specific angle intervals, 
-   nor does it have a built-in utility for complex radial dot patterns inside background images 
-   without heavily bloating the class list. Extracting these into dedicated classes improves maintainability. */
-
-.hero-overlay-main {
-  background: linear-gradient(300deg, rgba(15, 22, 28, 0.90) 0%, rgba(26, 37, 47, 0.75) 50%, rgba(26, 37, 47, 0.55) 100%);
-}
-
-/* Tailwind CDN applies transitions via class attribute —
-     this catches all transition-* and duration-* utilities globally */
-
-@media (prefers-reduced-motion: reduce) {
-
+  .timeline-item__number,
+  .card-accent,
+  #cookie-notice,
   [class*="transition"],
   [class*="duration"] {
     transition: none !important;
   }
 
-  [class*="animate-"] {
-    animation: none !important;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
-   TIMELINE COMPONENT
-   ───────────────────────────────────────────────────────────── */
-
-/* Spine: absolute centering Tailwind cannot express */
-#timeline-spine {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Track: absolute inset positioning Tailwind cannot express succinctly without cluttering HTML */
-#timeline-track {
-  position: absolute;
-  inset: 0;
-  background: var(--color-stone-deep, #C4B5A5);
-  opacity: 0.45;
-  border-radius: 9999px;
-}
-
-/* Fill: absolute positioning with JavaScript height manipulation Tailwind cannot express */
-#timeline-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0;
-  background: var(--color-sage, #8B9E8D);
-  border-radius: 9999px;
-}
-
-/* Dot: precise negative offset and custom border transition Tailwind cannot express */
-.timeline-dot {
-  position: absolute;
-  left: -5px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--color-cream, #FAF7F4);
-  border: 2px solid var(--color-stone-deep, #C4B5A5);
-  transition: background 0.25s ease, border-color 0.25s ease;
-  z-index: 1;
-}
-
-/* Active dot state: specific color variables via JS class replacement */
-.timeline-dot.tl-active {
-  background: var(--color-sage, #8B9E8D);
-  border-color: var(--color-sage, #8B9E8D);
-}
-
-/* Card accent: custom rgba variable shadow and bespoke transition Tailwind cannot express cleanly */
-.card-accent {
-  box-shadow: 0 4px 24px 2px rgba(var(--color-navy-dark-rgb), 0);
-  transition: box-shadow 0.5s ease;
-}
-
-/* Active card accent: updated subtle opacity shadow on scroll target */
-.card-accent.accent-active {
-  box-shadow: 0 4px 24px 2px rgba(var(--color-navy-dark-rgb), 0.13);
-}
-
-/* Focus/Accessibility context: disable transitions smoothly */
-@media (prefers-reduced-motion: reduce) {
   .card-accent {
-    transition: none;
     box-shadow: none;
-  }
-}
-
-/* Number color uses CSS vars + bespoke JS-toggled state timing */
-.timeline-item__number {
-  color: var(--color-muted, #7A7068);
-  transition: color 0.35s ease;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-/* Active Number state */
-.timeline-item__number.tl-active {
-  color: var(--color-sage-dark, #5C7A5E);
-}
-
-@media (min-width: 1024px) {
-  .timeline-item__number {
-    font-size: 3rem;
-    font-weight: 800;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
-   COOKIE NOTICE
-   Tailwind cannot express: JS-class-driven transitions.
-   The .cookie-notice--visible class is toggled by JS (never a
-   Tailwind utility), so the enter/exit animation must live here.
-   ───────────────────────────────────────────────────────────── */
-
-#cookie-notice {
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-#cookie-notice.cookie-notice--visible {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #cookie-notice {
-    transition: none !important;
   }
 }

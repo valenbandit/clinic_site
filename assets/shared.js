@@ -219,6 +219,8 @@ if (contactForm) {
             });
 
             if (res.ok) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'form_submit_success' });
                 contactForm.classList.add('hidden');
                 feedback.classList.remove('hidden');
                 feedback.classList.add('visible');
@@ -344,11 +346,15 @@ if (contactForm) {
     var stored = localStorage.getItem('cookieConsent');
 
     if (stored === 'accepted') {
-        window.dataLayer.push({ event: 'consent_accept' });
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+        });
         return;
     }
     if (stored === 'rejected') {
-        window.dataLayer.push({ event: 'consent_reject' });
         return;
     }
 
@@ -362,7 +368,14 @@ if (contactForm) {
     function dismiss(choice) {
         notice.classList.remove('cookie-notice--visible');
         localStorage.setItem('cookieConsent', choice);
-        window.dataLayer.push({ event: choice === 'accepted' ? 'consent_accept' : 'consent_reject' });
+        if (choice === 'accepted') {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+        }
         setTimeout(function () { notice.setAttribute('hidden', ''); }, 400);
     }
 
