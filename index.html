@@ -253,7 +253,10 @@
          ASSETS
     ------------------------------------------------------------ -->
     <!-- preload hero -->
-    <link rel="preload" as="image" fetchpriority="high" href="assets/site-images/index_hero.webp" />
+    <link rel="preload" as="image" fetchpriority="high"
+        href="assets/site-images/index_hero.webp"
+        imagesrcset="assets/site-images/index_hero_400.webp 400w, assets/site-images/index_hero.webp 1025w"
+        imagesizes="(max-width: 640px) 400px, 1025px" />
     <!-- preload stylesheets -->
     <link rel="preload" as="style" href="/assets/tailwind.css">
     <link rel="preload" as="style" href="/assets/shared.css">

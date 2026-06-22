@@ -160,7 +160,10 @@
          ASSETS
     ------------------------------------------------------------ -->
     <!-- preload hero -->
-    <link rel="preload" as="image" fetchpriority="high" href="assets/site-images/psychotherapy_bg_static.webp" />
+    <link rel="preload" as="image" fetchpriority="high"
+        href="assets/site-images/psychotherapy_bg_static.webp"
+        imagesrcset="assets/site-images/psychotherapy_bg_static_400.webp 400w, assets/site-images/psychotherapy_bg_static.webp 1601w"
+        imagesizes="(max-width: 640px) 400px, 1601px" />
     <!-- preload stylesheets -->
     <link rel="preload" as="style" href="/assets/tailwind.css">
     <link rel="preload" as="style" href="/assets/shared.css">
