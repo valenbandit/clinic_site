@@ -259,10 +259,14 @@
     <link rel="preload" as="style" href="/assets/shared.css">
 
     <!-- tailwind -->
-    <link rel="stylesheet" href="/assets/tailwind.css">
+    <link rel="stylesheet" href="/assets/tailwind.css" media="print" onload="this.media='all'">
 
     <!-- custom styles -->
-    <link rel="stylesheet" href="/assets/shared.css">
+    <link rel="stylesheet" href="/assets/shared.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/assets/tailwind.css">
+        <link rel="stylesheet" href="/assets/shared.css">
+    </noscript>
     <style>
         .hero-blob-1,
         .hero-blob-2 {
