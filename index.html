@@ -254,11 +254,9 @@
     ------------------------------------------------------------ -->
     <!-- preload hero -->
     <link rel="preload" as="image" fetchpriority="high" href="assets/site-images/index_hero.webp" />
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- preload stylesheets -->
+    <link rel="preload" as="style" href="/assets/tailwind.css">
+    <link rel="preload" as="style" href="/assets/shared.css">
 
     <!-- tailwind -->
     <link rel="stylesheet" href="/assets/tailwind.css">
@@ -531,6 +529,8 @@
             <!-- image side -->
             <div class="flex-1 order-1 sm:order-2 min-h-[45vh] sm:min-h-0 lg:min-h-screen relative overflow-hidden">
                 <img id="hero-parallax-img" src="assets/site-images/index_hero.webp"
+                    srcset="assets/site-images/index_hero_400.webp 400w, assets/site-images/index_hero.webp 1025w"
+                    sizes="(max-width: 640px) 400px, 1025px"
                     alt="אברהם דגן - פסיכותרפיסט בקליניקה בפרדס חנה"
                     class="hero-img absolute inset-0 w-full object-cover object-top sm:object-center" width="1025"
                     height="1025" loading="eager" fetchpriority="high" />
@@ -676,6 +676,8 @@
                         <div class="relative block w-full max-w-sm mx-auto">
                             <div class="absolute -inset-4 bg-stone-warm rounded-2xl -z-10"></div>
                             <img src="assets/site-images/bio2.webp"
+                                srcset="assets/site-images/bio2_400.webp 400w, assets/site-images/bio2.webp 1601w"
+                                sizes="(max-width: 640px) 400px, 1601px"
                                 alt="אברהם דגן - פסיכותרפיסט מומחה בשיטת האקומי וטיפול דינמי"
                                 class="rounded-2xl shadow-2xl w-full max-w-sm mx-auto object-cover aspect-[4/5]"
                                 width="1601" height="1626" loading="lazy" />
@@ -1271,6 +1273,8 @@
                         <!-- clinic image -->
                         <div class="md:col-span-2 rounded-2xl overflow-hidden h-64 md:h-80 shadow-md">
                             <img src="assets/site-images/index_atmosphere.webp"
+                                srcset="assets/site-images/index_atmosphere_400.webp 400w, assets/site-images/index_atmosphere.webp 1201w"
+                                sizes="(max-width: 640px) 400px, 1201px"
                                 alt="קליניקה לפסיכותרפיה בפרדס חנה - אברהם דגן" class="object-cover w-full h-full"
                                 width="1201" height="1197" loading="lazy" />
                         </div>
@@ -1607,7 +1611,10 @@
                     <p class="text-sage text-sm font-semibold tracking-widest uppercase">מיקום הקליניקה</p>
                     <a href="https://maps.app.goo.gl/HRKHkv56q174TshS6" target="_blank" rel="noopener noreferrer"
                         aria-label="מפת הגעה לקליניקה בפרדס חנה כרכור" class="block rounded-2xl overflow-hidden h-40">
-                        <img src="assets/site-images/map.webp" alt="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
+                        <img src="assets/site-images/map.webp"
+                            srcset="assets/site-images/map_400.webp 400w, assets/site-images/map.webp 873w"
+                            sizes="(max-width: 640px) 400px, 873px"
+                            alt="מיקום הקליניקה – הגליל 42, פרדס חנה כרכור"
                             class="w-full h-full object-cover" loading="lazy" width="873" height="643" />
                     </a>
                 </div>

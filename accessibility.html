@@ -101,7 +101,9 @@
     <!-- ------------------------------------------------------------
          ASSETS
     ------------------------------------------------------------ -->
-    <!-- fonts -->
+    <!-- preload stylesheets -->
+    <link rel="preload" as="style" href="/assets/tailwind.css">
+    <link rel="preload" as="style" href="/assets/shared.css">
 
     <!-- tailwind -->
     <link rel="stylesheet" href="/assets/tailwind.css">
@@ -507,7 +509,10 @@
                 <div class="flex flex-col gap-5 text-center lg:text-right">
                     <p class="text-sage text-sm font-semibold tracking-widest uppercase">ניווט לקליניקה</p>
                     <a href="https://maps.app.goo.gl/HRKHkv56q174TshS6" target="_blank" rel="noopener noreferrer" aria-label="מפת הגעה לקליניקה בפרדס חנה כרכור" class="block rounded-2xl overflow-hidden h-40">
-                        <img src="assets/site-images/map.webp" alt="ניווט לקליניקה – הגליל 42, פרדס חנה כרכור"
+                        <img src="assets/site-images/map.webp"
+                            srcset="assets/site-images/map_400.webp 400w, assets/site-images/map.webp 873w"
+                            sizes="(max-width: 640px) 400px, 873px"
+                            alt="ניווט לקליניקה – הגליל 42, פרדס חנה כרכור"
                             class="w-full h-full object-cover" loading="lazy" width="873" height="643" />
                     </a>
                 </div>
